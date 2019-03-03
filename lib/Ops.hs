@@ -1,5 +1,5 @@
 {-# LANGUAGE DefaultSignatures, GADTs #-}
-module Ops (cd, glob, draw) where
+module Ops (cd, glob, draw, printBanner) where
 
 import Data.String
 import Diagrams
@@ -44,5 +44,15 @@ cd = changeDirectory mempty
 
 draw :: Diagram Braille -> IO ()
 draw = putStr . renderDia Braille (BrailleOptions (mkWidth 80))
+
+printBanner :: IO ()
+printBanner = draw $
+    triangle 1
+ <> pentagon 1
+ <> septagon 1
+ <> nonagon 1
+ <> translateY (-0.15) (translateX (-0.25) (baselineText "Marios"))
+ <> translateY (-0.4)  (translateX (-0.25) (baselineText "Control"))
+ <> translateY (-0.7)  (translateX (-0.25) (baselineText "Program"))
 
 glob pattern = traverse makeRelativeToCurrentDirectory =<< Glob.glob pattern

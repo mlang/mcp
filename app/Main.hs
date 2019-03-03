@@ -57,6 +57,7 @@ setup = do
   runStmt $ "let externalPrint s = fdWrite (read " <> show (show wFd) <> ") s >> pure ()"
   runStmt "let printProc p = readProc p >>= externalPrint"
   runStmt "radio <- stations externalPrint"
+  runStmt "printBanner"
 
 loop :: REPL ()
 loop = prompt >>= \case
