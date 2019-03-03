@@ -1,7 +1,9 @@
 {-# LANGUAGE DefaultSignatures, GADTs #-}
-module Ops (cd, glob) where
+module Ops (cd, glob, draw) where
 
 import Data.String
+import Diagrams
+import Diagrams.Backend.Braille
 import qualified System.FilePath.Glob as Glob
 import System.Directory
 
@@ -39,5 +41,8 @@ instance (CDArg a, CDResult r) => CDResult (a -> r) where
 
 cd :: CDResult r => r
 cd = changeDirectory mempty
+
+draw :: Diagram Braille -> IO ()
+draw = putStr . renderDia Braille (BrailleOptions (mkWidth 80))
 
 glob pattern = traverse makeRelativeToCurrentDirectory =<< Glob.glob pattern

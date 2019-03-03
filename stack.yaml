@@ -2,6 +2,7 @@ resolver: lts-13.9
 packages:
 - .
 extra-deps:
+- diagrams-braille-0.1.0.2
 - gi-gst-1.0.16
 - github: judah/haskeline
   commit: master

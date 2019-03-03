@@ -10,6 +10,9 @@ description:         Marios Control Program
 
 dependencies:
 - base >= 4.9 && < 5
+- diagrams-braille
+- diagrams-core
+- diagrams-lib
 - directory
 - exceptions
 - ghc
