@@ -24,7 +24,8 @@ type REPL = StateT REPLState (REPLT IO)
 
 repl = either print pure =<< interp `evalStateT` defaultREPLState
                                     `runREPLT` settings where
-  settings = defaultSettings
+  settings = defaultSettings { autoAddHistory = True
+                             , historyFile = Just ".mcp_history" }
            & setComplete completion
   interp = do
     setup
