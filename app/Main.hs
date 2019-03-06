@@ -46,6 +46,7 @@ setup = do
               , ModuleImport "Data.IORef" NotQualified NoImportList
               , ModuleImport "Data.List" NotQualified NoImportList
               , ModuleImport "Diagrams" NotQualified NoImportList
+              , ModuleImport "Network.URI.Encode" (QualifiedAs (Just "URI")) NoImportList
               , ModuleImport "Radio" NotQualified NoImportList
               , ModuleImport "Ops" NotQualified NoImportList
               , ModuleImport "OS" (QualifiedAs Nothing) NoImportList
