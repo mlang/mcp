@@ -2,7 +2,7 @@
 module Main (main, repl) where
 
 import Control.Concurrent (forkIO)
-import Control.Exception (SomeException)
+import Control.Exception (SomeException, throwIO)
 import Control.Monad.Catch
 import Control.Monad.IO.Class
 import Control.Monad.State
@@ -13,6 +13,7 @@ import Data.List (isPrefixOf, nub, sort)
 import Language.Haskell.Interpreter hiding (get)
 import REPL
 import Shh (Failure(..))
+import System.IO.Error
 import System.Posix.IO
 import System.Console.Haskeline hiding (outputStr, outputStrLn, getInputLine)
 import qualified System.Console.Haskeline as Haskeline
@@ -60,6 +61,14 @@ setup = do
   runStmt "let printProc p = readProc p >>= externalPrint"
   runStmt "radio <- stations externalPrint"
   runStmt "printBanner"
+  loadRC ".mcprc"
+
+loadRC :: FilePath -> REPL ()
+loadRC fp =
+  traverse_ runStmt =<< lines <$> liftIO (readFile fp `catch` doesNotExist)
+ where
+  doesNotExist e | isDoesNotExistError e = pure ""
+                 | otherwise             = throwIO e
 
 loop :: REPL ()
 loop = prompt >>= \case

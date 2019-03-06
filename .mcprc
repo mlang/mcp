@@ -1,0 +1,3 @@
+let google q = OS.lynx "-nopause" $ "https://google.com/search?ie=UTF-8&q=" <>  URI.encode q
+radio "http://stream.radiozora.fm/chill_a"
+
