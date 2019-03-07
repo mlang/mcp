@@ -14,7 +14,11 @@ A sort of uGHCi with bells and whistles preconfigured to work as a shell.
   externalPrint.
 * Direct rendering of diagrams to console via diagrams-braille.
 
-## Depenendencies
+All this project does is bring together some very nice Haskell libraries.
+There is really no novelty here.  All the hard work has been
+done by the maintainers/authors of the packages this project depends on.
+
+## Dependencies
 
 MCP uses GStreamer to play background music.
 
