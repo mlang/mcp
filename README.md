@@ -1,5 +1,27 @@
 # Marios Control Program
 
+A sort of uGHCi with bells and whistles preconfigured to work as a shell.
+
+## Features
+
+* Background jobs (forkIO) have access to the externalPrint function from haskeline,
+  allowing output to the console without disturbing the prompt.
+* Host executables all available qualified in the OS module.
+* Simple support for changing the current directory without trashing
+  the context.
+* Simple expression completion (nothing GHCi can't also do).
+* Integrated internet radio player with current title reporting via
+  externalPrint.
+* Direct rendering of diagrams to console via diagrams-braille.
+
+## Depenendencies
+
+MCP uses GStreamer to play background music.
+
+```console
+# apt install libgirepository1.0-dev libgstreamer1.0-dev
+```
+
 ## Examples
 
 ### Changing directories
