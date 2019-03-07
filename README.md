@@ -26,6 +26,14 @@ MCP uses GStreamer to play background music.
 # apt install libgirepository1.0-dev libgstreamer1.0-dev
 ```
 
+## Running
+
+Currently, the best way to build/run this program is via stack:
+
+```console
+$ stack run
+```
+
 ## Examples
 
 ### Changing directories
