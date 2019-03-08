@@ -14,6 +14,7 @@ import Data.String
 import Data.Text (pack, unpack)
 import qualified GI.GLib as GLib
 import qualified GI.Gst as Gst
+import System.Console.ANSI
 
 type Player = Command -> IO ()
 type Printer = String -> IO ()
@@ -78,6 +79,8 @@ busCall externalPrint playBin bus message = do
     #foreach tagList $ \tl t -> case t of
       "title" -> do
         (ok, title) <- #getString tl t
-        when ok $ externalPrint (unpack title)
+        when ok $ externalPrint (setSGRCode [SetItalicized True] <>
+                                 "Now playing: " <> unpack title <>
+                                 setSGRCode [SetItalicized False])
       _ -> pure ()
   pure True

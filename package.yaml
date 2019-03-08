@@ -9,6 +9,7 @@ copyright:           "2019 Mario Lang"
 description:         Marios Control Program
 
 dependencies:
+- ansi-terminal
 - base >= 4.9 && < 5
 - diagrams-braille
 - diagrams-core
