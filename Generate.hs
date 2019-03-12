@@ -24,7 +24,7 @@ data METARException = NotAvailable Status
 
 instance Exception METARException
 
-data Info = Info { code :: String, point :: Point }
+data Info = Info { code :: String, name :: String, point :: Point }
           deriving (Show)
 
 bbsss :: IO [Info]
@@ -44,8 +44,7 @@ parser = line `endBy` (string "\r\n" <|> string "\n") where
     char ';'
     code <- count 4 anyChar 
     char ';'
-    many (notChar ';')
-    char ';'
+    name <- many (notChar ';') <* char ';'
     many (notChar ';')
     char ';'
     many (notChar ';')
@@ -74,7 +73,7 @@ parser = line `endBy` (string "\r\n" <|> string "\n") where
     many (noneOf ";\r\n")
     let lat = dir 'S' latD $ read latH + (read latM / 60)
     let lon = dir 'W' lonD $ read lonH + (read lonM / 60)
-    pure $ Info code (pt lat lon ele Nothing)
+    pure $ Info code name (pt lat lon ele Nothing)
 
 dir d x = case x of
   Just d' | d == d' -> negate
@@ -104,7 +103,7 @@ writeModule fp = do
     hPutStrLn h " where vec ICAOData{..} = getVector p icaoPoint"
     hPutStrLn h ""
     hPutStrLn h $ "data ICAOCode = " <>
-                  intercalate "\n              | " (code <$> l)
+                  intercalate "\n              | " ((\Info{..} -> code <> " -- " <> name) <$> l)
     hPutStrLn h "          deriving (Bounded, Enum, Eq, Ord, Read, Show)"
     hPutStrLn h ""
     hPutStrLn h "data ICAOData = ICAOData { icaoPoint :: Point }"

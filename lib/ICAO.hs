@@ -14,3890 +14,3890 @@ nearest p = head . sortOn (fst . snd) $
             fmap vec <$> Map.assocs icaoData
  where vec ICAOData{..} = getVector p icaoPoint
 
-data ICAOCode = AGGH
-              | AGGL
-              | AGGM
-              | ANAU
-              | AYMD
-              | AYPY
-              | AYWK
-              | BGAM
-              | BGAS
-              | BGAT
-              | BGBW
-              | BGCO
-              | BGDB
-              | BGDH
-              | BGEM
-              | BGFH
-              | BGGD
-              | BGGH
-              | BGHB
-              | BGJH
-              | BGJN
-              | BGKK
-              | BGKT
-              | BGPC
-              | BGSC
-              | BGSF
-              | BGTL
-              | BIAR
-              | BIEG
-              | BIGR
-              | BIHN
-              | BIKF
-              | BIRG
-              | BIRK
-              | BIST
-              | BIVM
-              | BIVO
-              | CWAC
-              | CWAF
-              | CWAG
-              | CWAH
-              | CWAJ
-              | CWAN
-              | CWAQ
-              | CWAR
-              | CWAS
-              | CWAV
-              | CWAX
-              | CWBA
-              | CWBE
-              | CWBG
-              | CWBI
-              | CWBJ
-              | CWBK
-              | CWBL
-              | CWBM
-              | CWBO
-              | CWBR
-              | CWBT
-              | CWBV
-              | CWBY
-              | CWBZ
-              | CWCA
-              | CWCD
-              | CWCF
-              | CWCH
-              | CWCI
-              | CWCJ
-              | CWCL
-              | CWCM
-              | CWCO
-              | CWCU
-              | CWCX
-              | CWDA
-              | CWDB
-              | CWDC
-              | CWDE
-              | CWDF
-              | CWDH
-              | CWDI
-              | CWDJ
-              | CWDK
-              | CWDL
-              | CWDM
-              | CWDO
-              | CWDP
-              | CWDQ
-              | CWDS
-              | CWDT
-              | CWDU
-              | CWDV
-              | CWEA
-              | CWEB
-              | CWEC
-              | CWEE
-              | CWEF
-              | CWEH
-              | CWEI
-              | CWEK
-              | CWEL
-              | CWEO
-              | CWEP
-              | CWEQ
-              | CWER
-              | CWES
-              | CWEU
-              | CWEV
-              | CWEW
-              | CWEZ
-              | CWFD
-              | CWFE
-              | CWFF
-              | CWFG
-              | CWFJ
-              | CWFN
-              | CWFQ
-              | CWFW
-              | CWFX
-              | CWFZ
-              | CWGB
-              | CWGD
-              | CWGF
-              | CWGH
-              | CWGL
-              | CWGM
-              | CWGN
-              | CWGP
-              | CWGQ
-              | CWGR
-              | CWGT
-              | CWGU
-              | CWGW
-              | CWGY
-              | CWHA
-              | CWHC
-              | CWHE
-              | CWHH
-              | CWHI
-              | CWHL
-              | CWHM
-              | CWHO
-              | CWHP
-              | CWHQ
-              | CWHS
-              | CWHT
-              | CWHV
-              | CWHW
-              | CWHY
-              | CWIC
-              | CWID
-              | CWIE
-              | CWII
-              | CWIJ
-              | CWIK
-              | CWIL
-              | CWIO
-              | CWIP
-              | CWIQ
-              | CWIS
-              | CWIT
-              | CWIW
-              | CWIX
-              | CWIZ
-              | CWJA
-              | CWJB
-              | CWJC
-              | CWJD
-              | CWJH
-              | CWJI
-              | CWJM
-              | CWJN
-              | CWJO
-              | CWJP
-              | CWJR
-              | CWJT
-              | CWJW
-              | CWJX
-              | CWJY
-              | CWJZ
-              | CWKD
-              | CWKE
-              | CWKG
-              | CWKH
-              | CWKK
-              | CWKM
-              | CWKO
-              | CWKW
-              | CWKX
-              | CWLA
-              | CWLB
-              | CWLE
-              | CWLF
-              | CWLG
-              | CWLI
-              | CWLM
-              | CWLO
-              | CWLP
-              | CWLQ
-              | CWLS
-              | CWLT
-              | CWLV
-              | CWLX
-              | CWLY
-              | CWLZ
-              | CWME
-              | CWMH
-              | CWMI
-              | CWMJ
-              | CWMM
-              | CWMN
-              | CWMP
-              | CWMQ
-              | CWMS
-              | CWMT
-              | CWMU
-              | CWMV
-              | CWMW
-              | CWMX
-              | CWMZ
-              | CWNB
-              | CWNC
-              | CWND
-              | CWNH
-              | CWNK
-              | CWNL
-              | CWNM
-              | CWNO
-              | CWNP
-              | CWNQ
-              | CWNR
-              | CWNT
-              | CWNW
-              | CWNX
-              | CWNZ
-              | CWOA
-              | CWOB
-              | CWOC
-              | CWOD
-              | CWOE
-              | CWOH
-              | CWOI
-              | CWOK
-              | CWOU
-              | CWPA
-              | CWPB
-              | CWPC
-              | CWPD
-              | CWPF
-              | CWPH
-              | CWPI
-              | CWPJ
-              | CWPK
-              | CWPL
-              | CWPO
-              | CWPQ
-              | CWPR
-              | CWPS
-              | CWPU
-              | CWQC
-              | CWQE
-              | CWQF
-              | CWQG
-              | CWQH
-              | CWQK
-              | CWQL
-              | CWQM
-              | CWQO
-              | CWQP
-              | CWQQ
-              | CWQR
-              | CWQS
-              | CWQV
-              | CWQW
-              | CWQY
-              | CWRA
-              | CWRD
-              | CWRF
-              | CWRH
-              | CWRJ
-              | CWRN
-              | CWRO
-              | CWRP
-              | CWRT
-              | CWRU
-              | CWRV
-              | CWRW
-              | CWRY
-              | CWRZ
-              | CWSA
-              | CWSE
-              | CWSF
-              | CWSG
-              | CWSH
-              | CWSI
-              | CWSK
-              | CWSL
-              | CWSP
-              | CWSQ
-              | CWSR
-              | CWSS
-              | CWST
-              | CWSY
-              | CWSZ
-              | CWTA
-              | CWTB
-              | CWTC
-              | CWTD
-              | CWTE
-              | CWTF
-              | CWTG
-              | CWTN
-              | CWTO
-              | CWTY
-              | CWUM
-              | CWUP
-              | CWUR
-              | CWUS
-              | CWUT
-              | CWUU
-              | CWUW
-              | CWUX
-              | CWUY
-              | CWVA
-              | CWVC
-              | CWVD
-              | CWVH
-              | CWVI
-              | CWVK
-              | CWVN
-              | CWVO
-              | CWVP
-              | CWVQ
-              | CWVT
-              | CWVU
-              | CWVY
-              | CWWA
-              | CWWB
-              | CWWC
-              | CWWE
-              | CWWF
-              | CWWK
-              | CWWL
-              | CWWN
-              | CWWO
-              | CWWP
-              | CWWS
-              | CWWV
-              | CWWX
-              | CWWZ
-              | CWXA
-              | CWXC
-              | CWXH
-              | CWXL
-              | CWXM
-              | CWXP
-              | CWXV
-              | CWXW
-              | CWYE
-              | CWYH
-              | CWYJ
-              | CWYK
-              | CWYL
-              | CWYM
-              | CWYO
-              | CWYY
-              | CWZA
-              | CWZB
-              | CWZN
-              | CWZQ
-              | CWZS
-              | CWZT
-              | CWZV
-              | CWZZ
-              | CXBK
-              | CXBO
-              | CXCK
-              | CXDE
-              | CXDI
-              | CXDW
-              | CXEC
-              | CXEG
-              | CXGH
-              | CXHF
-              | CXKT
-              | CXLC
-              | CXLL
-              | CXMD
-              | CXMM
-              | CXNM
-              | CXOX
-              | CXPV
-              | CXQA
-              | CXRH
-              | CXSH
-              | CXSR
-              | CXSW
-              | CXTN
-              | CXTP
-              | CXTV
-              | CXWN
-              | CXXX
-              | CXZU
-              | CYAH
-              | CYAJ
-              | CYAM
-              | CYAW
-              | CYAZ
-              | CYBC
-              | CYBD
-              | CYBG
-              | CYBK
-              | CYBR
-              | CYBU
-              | CYBV
-              | CYBX
-              | CYCB
-              | CYCD
-              | CYCG
-              | CYCH
-              | CYCL
-              | CYCO
-              | CYCP
-              | CYCT
-              | CYCX
-              | CYCY
-              | CYDA
-              | CYDC
-              | CYDF
-              | CYDN
-              | CYDP
-              | CYED
-              | CYEG
-              | CYEN
-              | CYET
-              | CYEV
-              | CYFB
-              | CYFC
-              | CYFS
-              | CYGK
-              | CYGL
-              | CYGM
-              | CYGP
-              | CYGQ
-              | CYGR
-              | CYGV
-              | CYGW
-              | CYGX
-              | CYHA
-              | CYHB
-              | CYHE
-              | CYHM
-              | CYHU
-              | CYHY
-              | CYHZ
-              | CYIO
-              | CYIV
-              | CYJT
-              | CYKA
-              | CYKF
-              | CYKJ
-              | CYKL
-              | CYKY
-              | CYLJ
-              | CYLL
-              | CYLW
-              | CYMA
-              | CYMD
-              | CYMJ
-              | CYMM
-              | CYMO
-              | CYMT
-              | CYNA
-              | CYNE
-              | CYNM
-              | CYOD
-              | CYOJ
-              | CYOW
-              | CYOY
-              | CYPA
-              | CYPE
-              | CYPG
-              | CYPQ
-              | CYPR
-              | CYPW
-              | CYPY
-              | CYPZ
-              | CYQA
-              | CYQB
-              | CYQD
-              | CYQF
-              | CYQG
-              | CYQH
-              | CYQI
-              | CYQK
-              | CYQL
-              | CYQM
-              | CYQQ
-              | CYQR
-              | CYQT
-              | CYQU
-              | CYQV
-              | CYQW
-              | CYQX
-              | CYQY
-              | CYQZ
-              | CYRB
-              | CYRJ
-              | CYRL
-              | CYRM
-              | CYRT
-              | CYRV
-              | CYSB
-              | CYSC
-              | CYSD
-              | CYSF
-              | CYSJ
-              | CYSL
-              | CYSM
-              | CYSU
-              | CYTE
-              | CYTH
-              | CYTL
-              | CYTR
-              | CYTS
-              | CYTZ
-              | CYUA
-              | CYUB
-              | CYUI
-              | CYUJ
-              | CYUK
-              | CYUL
-              | CYUQ
-              | CYUS
-              | CYUX
-              | CYVC
-              | CYVO
-              | CYVP
-              | CYVQ
-              | CYVR
-              | CYVV
-              | CYWA
-              | CYWG
-              | CYWK
-              | CYWL
-              | CYXC
-              | CYXD
-              | CYXE
-              | CYXH
-              | CYXJ
-              | CYXL
-              | CYXR
-              | CYXS
-              | CYXT
-              | CYXU
-              | CYXX
-              | CYXY
-              | CYXZ
-              | CYYB
-              | CYYC
-              | CYYD
-              | CYYE
-              | CYYF
-              | CYYG
-              | CYYJ
-              | CYYL
-              | CYYN
-              | CYYQ
-              | CYYR
-              | CYYT
-              | CYYU
-              | CYYW
-              | CYYY
-              | CYYZ
-              | CYZE
-              | CYZF
-              | CYZH
-              | CYZP
-              | CYZR
-              | CYZS
-              | CYZT
-              | CYZU
-              | CYZV
-              | CYZW
-              | CYZX
-              | CYZY
-              | CZDI
-              | CZOC
-              | CZPK
-              | CZST
-              | CZUB
-              | CZUE
-              | CZUM
-              | DAAD
-              | DAAE
-              | DAAG
-              | DAAJ
-              | DAAP
-              | DAAS
-              | DAAV
-              | DAAY
-              | DABB
-              | DABC
-              | DABP
-              | DABS
-              | DABT
-              | DAFI
-              | DAOB
-              | DAOF
-              | DAOI
-              | DAON
-              | DAOO
-              | DAOR
-              | DAOV
-              | DAUA
-              | DAUB
-              | DAUE
-              | DAUG
-              | DAUH
-              | DAUK
-              | DAUL
-              | DAUO
-              | DAUT
-              | DAUU
-              | DAUZ
-              | DBBB
-              | DBBC
-              | DBBK
-              | DBBN
-              | DBBP
-              | DBBS
-              | DFCC
-              | DFCO
-              | DFCP
-              | DFEE
-              | DFEF
-              | DFFD
-              | DFOD
-              | DFOG
-              | DFOO
-              | DGAA
-              | DGAD
-              | DGAH
-              | DGAK
-              | DGAS
-              | DGAT
-              | DGKA
-              | DGKK
-              | DGLB
-              | DGLE
-              | DGLN
-              | DGLW
-              | DGLY
-              | DGSB
-              | DGSI
-              | DGSN
-              | DGSW
-              | DGTK
-              | DGTX
-              | DIAD
-              | DIAP
-              | DIBK
-              | DIBU
-              | DIDK
-              | DIDL
-              | DIGA
-              | DIKO
-              | DIMN
-              | DIOD
-              | DISP
-              | DISS
-              | DITB
-              | DIYO
-              | DNBI
-              | DNCA
-              | DNEN
-              | DNGU
-              | DNIB
-              | DNIL
-              | DNJO
-              | DNKA
-              | DNKN
-              | DNMA
-              | DNMK
-              | DNMM
-              | DNOS
-              | DNPO
-              | DNSO
-              | DNYO
-              | DNZA
-              | DRRB
-              | DRRG
-              | DRRI
-              | DRRL
-              | DRRM
-              | DRRN
-              | DRRT
-              | DRZA
-              | DRZF
-              | DRZG
-              | DRZM
-              | DRZR
-              | DTKA
-              | DTTA
-              | DTTB
-              | DTTD
-              | DTTF
-              | DTTG
-              | DTTJ
-              | DTTK
-              | DTTL
-              | DTTM
-              | DTTN
-              | DTTR
-              | DTTX
-              | DTTZ
-              | DXAK
-              | DXMG
-              | DXNG
-              | DXSK
-              | DXTA
-              | DXXX
-              | EBAW
-              | EBBE
-              | EBBL
-              | EBBR
-              | EBBT
-              | EBBX
-              | EBCI
-              | EBCV
-              | EBDT
-              | EBFN
-              | EBFS
-              | EBGT
-              | EBLB
-              | EBLG
-              | EBMB
-              | EBMT
-              | EBOS
-              | EBSP
-              | EBST
-              | EBSU
-              | EBTN
-              | EBWE
-              | EBZW
-              | EDDB
-              | EDDC
-              | EDDE
-              | EDDF
-              | EDDG
-              | EDDH
-              | EDDI
-              | EDDK
-              | EDDL
-              | EDDM
-              | EDDN
-              | EDDP
-              | EDDR
-              | EDDS
-              | EDDT
-              | EDDV
-              | EDDW
-              | EDFH
-              | EDFM
-              | EDHI
-              | EDHL
-              | EDLP
-              | EDLW
-              | EDMA
-              | EDNY
-              | EDOP
-              | EDQD
-              | EDQM
-              | EDTD
-              | EDTZ
-              | EDVE
-              | EDVK
-              | EDXW
-              | EDZE
-              | EEKA
-              | EFHA
-              | EFHF
-              | EFHK
-              | EFHL
-              | EFHT
-              | EFIV
-              | EFJO
-              | EFJY
-              | EFKA
-              | EFKE
-              | EFKI
-              | EFKK
-              | EFKS
-              | EFKU
-              | EFLP
-              | EFMA
-              | EFMI
-              | EFOU
-              | EFPE
-              | EFPO
-              | EFPU
-              | EFRO
-              | EFSA
-              | EFSO
-              | EFSU
-              | EFTP
-              | EFTU
-              | EFUT
-              | EFVA
-              | EFVI
-              | EGAA
-              | EGAC
-              | EGBB
-              | EGCC
-              | EGDB
-              | EGDC
-              | EGDG
-              | EGDL
-              | EGDM
-              | EGDP
-              | EGDR
-              | EGDY
-              | EGFF
-              | EGHE
-              | EGHH
-              | EGHI
-              | EGJB
-              | EGJJ
-              | EGKA
-              | EGKK
-              | EGLF
-              | EGLL
-              | EGNC
-              | EGNH
-              | EGNL
-              | EGNR
-              | EGNS
-              | EGOM
-              | EGOP
-              | EGOS
-              | EGOV
-              | EGOY
-              | EGPA
-              | EGPB
-              | EGPC
-              | EGPD
-              | EGPE
-              | EGPF
-              | EGPH
-              | EGPK
-              | EGPL
-              | EGPO
-              | EGPU
-              | EGQA
-              | EGQJ
-              | EGQK
-              | EGQL
-              | EGQM
-              | EGQS
-              | EGRB
-              | EGRR
-              | EGSH
-              | EGSS
-              | EGTE
-              | EGUB
-              | EGUC
-              | EGUF
-              | EGUL
-              | EGUM
-              | EGUN
-              | EGUW
-              | EGUY
-              | EGVA
-              | EGVN
-              | EGVO
-              | EGVP
-              | EGWU
-              | EGWZ
-              | EGXC
-              | EGXD
-              | EGXE
-              | EGXG
-              | EGXH
-              | EGXJ
-              | EGXT
-              | EGXU
-              | EGXV
-              | EGXW
-              | EGYC
-              | EGYD
-              | EGYH
-              | EGYM
-              | EGYP
-              | EGYW
-              | EHAM
-              | EHBK
-              | EHDB
-              | EHDL
-              | EHEH
-              | EHGG
-              | EHGR
-              | EHKD
-              | EHLE
-              | EHLW
-              | EHRD
-              | EHSB
-              | EHTW
-              | EHVB
-              | EHVK
-              | EHVL
-              | EHWO
-              | EICK
-              | EIDW
-              | EIME
-              | EINN
-              | EKAH
-              | EKAT
-              | EKAV
-              | EKBI
-              | EKCH
-              | EKEB
-              | EKHO
-              | EKHS
-              | EKKA
-              | EKMB
-              | EKOD
-              | EKRK
-              | EKRN
-              | EKSB
-              | EKSN
-              | EKSP
-              | EKST
-              | EKSV
-              | EKTS
-              | EKVA
-              | EKVD
-              | EKVG
-              | EKVJ
-              | EKVL
-              | EKYT
-              | ELLX
-              | ENAL
-              | ENAN
-              | ENAS
-              | ENAT
-              | ENBJ
-              | ENBM
-              | ENBN
-              | ENBO
-              | ENBR
-              | ENBV
-              | ENCN
-              | ENDU
-              | ENEV
-              | ENFB
-              | ENFG
-              | ENFL
-              | ENGM
-              | ENHD
-              | ENHF
-              | ENHO
-              | ENHV
-              | ENJA
-              | ENKA
-              | ENKB
-              | ENKR
-              | ENLI
-              | ENLK
-              | ENMH
-              | ENML
-              | ENMS
-              | ENNA
-              | ENNK
-              | ENNM
-              | ENOL
-              | ENOV
-              | ENRA
-              | ENRM
-              | ENRO
-              | ENRS
-              | ENRY
-              | ENSB
-              | ENSD
-              | ENSG
-              | ENSH
-              | ENSK
-              | ENSN
-              | ENSR
-              | ENSS
-              | ENST
-              | ENTC
-              | ENTO
-              | ENVA
-              | ENVD
-              | ENZV
-              | EPGD
-              | EPKK
-              | EPKO
-              | EPKT
-              | EPPO
-              | EPRZ
-              | EPSC
-              | EPWA
-              | EPWR
-              | EPZG
-              | ESCF
-              | ESCL
-              | ESCM
-              | ESDA
-              | ESDB
-              | ESDF
-              | ESGG
-              | ESGJ
-              | ESGP
-              | ESGR
-              | ESIB
-              | ESMK
-              | ESMQ
-              | ESMS
-              | ESMT
-              | ESMV
-              | ESMX
-              | ESNG
-              | ESNJ
-              | ESNK
-              | ESNN
-              | ESNO
-              | ESNQ
-              | ESNS
-              | ESNU
-              | ESOW
-              | ESPA
-              | ESPC
-              | ESPD
-              | ESPE
-              | ESSA
-              | ESSB
-              | ESSD
-              | ESSF
-              | ESSK
-              | ESSP
-              | ESSQ
-              | ESSV
-              | ETAD
-              | ETAR
-              | ETAS
-              | ETBA
-              | ETEB
-              | ETEH
-              | ETEU
-              | ETGB
-              | ETGG
-              | ETGI
-              | ETGK
-              | ETGW
-              | ETGY
-              | ETGZ
-              | ETHA
-              | ETHB
-              | ETHC
-              | ETHE
-              | ETHF
-              | ETHI
-              | ETHL
-              | ETHM
-              | ETHN
-              | ETHR
-              | ETHS
-              | ETHT
-              | ETIC
-              | ETID
-              | ETIE
-              | ETIH
-              | ETIK
-              | ETIN
-              | ETME
-              | ETMK
-              | ETMN
-              | ETND
-              | ETNG
-              | ETNH
-              | ETNJ
-              | ETNL
-              | ETNN
-              | ETNP
-              | ETNR
-              | ETNS
-              | ETNT
-              | ETNU
-              | ETNW
-              | ETOR
-              | ETOU
-              | ETSA
-              | ETSB
-              | ETSE
-              | ETSF
-              | ETSH
-              | ETSI
-              | ETSL
-              | ETSM
-              | ETSN
-              | ETSP
-              | ETUL
-              | ETUN
-              | ETUO
-              | ETUR
-              | EYVI
-              | FAAB
-              | FAAN
-              | FABL
-              | FABM
-              | FABY
-              | FACL
-              | FACT
-              | FACV
-              | FADA
-              | FADN
-              | FADY
-              | FAEL
-              | FAER
-              | FAFF
-              | FAFR
-              | FAGB
-              | FAGE
-              | FAGG
-              | FAGR
-              | FAHS
-              | FAIR
-              | FAJS
-              | FAKD
-              | FAKM
-              | FALW
-              | FALY
-              | FAMB
-              | FAME
-              | FAMM
-              | FAMO
-              | FANS
-              | FAOH
-              | FAPB
-              | FAPE
-              | FAPH
-              | FAPJ
-              | FAPR
-              | FAQT
-              | FARB
-              | FASB
-              | FATC
-              | FAUP
-              | FAUT
-              | FAVB
-              | FAVR
-              | FAWK
-              | FAWM
-              | FBFT
-              | FBGZ
-              | FBJW
-              | FBKE
-              | FBLT
-              | FBMN
-              | FBSK
-              | FBSN
-              | FBSW
-              | FBTE
-              | FBTS
-              | FCBB
-              | FCBD
-              | FCBM
-              | FCBO
-              | FCBS
-              | FCOG
-              | FCOI
-              | FCOM
-              | FCOS
-              | FCOU
-              | FCPA
-              | FCPL
-              | FCPP
-              | FDMS
-              | FEFA
-              | FEFB
-              | FEFF
-              | FEFG
-              | FEFI
-              | FEFL
-              | FEFM
-              | FEFN
-              | FEFO
-              | FEFR
-              | FEFS
-              | FEFT
-              | FEFY
-              | FGSL
-              | FHAW
-              | FIMP
-              | FIMR
-              | FJDG
-              | FKAB
-              | FKAF
-              | FKAG
-              | FKAL
-              | FKAM
-              | FKAN
-              | FKAO
-              | FKAY
-              | FKKA
-              | FKKB
-              | FKKC
-              | FKKD
-              | FKKF
-              | FKKI
-              | FKKM
-              | FKKN
-              | FKKR
-              | FKKV
-              | FKYS
-              | FLBA
-              | FLCH
-              | FLCP
-              | FLIK
-              | FLKB
-              | FLKO
-              | FLKS
-              | FLKW
-              | FLLC
-              | FLLD
-              | FLLI
-              | FLLS
-              | FLMA
-              | FLMG
-              | FLMP
-              | FLMW
-              | FLND
-              | FLPA
-              | FLPE
-              | FLPO
-              | FLSE
-              | FLSN
-              | FLSS
-              | FLSW
-              | FLZB
-              | FMCH
-              | FMCV
-              | FMCZ
-              | FMEE
-              | FMEP
-              | FMME
-              | FMMH
-              | FMMI
-              | FMMO
-              | FMMS
-              | FMMT
-              | FMMV
-              | FMNA
-              | FMND
-              | FMNH
-              | FMNL
-              | FMNM
-              | FMNN
-              | FMNQ
-              | FMNS
-              | FMNV
-              | FMSD
-              | FMSF
-              | FMSG
-              | FMSM
-              | FMSO
-              | FMSR
-              | FMST
-              | FNBG
-              | FNCA
-              | FNHU
-              | FNKU
-              | FNLU
-              | FOGM
-              | FOGR
-              | FOOB
-              | FOOC
-              | FOOD
-              | FOOE
-              | FOOG
-              | FOOK
-              | FOOL
-              | FOOM
-              | FOOR
-              | FOOT
-              | FOOY
-              | FPPR
-              | FPST
-              | FQBR
-              | FQCB
-              | FQCH
-              | FQIN
-              | FQLC
-              | FQLU
-              | FQMA
-              | FQMP
-              | FQNP
-              | FQPB
-              | FQQL
-              | FQTE
-              | FQVL
-              | FQXA
-              | FSIA
-              | FSSS
-              | FTTA
-              | FTTC
-              | FTTD
-              | FTTJ
-              | FTTK
-              | FTTL
-              | FTTN
-              | FTTP
-              | FTTY
-              | FVBB
-              | FVBI
-              | FVBU
-              | FVCH
-              | FVCZ
-              | FVFA
-              | FVGO
-              | FVHA
-              | FVKA
-              | FVKB
-              | FVMT
-              | FVMV
-              | FVRU
-              | FVTL
-              | FVWN
-              | FWCL
-              | FWCT
-              | FWDZ
-              | FWKA
-              | FWKI
-              | FWKK
-              | FWMG
-              | FWMY
-              | FWMZ
-              | FWSM
-              | FWUU
-              | FXMU
-              | FYGF
-              | FYKT
-              | FYRU
-              | FYWH
-              | FZAA
-              | FZAG
-              | FZAM
-              | FZAN
-              | FZBA
-              | FZBO
-              | FZCA
-              | FZCS
-              | FZEA
-              | FZFK
-              | FZGN
-              | FZIA
-              | FZMB
-              | FZNA
-              | FZNC
-              | FZOA
-              | FZQA
-              | FZQM
-              | FZRA
-              | FZRF
-              | FZRQ
-              | FZSA
-              | FZUA
-              | FZUK
-              | FZVA
-              | FZVI
-              | FZVS
-              | FZWA
-              | GABG
-              | GABS
-              | GAGO
-              | GAHB
-              | GAKA
-              | GAKL
-              | GAKO
-              | GAKT
-              | GAKY
-              | GAMB
-              | GAMK
-              | GANK
-              | GANR
-              | GASG
-              | GASK
-              | GASN
-              | GATB
-              | GATS
-              | GBYD
-              | GCFV
-              | GCHI
-              | GCLA
-              | GCLP
-              | GCRR
-              | GCTS
-              | GCXO
-              | GEML
-              | GFLL
-              | GGBF
-              | GGOV
-              | GLRB
-              | GMAA
-              | GMAD
-              | GMAT
-              | GMFF
-              | GMFI
-              | GMFK
-              | GMFM
-              | GMFN
-              | GMFO
-              | GMFZ
-              | GMMC
-              | GMME
-              | GMMF
-              | GMMI
-              | GMMN
-              | GMMS
-              | GMMX
-              | GMMY
-              | GMMZ
-              | GMTA
-              | GMTN
-              | GMTT
-              | GOGG
-              | GOGK
-              | GOGS
-              | GOOD
-              | GOOG
-              | GOOK
-              | GOOY
-              | GOSM
-              | GOSP
-              | GOSS
-              | GOTK
-              | GOTT
-              | GQNA
-              | GQNB
-              | GQND
-              | GQNF
-              | GQNI
-              | GQNJ
-              | GQNK
-              | GQNN
-              | GQNR
-              | GQPA
-              | GQPP
-              | GQPT
-              | GSVO
-              | GUCY
-              | GUFH
-              | GUID
-              | GUKU
-              | GULB
-              | GUMA
-              | GUNZ
-              | GUOK
-              | GUSI
-              | GUXD
-              | GVAC
-              | HAAB
-              | HAAM
-              | HABD
-              | HADC
-              | HADM
-              | HADR
-              | HAGN
-              | HAGO
-              | HAGR
-              | HAHM
-              | HAJJ
-              | HAJM
-              | HALA
-              | HAMK
-              | HAMS
-              | HANG
-              | HASB
-              | HBBA
-              | HCMH
-              | HCMI
-              | HCMM
-              | HCMN
-              | HCMV
-              | HEAR
-              | HEAT
-              | HEAX
-              | HECA
-              | HEGN
-              | HELX
-              | HEMM
-              | HEPS
-              | HESN
-              | HETR
-              | HFFF
-              | HHAS
-              | HKEL
-              | HKEM
-              | HKGA
-              | HKKG
-              | HKKI
-              | HKKR
-              | HKKS
-              | HKKT
-              | HKLO
-              | HKLU
-              | HKMA
-              | HKMB
-              | HKME
-              | HKML
-              | HKMO
-              | HKMU
-              | HKMY
-              | HKNA
-              | HKNC
-              | HKNI
-              | HKNK
-              | HKNO
-              | HKNW
-              | HKVO
-              | HKWJ
-              | HLGT
-              | HLKF
-              | HLLB
-              | HLLS
-              | HLLT
-              | HLTD
-              | HRYG
-              | HRYR
-              | HSAT
-              | HSDN
-              | HSDZ
-              | HSFS
-              | HSGF
-              | HSGN
-              | HSKA
-              | HSKI
-              | HSLI
-              | HSNL
-              | HSNR
-              | HSOB
-              | HSRN
-              | HSSJ
-              | HSSM
-              | HSSP
-              | HSSS
-              | HSSW
-              | HTAR
-              | HTBU
-              | HTDA
-              | HTDO
-              | HTIR
-              | HTKA
-              | HTKJ
-              | HTMB
-              | HTMG
-              | HTMO
-              | HTMS
-              | HTMT
-              | HTMU
-              | HTMW
-              | HTNA
-              | HTPE
-              | HTSE
-              | HTSO
-              | HTTB
-              | HTTG
-              | HTZA
-              | HUAR
-              | HUEN
-              | HUGU
-              | HUJI
-              | HUKB
-              | HUKS
-              | HUMA
-              | HUMI
-              | HUSO
-              | HUTO
-              | K01R
-              | K1K5
-              | K1V4
-              | K2C2
-              | K2DP
-              | K2PJ
-              | K3RN
-              | K44W
-              | K4CB
-              | K4MR
-              | K4SU
-              | K50Q
-              | K87Q
-              | K9B2
-              | K9V9
-              | KABE
-              | KABI
-              | KABQ
-              | KABR
-              | KABY
-              | KACT
-              | KACY
-              | KADW
-              | KAEX
-              | KAFF
-              | KAGR
-              | KAGS
-              | KAHN
-              | KALB
-              | KALO
-              | KALS
-              | KAMA
-              | KANJ
-              | KAPN
-              | KAQQ
-              | KAST
-              | KATL
-              | KATT
-              | KAVL
-              | KAVP
-              | KAVX
-              | KAYS
-              | KBDL
-              | KBDR
-              | KBED
-              | KBFF
-              | KBFL
-              | KBGM
-              | KBHM
-              | KBIH
-              | KBIL
-              | KBIS
-              | KBJI
-              | KBJN
-              | KBKW
-              | KBML
-              | KBNA
-              | KBNO
-              | KBOI
-              | KBOS
-              | KBPI
-              | KBPT
-              | KBRO
-              | KBTV
-              | KBUF
-              | KBUR
-              | KBVE
-              | KBWI
-              | KBYS
-              | KCAE
-              | KCAG
-              | KCAK
-              | KCAO
-              | KCAR
-              | KCEF
-              | KCHA
-              | KCHH
-              | KCHS
-              | KCKL
-              | KCLE
-              | KCLT
-              | KCMH
-              | KCMX
-              | KCNK
-              | KCOD
-              | KCOF
-              | KCON
-              | KCOS
-              | KCOU
-              | KCPR
-              | KCRP
-              | KCRW
-              | KCTY
-              | KCVG
-              | KCYS
-              | KD45
-              | KDAY
-              | KDBQ
-              | KDCA
-              | KDDC
-              | KDEN
-              | KDFW
-              | KDGW
-              | KDLH
-              | KDNR
-              | KDPG
-              | KDRA
-              | KDRT
-              | KDSM
-              | KDTW
-              | KE28
-              | KEDW
-              | KEKA
-              | KEKN
-              | KELP
-              | KELY
-              | KENV
-              | KEPO
-              | KEPZ
-              | KERI
-              | KESC
-              | KEUG
-              | KEVV
-              | KEWR
-              | KEYW
-              | KF10
-              | KF30
-              | KFAR
-              | KFAT
-              | KFBG
-              | KFCS
-              | KFFO
-              | KFHU
-              | KFMH
-              | KFNT
-              | KFOD
-              | KFRI
-              | KFSD
-              | KFSI
-              | KFSM
-              | KFTK
-              | KFWA
-              | KFWD
-              | KGBN
-              | KGCC
-              | KGDP
-              | KGEG
-              | KGGG
-              | KGGW
-              | KGJT
-              | KGLD
-              | KGLS
-              | KGPI
-              | KGRB
-              | KGRF
-              | KGRI
-              | KGRR
-              | KGSO
-              | KGSP
-              | KGTB
-              | KGTF
-              | KH92
-              | KHAT
-              | KHLN
-              | KHLR
-              | KHMN
-              | KHMS
-              | KHON
-              | KHOP
-              | KHRT
-              | KHSV
-              | KHTL
-              | KHTS
-              | KHVR
-              | KIAD
-              | KIAH
-              | KICT
-              | KIGM
-              | KIND
-              | KINL
-              | KINS
-              | KINW
-              | KIPT
-              | KISN
-              | KJAN
-              | KJAX
-              | KJCT
-              | KJFK
-              | KLAN
-              | KLAS
-              | KLAX
-              | KLBB
-              | KLBF
-              | KLCH
-              | KLEX
-              | KLFI
-              | KLGA
-              | KLGB
-              | KLHW
-              | KLIX
-              | KLND
-              | KLNK
-              | KLRD
-              | KLSE
-              | KLSF
-              | KLTS
-              | KLWS
-              | KLYH
-              | KLZK
-              | KMAF
-              | KMCF
-              | KMCI
-              | KMCN
-              | KMCO
-              | KMDW
-              | KMEI
-              | KMEM
-              | KMER
-              | KMFR
-              | KMGE
-              | KMGM
-              | KMHX
-              | KMIA
-              | KMKE
-              | KMKG
-              | KMLB
-              | KMLI
-              | KMLS
-              | KMMO
-              | KMOB
-              | KMQT
-              | KMRF
-              | KMSN
-              | KMSO
-              | KMSP
-              | KMSY
-              | KMWN
-              | KMWS
-              | KMYR
-              | KN78
-              | KNEL
-              | KNGZ
-              | KNHK
-              | KNHZ
-              | KNID
-              | KNJK
-              | KNKT
-              | KNKX
-              | KNLC
-              | KNOW
-              | KNSI
-              | KNTD
-              | KNUQ
-              | KO64
-              | KOAK
-              | KOAX
-              | KOFF
-              | KOFK
-              | KOGD
-              | KOKC
-              | KOLM
-              | KOMA
-              | KONM
-              | KORD
-              | KORF
-              | KOUN
-              | KP07
-              | KP11
-              | KP24
-              | KP28
-              | KP35
-              | KP38
-              | KP39
-              | KPAH
-              | KPAM
-              | KPBI
-              | KPDT
-              | KPDX
-              | KPGA
-              | KPHL
-              | KPHX
-              | KPIA
-              | KPIH
-              | KPIT
-              | KPKF
-              | KPMD
-              | KPOB
-              | KPOE
-              | KPQI
-              | KPTT
-              | KPUB
-              | KPUC
-              | KPVD
-              | KPWM
-              | KQHA
-              | KRAP
-              | KRBL
-              | KRDD
-              | KRDU
-              | KRFD
-              | KRIC
-              | KRIV
-              | KRIW
-              | KRKS
-              | KRMG
-              | KRNO
-              | KROA
-              | KROC
-              | KROW
-              | KRQE
-              | KRST
-              | KRUE
-              | KRUM
-              | KSAC
-              | KSAN
-              | KSAT
-              | KSAV
-              | KSBN
-              | KSCK
-              | KSDB
-              | KSDF
-              | KSEA
-              | KSEP
-              | KSFD
-              | KSFO
-              | KSGF
-              | KSHR
-              | KSHV
-              | KSJT
-              | KSLC
-              | KSLE
-              | KSLO
-              | KSMX
-              | KSNY
-              | KSPS
-              | KSSC
-              | KSTJ
-              | KSTL
-              | KSUU
-              | KSUX
-              | KSVC
-              | KSYR
-              | KTBW
-              | KTCM
-              | KTCS
-              | KTIK
-              | KTLH
-              | KTOL
-              | KTOP
-              | KTPA
-              | KTUL
-              | KTUP
-              | KTUS
-              | KTYS
-              | KU67
-              | KUIL
-              | KVAD
-              | KVBG
-              | KVCT
-              | KVPS
-              | KVTN
-              | KW30
-              | KWAL
-              | KWDD
-              | KWMC
-              | KWWR
-              | KXMR
-              | KYKM
-              | KYNG
-              | KYUM
-              | LATI
-              | LBBG
-              | LBPD
-              | LBRS
-              | LBSF
-              | LBWN
-              | LCLK
-              | LCNC
-              | LCPH
-              | LCRA
-              | LDDD
-              | LDDU
-              | LDOR
-              | LDOS
-              | LDPL
-              | LDRI
-              | LDSH
-              | LDSP
-              | LDVA
-              | LDZA
-              | LDZD
-              | LEAB
-              | LEAL
-              | LEAM
-              | LEAS
-              | LEBA
-              | LEBB
-              | LEBG
-              | LEBL
-              | LEBZ
-              | LECH
-              | LECO
-              | LECV
-              | LEGE
-              | LEGR
-              | LEGT
-              | LEHI
-              | LEIB
-              | LEJR
-              | LELC
-              | LELN
-              | LELO
-              | LEMD
-              | LEMG
-              | LEMH
-              | LEMO
-              | LEPA
-              | LEPP
-              | LERI
-              | LERS
-              | LERT
-              | LESA
-              | LESO
-              | LEST
-              | LETO
-              | LEVC
-              | LEVD
-              | LEVS
-              | LEVT
-              | LEVX
-              | LEXJ
-              | LEZG
-              | LEZL
-              | LFAT
-              | LFBA
-              | LFBC
-              | LFBD
-              | LFBE
-              | LFBF
-              | LFBG
-              | LFBH
-              | LFBI
-              | LFBL
-              | LFBM
-              | LFBN
-              | LFBO
-              | LFBP
-              | LFBS
-              | LFBT
-              | LFBV
-              | LFBX
-              | LFBY
-              | LFBZ
-              | LFCG
-              | LFCI
-              | LFCR
-              | LFDH
-              | LFHP
-              | LFIG
-              | LFJL
-              | LFKB
-              | LFKC
-              | LFKF
-              | LFKJ
-              | LFKS
-              | LFLA
-              | LFLB
-              | LFLC
-              | LFLD
-              | LFLL
-              | LFLM
-              | LFLN
-              | LFLQ
-              | LFLS
-              | LFLV
-              | LFLW
-              | LFLX
-              | LFLY
-              | LFMA
-              | LFMC
-              | LFMD
-              | LFME
-              | LFMH
-              | LFMI
-              | LFMK
-              | LFML
-              | LFMN
-              | LFMO
-              | LFMP
-              | LFMT
-              | LFMX
-              | LFMY
-              | LFOB
-              | LFOC
-              | LFOE
-              | LFOF
-              | LFOH
-              | LFOI
-              | LFOJ
-              | LFOP
-              | LFOR
-              | LFOS
-              | LFOT
-              | LFOW
-              | LFPB
-              | LFPC
-              | LFPG
-              | LFPM
-              | LFPN
-              | LFPO
-              | LFPV
-              | LFQB
-              | LFQG
-              | LFQH
-              | LFQI
-              | LFQQ
-              | LFQV
-              | LFRA
-              | LFRB
-              | LFRC
-              | LFRD
-              | LFRH
-              | LFRI
-              | LFRJ
-              | LFRK
-              | LFRL
-              | LFRM
-              | LFRN
-              | LFRQ
-              | LFRS
-              | LFRT
-              | LFRZ
-              | LFSA
-              | LFSB
-              | LFSC
-              | LFSD
-              | LFSF
-              | LFSI
-              | LFSL
-              | LFSN
-              | LFSO
-              | LFSQ
-              | LFSR
-              | LFST
-              | LFSX
-              | LFTH
-              | LFTU
-              | LFTW
-              | LFVP
-              | LFXA
-              | LFYR
-              | LGAD
-              | LGAL
-              | LGAT
-              | LGBL
-              | LGEL
-              | LGHI
-              | LGIR
-              | LGKA
-              | LGKF
-              | LGKL
-              | LGKO
-              | LGKP
-              | LGKR
-              | LGKV
-              | LGKZ
-              | LGLM
-              | LGLR
-              | LGMT
-              | LGPZ
-              | LGRP
-              | LGRX
-              | LGSA
-              | LGSM
-              | LGTG
-              | LGTP
-              | LGTS
-              | LGTT
-              | LHBC
-              | LHBM
-              | LHBP
-              | LHBS
-              | LHDC
-              | LHKE
-              | LHKV
-              | LHMC
-              | LHNY
-              | LHPA
-              | LHPP
-              | LHSK
-              | LHSN
-              | LHSY
-              | LHUD
-              | LIBA
-              | LIBC
-              | LIBD
-              | LIBE
-              | LIBG
-              | LIBH
-              | LIBN
-              | LIBP
-              | LIBQ
-              | LIBR
-              | LIBS
-              | LIBT
-              | LIBU
-              | LIBV
-              | LIBW
-              | LIBY
-              | LIBZ
-              | LICA
-              | LICC
-              | LICD
-              | LICE
-              | LICF
-              | LICG
-              | LICJ
-              | LICL
-              | LICO
-              | LICP
-              | LICR
-              | LICT
-              | LICU
-              | LICZ
-              | LIEA
-              | LIEB
-              | LIEC
-              | LIED
-              | LIEE
-              | LIEF
-              | LIEG
-              | LIEH
-              | LIEL
-              | LIEN
-              | LIEO
-              | LIEP
-              | LIMC
-              | LIME
-              | LIMF
-              | LIMG
-              | LIMH
-              | LIMJ
-              | LIMK
-              | LIML
-              | LIMN
-              | LIMO
-              | LIMS
-              | LIMT
-              | LIMU
-              | LIMV
-              | LIMY
-              | LIPA
-              | LIPB
-              | LIPC
-              | LIPD
-              | LIPE
-              | LIPF
-              | LIPH
-              | LIPI
-              | LIPK
-              | LIPL
-              | LIPQ
-              | LIPR
-              | LIPS
-              | LIPT
-              | LIPX
-              | LIPY
-              | LIPZ
-              | LIQB
-              | LIQC
-              | LIQJ
-              | LIQK
-              | LIQN
-              | LIQO
-              | LIQP
-              | LIQR
-              | LIQV
-              | LIQW
-              | LIQZ
-              | LIRA
-              | LIRB
-              | LIRE
-              | LIRF
-              | LIRG
-              | LIRH
-              | LIRJ
-              | LIRK
-              | LIRL
-              | LIRM
-              | LIRN
-              | LIRP
-              | LIRQ
-              | LIRS
-              | LIRT
-              | LIRU
-              | LIRV
-              | LIRZ
-              | LIVC
-              | LIVD
-              | LIVF
-              | LIVM
-              | LIVO
-              | LIVP
-              | LIVR
-              | LIVT
-              | LIYW
-              | LJLJ
-              | LJMB
-              | LJMS
-              | LJPZ
-              | LKHO
-              | LKKV
-              | LKKZ
-              | LKMT
-              | LKPP
-              | LKPR
-              | LKSL
-              | LKTB
-              | LLBG
-              | LLBS
-              | LLET
-              | LLHA
-              | LLJR
-              | LLOV
-              | LMML
-              | LOAV
-              | LOWG
-              | LOWI
-              | LOWK
-              | LOWL
-              | LOWS
-              | LOWW
-              | LOXA
-              | LOXL
-              | LOXS
-              | LOXT
-              | LOXZ
-              | LPAZ
-              | LPBG
-              | LPBJ
-              | LPFL
-              | LPFR
-              | LPFU
-              | LPHR
-              | LPLA
-              | LPPD
-              | LPPR
-              | LPPS
-              | LPPT
-              | LPVR
-              | LQBI
-              | LQBK
-              | LQLV
-              | LQMO
-              | LQSA
-              | LQTZ
-              | LRAR
-              | LRBC
-              | LRBM
-              | LRBS
-              | LRCK
-              | LRCL
-              | LRCS
-              | LRCV
-              | LRIA
-              | LROD
-              | LROP
-              | LRSB
-              | LRSM
-              | LRSV
-              | LRTC
-              | LRTM
-              | LRTR
-              | LSGG
-              | LSGL
-              | LSGN
-              | LSGS
-              | LSMP
-              | LSZA
-              | LSZG
-              | LSZH
-              | LSZR
-              | LTAC
-              | LTAD
-              | LTAE
-              | LTAF
-              | LTAG
-              | LTAH
-              | LTAI
-              | LTAJ
-              | LTAK
-              | LTAN
-              | LTAP
-              | LTAQ
-              | LTAR
-              | LTAS
-              | LTAT
-              | LTAU
-              | LTAW
-              | LTBA
-              | LTBD
-              | LTBE
-              | LTBF
-              | LTBG
-              | LTBH
-              | LTBI
-              | LTBJ
-              | LTBL
-              | LTBM
-              | LTBO
-              | LTBS
-              | LTBT
-              | LTBV
-              | LTCA
-              | LTCC
-              | LTCD
-              | LTCE
-              | LTCF
-              | LTCG
-              | LTCH
-              | LTCI
-              | LTCJ
-              | LWOH
-              | LWSK
-              | LXGB
-              | LYBE
-              | LYNI
-              | LYPR
-              | LYPZ
-              | LYTI
-              | LYTV
-              | LYVR
-              | LZIB
-              | LZKC
-              | LZLU
-              | LZTT
-              | MDBH
-              | MDHE
-              | MDPC
-              | MDPP
-              | MDSD
-              | MDST
-              | MGCB
-              | MGFL
-              | MGGT
-              | MGHT
-              | MGPB
-              | MGRT
-              | MGSJ
-              | MHAM
-              | MHCA
-              | MHCH
-              | MHIC
-              | MHLC
-              | MHLE
-              | MHLM
-              | MHNO
-              | MHPL
-              | MHRO
-              | MHSC
-              | MHSR
-              | MHTE
-              | MHTG
-              | MHYR
-              | MKJP
-              | MKJS
-              | MMAN
-              | MMAS
-              | MMCB
-              | MMCL
-              | MMCM
-              | MMCN
-              | MMCP
-              | MMEP
-              | MMHO
-              | MMIA
-              | MMIO
-              | MMLT
-              | MMMD
-              | MMMV
-              | MMPB
-              | MMPG
-              | MMQT
-              | MMSP
-              | MMTC
-              | MMTG
-              | MMTL
-              | MNBL
-              | MNCH
-              | MNJG
-              | MNJU
-              | MNMG
-              | MNPC
-              | MNRS
-              | MPDA
-              | MPFS
-              | MPHO
-              | MPSA
-              | MPTO
-              | MRLB
-              | MRLM
-              | MRNC
-              | MROC
-              | MRPM
-              | MSAC
-              | MSLP
-              | MSSA
-              | MSSM
-              | MSSS
-              | MTCH
-              | MUBA
-              | MUCA
-              | MUCF
-              | MUCM
-              | MUCU
-              | MUGM
-              | MUGT
-              | MUHA
-              | MUMZ
-              | MUNG
-              | MUPR
-              | MUVR
-              | MUVT
-              | MWCR
-              | MYBS
-              | MYEG
-              | MYGF
-              | MYGW
-              | MYIG
-              | MYNN
-              | MYSM
-              | MZBZ
-              | NCRG
-              | NFFN
-              | NFNA
-              | NFNK
-              | NFNR
-              | NFTF
-              | NFTL
-              | NGBR
-              | NGFO
-              | NGFU
-              | NGTA
-              | NGTR
-              | NGTU
-              | NIUE
-              | NLWF
-              | NLWW
-              | NSAP
-              | NSFA
-              | NSTU
-              | NTAA
-              | NTAT
-              | NTTB
-              | NTTG
-              | NTTO
-              | NTTX
-              | NVSC
-              | NVSL
-              | NVSS
-              | NVVV
-              | NWWE
-              | NWWK
-              | NWWL
-              | NWWN
-              | NWWR
-              | NWWV
-              | NWWW
-              | NZAA
-              | NZCH
-              | NZCI
-              | NZCM
-              | NZDN
-              | NZGS
-              | NZHK
-              | NZKI
-              | NZNP
-              | NZNV
-              | NZOH
-              | NZPP
-              | NZRN
-              | NZRO
-              | NZSP
-              | NZTG
-              | NZWN
-              | NZWP
-              | OAFR
-              | OAFZ
-              | OAHR
-              | OAJL
-              | OAJS
-              | OAKB
-              | OAMS
-              | OASD
-              | OASG
-              | OAZB
-              | OAZG
-              | OBBI
-              | OEAB
-              | OEAH
-              | OEBA
-              | OEBH
-              | OEDF
-              | OEDR
-              | OEDW
-              | OEGN
-              | OEGS
-              | OEGT
-              | OEHL
-              | OEJD
-              | OEJN
-              | OEKK
-              | OEKM
-              | OEMA
-              | OEMK
-              | OENG
-              | OEPA
-              | OERF
-              | OERK
-              | OERR
-              | OERY
-              | OESH
-              | OESK
-              | OETB
-              | OETF
-              | OETR
-              | OEWD
-              | OEWJ
-              | OEYN
-              | OIAA
-              | OIAG
-              | OIAH
-              | OIAI
-              | OIAW
-              | OIBB
-              | OIBL
-              | OICC
-              | OICG
-              | OICS
-              | OIFK
-              | OIFM
-              | OIFS
-              | OIGG
-              | OIHR
-              | OIII
-              | OIIK
-              | OIIS
-              | OIKB
-              | OIKK
-              | OIKM
-              | OIMB
-              | OIMH
-              | OIMM
-              | OIMN
-              | OIMS
-              | OIMT
-              | OING
-              | OINR
-              | OISA
-              | OISF
-              | OISS
-              | OITK
-              | OITR
-              | OITS
-              | OITT
-              | OITZ
-              | OIYY
-              | OIZB
-              | OIZC
-              | OIZH
-              | OIZI
-              | OIZJ
-              | OJAI
-              | OJAM
-              | OJAQ
-              | OJBD
-              | OJHF
-              | OJHR
-              | OJMF
-              | OJMN
-              | OKBK
-              | OLBA
-              | OMAA
-              | OMAD
-              | OMAL
-              | OMDB
-              | OMFJ
-              | OMRK
-              | OMSJ
-              | OOBR
-              | OOFD
-              | OOKB
-              | OOMA
-              | OOMS
-              | OOSA
-              | OOSH
-              | OOSQ
-              | OOSR
-              | OOTH
-              | OPDI
-              | OPJA
-              | OPJI
-              | OPKC
-              | OPKD
-              | OPLA
-              | OPLH
-              | OPMI
-              | OPMT
-              | OPNH
-              | OPPG
-              | OPPS
-              | OPQT
-              | OPRN
-              | OPRS
-              | OPSB
-              | OPSR
-              | ORBB
-              | ORBM
-              | ORMS
-              | OSAP
-              | OSDI
-              | OSDZ
-              | OSKL
-              | OSLK
-              | OSPR
-              | OTBD
-              | OYAA
-              | OYAR
-              | OYAT
-              | OYHD
-              | OYMB
-              | OYMC
-              | OYMK
-              | OYSN
-              | OYSQ
-              | OYTZ
-              | OYZM
-              | PAAQ
-              | PABA
-              | PABE
-              | PABI
-              | PABL
-              | PABR
-              | PABT
-              | PACD
-              | PACP
-              | PACV
-              | PACY
-              | PACZ
-              | PADK
-              | PADL
-              | PADQ
-              | PADU
-              | PAED
-              | PAEH
-              | PAEI
-              | PAEN
-              | PAFA
-              | PAFM
-              | PAFR
-              | PAGA
-              | PAGK
-              | PAGM
-              | PAGN
-              | PAGS
-              | PAGY
-              | PAHD
-              | PAIL
-              | PAIM
-              | PAJN
-              | PAKN
-              | PAKO
-              | PAKT
-              | PAKW
-              | PALU
-              | PAMC
-              | PAMD
-              | PAMH
-              | PANC
-              | PANI
-              | PANN
-              | PANT
-              | PAOM
-              | PAOR
-              | PAOT
-              | PAPC
-              | PAPG
-              | PAPH
-              | PAPT
-              | PAQT
-              | PASI
-              | PASN
-              | PASV
-              | PASW
-              | PASY
-              | PATA
-              | PATC
-              | PATK
-              | PAUM
-              | PAUN
-              | PAWD
-              | PAWG
-              | PAWI
-              | PAYA
-              | PFYU
-              | PGAC
-              | PGRO
-              | PGSN
-              | PGUA
-              | PGUM
-              | PGWT
-              | PHBK
-              | PHHI
-              | PHJR
-              | PHLI
-              | PHMK
-              | PHNG
-              | PHNL
-              | PHOG
-              | PHTO
-              | PHWH
-              | PJON
-              | PKMJ
-              | PKWA
-              | PLCH
-              | PLFA
-              | PMDY
-              | POLI
-              | PPIZ
-              | PTKK
-              | PTPN
-              | PTRO
-              | PTSA
-              | PTTK
-              | PTYA
-              | PWAK
-              | RCAY
-              | RCBS
-              | RCDC
-              | RCFG
-              | RCFS
-              | RCGM
-              | RCKH
-              | RCKU
-              | RCKW
-              | RCLG
-              | RCLM
-              | RCLY
-              | RCMJ
-              | RCMQ
-              | RCMS
-              | RCNN
-              | RCNO
-              | RCPO
-              | RCQC
-              | RCQS
-              | RCSQ
-              | RCSS
-              | RCTP
-              | RCUK
-              | RCYU
-              | RJAA
-              | RJAF
-              | RJAH
-              | RJAK
-              | RJAM
-              | RJAO
-              | RJAT
-              | RJAW
-              | RJBB
-              | RJBD
-              | RJCA
-              | RJCB
-              | RJCC
-              | RJCH
-              | RJCJ
-              | RJCK
-              | RJCM
-              | RJCN
-              | RJCO
-              | RJCS
-              | RJCW
-              | RJCY
-              | RJDB
-              | RJDC
-              | RJDM
-              | RJDT
-              | RJEB
-              | RJEC
-              | RJFA
-              | RJFC
-              | RJFE
-              | RJFF
-              | RJFG
-              | RJFK
-              | RJFM
-              | RJFN
-              | RJFO
-              | RJFR
-              | RJFT
-              | RJFU
-              | RJFW
-              | RJFY
-              | RJFZ
-              | RJKA
-              | RJKB
-              | RJKN
-              | RJNF
-              | RJNG
-              | RJNH
-              | RJNK
-              | RJNN
-              | RJNO
-              | RJNT
-              | RJNY
-              | RJOA
-              | RJOB
-              | RJOC
-              | RJOE
-              | RJOF
-              | RJOH
-              | RJOI
-              | RJOK
-              | RJOM
-              | RJOO
-              | RJOP
-              | RJOR
-              | RJOS
-              | RJOT
-              | RJOW
-              | RJOY
-              | RJOZ
-              | RJSA
-              | RJSC
-              | RJSD
-              | RJSF
-              | RJSH
-              | RJSI
-              | RJSK
-              | RJSM
-              | RJSN
-              | RJSO
-              | RJSS
-              | RJST
-              | RJSU
-              | RJTA
-              | RJTC
-              | RJTD
-              | RJTE
-              | RJTF
-              | RJTH
-              | RJTI
-              | RJTJ
-              | RJTK
-              | RJTL
-              | RJTO
-              | RJTQ
-              | RJTR
-              | RJTT
-              | RJTU
-              | RJTX
-              | RJTY
-              | RKJJ
-              | RKJK
-              | RKJY
-              | RKNC
-              | RKNH
-              | RKNN
-              | RKNW
-              | RKPC
-              | RKPK
-              | RKPM
-              | RKPS
-              | RKPU
-              | RKSB
-              | RKSF
-              | RKSG
-              | RKSI
-              | RKSL
-              | RKSM
-              | RKSN
-              | RKSO
-              | RKSP
-              | RKSS
-              | RKSW
-              | RKTA
-              | RKTD
-              | RKTE
-              | RKTF
-              | RKTH
-              | RKTI
-              | RKTM
-              | RKTN
-              | RKTT
-              | RKTU
-              | RKTY
-              | ROAH
-              | RODE
-              | RODN
-              | ROHF
-              | ROIG
-              | ROKJ
-              | ROMD
-              | ROMY
-              | ROTM
-              | ROYN
-              | RPLB
-              | RPLI
-              | RPLL
-              | RPMD
-              | RPMK
-              | RPMP
-              | RPMR
-              | RPMS
-              | RPMT
-              | RPMZ
-              | RPUA
-              | RPUB
-              | RPUD
-              | RPUH
-              | RPUI
-              | RPUK
-              | RPUO
-              | RPUQ
-              | RPUR
-              | RPUT
-              | RPUV
-              | RPVA
-              | RPVD
-              | RPVF
-              | RPVG
-              | RPVI
-              | RPVM
-              | RPVP
-              | RPVR
-              | RPVT
-              | RPWB
-              | RPWC
-              | RPWE
-              | RPWG
-              | RPWL
-              | RPWS
-              | RPWY
-              | RPXT
-              | SAAC
-              | SAAG
-              | SAAJ
-              | SAAP
-              | SAAR
-              | SAAU
-              | SAAV
-              | SABA
-              | SABE
-              | SACI
-              | SACO
-              | SACP
-              | SACV
-              | SADD
-              | SADL
-              | SADP
-              | SAEZ
-              | SAME
-              | SAMI
-              | SAMJ
-              | SAMM
-              | SAMR
-              | SAMS
-              | SAMU
-              | SANC
-              | SANE
-              | SANI
-              | SANL
-              | SANO
-              | SANT
-              | SANU
-              | SANW
-              | SAOC
-              | SAOD
-              | SAOL
-              | SAOM
-              | SAOR
-              | SAOU
-              | SARC
-              | SARE
-              | SARF
-              | SARI
-              | SARL
-              | SARM
-              | SARP
-              | SARS
-              | SASA
-              | SASJ
-              | SASO
-              | SASQ
-              | SASR
-              | SAST
-              | SATK
-              | SATU
-              | SAVB
-              | SAVC
-              | SAVE
-              | SAVO
-              | SAVP
-              | SAVT
-              | SAVV
-              | SAWA
-              | SAWD
-              | SAWE
-              | SAWG
-              | SAWH
-              | SAWJ
-              | SAWP
-              | SAWR
-              | SAWU
-              | SAZA
-              | SAZB
-              | SAZD
-              | SAZE
-              | SAZG
-              | SAZH
-              | SAZM
-              | SAZN
-              | SAZP
-              | SAZQ
-              | SAZR
-              | SAZS
-              | SAZT
-              | SAZV
-              | SAZY
-              | SBAA
-              | SBAF
-              | SBAN
-              | SBAR
-              | SBAT
-              | SBBC
-              | SBBE
-              | SBBG
-              | SBBH
-              | SBBI
-              | SBBQ
-              | SBBR
-              | SBBU
-              | SBBV
-              | SBBW
-              | SBCF
-              | SBCG
-              | SBCI
-              | SBCO
-              | SBCP
-              | SBCR
-              | SBCT
-              | SBCV
-              | SBCY
-              | SBCZ
-              | SBDN
-              | SBEG
-              | SBEK
-              | SBES
-              | SBFI
-              | SBFL
-              | SBFN
-              | SBFZ
-              | SBGA
-              | SBGL
-              | SBGO
-              | SBGW
-              | SBHT
-              | SBIH
-              | SBIL
-              | SBIZ
-              | SBJF
-              | SBJP
-              | SBJR
-              | SBKG
-              | SBKP
-              | SBLO
-              | SBLP
-              | SBMA
-              | SBMG
-              | SBMK
-              | SBMN
-              | SBMO
-              | SBMQ
-              | SBMS
-              | SBMT
-              | SBMY
-              | SBNT
-              | SBOI
-              | SBPA
-              | SBPB
-              | SBPC
-              | SBPF
-              | SBPG
-              | SBPK
-              | SBPL
-              | SBPN
-              | SBPP
-              | SBPV
-              | SBQV
-              | SBRB
-              | SBRF
-              | SBRJ
-              | SBRS
-              | SBSA
-              | SBSC
-              | SBSL
-              | SBSM
-              | SBSN
-              | SBSP
-              | SBST
-              | SBSV
-              | SBTE
-              | SBTF
-              | SBTK
-              | SBTT
-              | SBTU
-              | SBUA
-              | SBUF
-              | SBUG
-              | SBUR
-              | SBVH
-              | SBVT
-              | SBXV
-              | SBYA
-              | SBYS
-              | SCAR
-              | SCBA
-              | SCCC
-              | SCCH
-              | SCCI
-              | SCCY
-              | SCDA
-              | SCEL
-              | SCER
-              | SCFA
-              | SCHA
-              | SCHR
-              | SCIC
-              | SCIE
-              | SCIP
-              | SCLL
-              | SCRA
-              | SCSE
-              | SCTC
-              | SCTE
-              | SCVD
-              | SEAM
-              | SEBC
-              | SECU
-              | SEES
-              | SEGU
-              | SEIB
-              | SELO
-              | SELT
-              | SEMA
-              | SEMH
-              | SEMT
-              | SEPA
-              | SEQU
-              | SESA
-              | SEST
-              | SETI
-              | SETU
-              | SFAL
-              | SGAS
-              | SGCO
-              | SGEN
-              | SGME
-              | SGNA
-              | SKAR
-              | SKAS
-              | SKBG
-              | SKBO
-              | SKBQ
-              | SKBU
-              | SKCC
-              | SKCG
-              | SKCL
-              | SKEJ
-              | SKIB
-              | SKIP
-              | SKLC
-              | SKLT
-              | SKMD
-              | SKMR
-              | SKMU
-              | SKNV
-              | SKPC
-              | SKPE
-              | SKPP
-              | SKPS
-              | SKPV
-              | SKRG
-              | SKRH
-              | SKSJ
-              | SKSM
-              | SKSP
-              | SKUC
-              | SKUI
-              | SKVP
-              | SKVV
-              | SLAP
-              | SLAS
-              | SLCA
-              | SLCB
-              | SLCN
-              | SLCO
-              | SLCP
-              | SLET
-              | SLGY
-              | SLJE
-              | SLJO
-              | SLJV
-              | SLLP
-              | SLMG
-              | SLOR
-              | SLPO
-              | SLPS
-              | SLRB
-              | SLRI
-              | SLRQ
-              | SLRY
-              | SLSA
-              | SLSB
-              | SLSI
-              | SLSM
-              | SLSU
-              | SLTJ
-              | SLTR
-              | SLVM
-              | SLVR
-              | SLYA
-              | SMZY
-              | SOCA
-              | SOOM
-              | SPAY
-              | SPCL
-              | SPEO
-              | SPGM
-              | SPHI
-              | SPHO
-              | SPHY
-              | SPHZ
-              | SPIM
-              | SPJA
-              | SPJI
-              | SPJL
-              | SPJN
-              | SPJR
-              | SPME
-              | SPMS
-              | SPNC
-              | SPPY
-              | SPQT
-              | SPQU
-              | SPRU
-              | SPSO
-              | SPST
-              | SPTN
-              | SPTU
-              | SPUR
-              | SPYL
-              | SPZO
-              | SUAA
-              | SUAG
-              | SUCA
-              | SUDU
-              | SUME
-              | SUMO
-              | SUMU
-              | SUPU
-              | SURV
-              | SUSO
-              | SUTB
-              | SUTR
-              | SVAC
-              | SVBC
-              | SVBI
-              | SVBM
-              | SVBS
-              | SVCB
-              | SVCL
-              | SVCR
-              | SVCU
-              | SVFM
-              | SVGD
-              | SVGI
-              | SVGU
-              | SVJM
-              | SVLO
-              | SVMC
-              | SVMD
-              | SVMI
-              | SVMN
-              | SVMT
-              | SVPA
-              | SVPC
-              | SVSA
-              | SVSE
-              | SVSO
-              | SVSR
-              | SVTM
-              | SVTR
-              | SVVA
-              | SVVL
-              | SVVP
-              | SWBC
-              | SYGT
-              | SYTM
-              | TAPA
-              | TBPB
-              | TDCF
-              | TDPD
-              | TDPR
-              | TFFF
-              | TFFJ
-              | TFFR
-              | TGPY
-              | TIST
-              | TISX
-              | TJBQ
-              | TJNR
-              | TKPK
-              | TKPN
-              | TLPC
-              | TLPL
-              | TNCA
-              | TNCB
-              | TNCC
-              | TNCE
-              | TNCM
-              | TTPP
-              | TTPT
-              | TUPJ
-              | TVSV
-              | TXKF
-              | UAAA
-              | UAII
-              | UAKK
-              | UAOO
-              | UARR
-              | UATA
-              | UATT
-              | UBBB
-              | UEEE
-              | UELL
-              | UGEE
-              | UGGG
-              | UGMM
-              | UHBP
-              | UHHH
-              | UHHO
-              | UHMA
-              | UHMD
-              | UHMM
-              | UHPP
-              | UHSS
-              | UHWW
-              | UIAA
-              | UIII
-              | UIIO
-              | UIKB
-              | UIKK
-              | UINN
-              | UIUH
-              | UIUU
-              | UKBB
-              | UKFF
-              | UKHH
-              | UKII
-              | UKKK
-              | UKLL
-              | UKLR
-              | UKOO
-              | ULAA
-              | ULAK
-              | ULLI
-              | ULMM
-              | ULOL
-              | ULWT
-              | ULWW
-              | UMII
-              | UMMS
-              | UMRR
-              | UMRW
-              | UNBB
-              | UNII
-              | UNNN
-              | URKK
-              | URMM
-              | URRR
-              | URSS
-              | URWI
-              | URWW
-              | USHH
-              | USRR
-              | USSS
-              | UTDD
-              | UTED
-              | UTSM
-              | UTSS
-              | UTST
-              | UTTT
-              | UUBP
-              | UUEM
-              | UUOO
-              | UUYT
-              | UUYY
-              | UWPP
-              | UWWW
-              | VAAH
-              | VAAK
-              | VAAU
-              | VABB
-              | VABI
-              | VABJ
-              | VABM
-              | VABP
-              | VABV
-              | VAGO
-              | VAID
-              | VAJB
-              | VAKD
-              | VAKP
-              | VANP
-              | VARK
-              | VASL
-              | VBBM
-              | VBBS
-              | VBCI
-              | VBHL
-              | VBKG
-              | VBKP
-              | VBLS
-              | VBMK
-              | VBML
-              | VBMM
-              | VBPA
-              | VBPR
-              | VBPT
-              | VBRM
-              | VBRN
-              | VBRR
-              | VBSY
-              | VBTV
-              | VCBI
-              | VCCA
-              | VCCB
-              | VCCC
-              | VCCT
-              | VDKC
-              | VDPP
-              | VDSR
-              | VEAT
-              | VEBD
-              | VEBS
-              | VECC
-              | VECX
-              | VEGK
-              | VEGT
-              | VEGY
-              | VEIM
-              | VEJH
-              | VEJS
-              | VELR
-              | VEMN
-              | VEPB
-              | VEPT
-              | VERC
-              | VGCB
-              | VGEG
-              | VGIS
-              | VGJR
-              | VGRJ
-              | VGSY
-              | VGTJ
-              | VGZR
-              | VHCH
-              | VHHH
-              | VIAG
-              | VIAL
-              | VIAR
-              | VIBN
-              | VIBY
-              | VICX
-              | VIDD
-              | VIDP
-              | VIGR
-              | VIHR
-              | VIJN
-              | VIJO
-              | VIJP
-              | VIKO
-              | VILK
-              | VIST
-              | VIUD
-              | VLAP
-              | VLIP
-              | VLLB
-              | VLSB
-              | VLSK
-              | VLSV
-              | VLTK
-              | VLVT
-              | VMMC
-              | VNBW
-              | VNJL
-              | VNKT
-              | VNPK
-              | VNSI
-              | VNSK
-              | VNTJ
-              | VNVT
-              | VOBI
-              | VOBZ
-              | VOCB
-              | VOCC
-              | VOCP
-              | VOHY
-              | VOMD
-              | VOML
-              | VOMM
-              | VOTR
-              | VOTV
-              | VOVR
-              | VRGN
-              | VRMM
-              | VTBC
-              | VTBD
-              | VTBG
-              | VTBI
-              | VTBJ
-              | VTBP
-              | VTBS
-              | VTBU
-              | VTCC
-              | VTCH
-              | VTCL
-              | VTCN
-              | VTCP
-              | VTCR
-              | VTCS
-              | VTPH
-              | VTPM
-              | VTPN
-              | VTPS
-              | VTPT
-              | VTPU
-              | VTSA
-              | VTSB
-              | VTSD
-              | VTSH
-              | VTSK
-              | VTSN
-              | VTSP
-              | VTSR
-              | VTSS
-              | VTST
-              | VTUB
-              | VTUC
-              | VTUD
-              | VTUK
-              | VTUL
-              | VTUM
-              | VTUN
-              | VTUP
-              | VTUR
-              | VTUS
-              | VTUU
-              | VVDN
-              | VVNB
-              | VVNT
-              | VVPB
-              | VVPK
-              | VVQN
-              | VVTS
-              | VVVH
-              | VYSW
-              | VYYY
-              | WAAA
-              | WAAB
-              | WAAU
-              | WABB
-              | WABI
-              | WABN
-              | WABO
-              | WABT
-              | WAJI
-              | WAJJ
-              | WAJW
-              | WAKK
-              | WAKT
-              | WAMA
-              | WAMG
-              | WAMH
-              | WAMI
-              | WAML
-              | WAMM
-              | WAMP
-              | WAMT
-              | WAMW
-              | WAPA
-              | WAPH
-              | WAPI
-              | WAPN
-              | WAPP
-              | WAPR
-              | WASF
-              | WASK
-              | WASR
-              | WASS
-              | WBGB
-              | WBGG
-              | WBGR
-              | WBGS
-              | WBKK
-              | WBKL
-              | WBKS
-              | WBKT
-              | WBKW
-              | WBSB
-              | WIAA
-              | WIAG
-              | WIAM
-              | WIAR
-              | WIAS
-              | WIBB
-              | WIIA
-              | WIIB
-              | WIIH
-              | WIII
-              | WIIJ
-              | WIIK
-              | WIIL
-              | WIIS
-              | WIIT
-              | WIKB
-              | WIKD
-              | WIKK
-              | WIKN
-              | WIKS
-              | WIMB
-              | WIMG
-              | WIMM
-              | WIMS
-              | WIOI
-              | WIOK
-              | WION
-              | WIOO
-              | WIOS
-              | WIPA
-              | WIPH
-              | WIPL
-              | WIPP
-              | WIPR
-              | WITC
-              | WITM
-              | WITT
-              | WMBA
-              | WMKC
-              | WMKD
-              | WMKJ
-              | WMKK
-              | WMKL
-              | WMKM
-              | WMKP
-              | WPDL
-              | WPEC
-              | WPOC
-              | WRBB
-              | WRBI
-              | WRBK
-              | WRBM
-              | WRBP
-              | WRKC
-              | WRKK
-              | WRKL
-              | WRKM
-              | WRKR
-              | WRKS
-              | WRLB
-              | WRLG
-              | WRLK
-              | WRLL
-              | WRLR
-              | WRLS
-              | WRRA
-              | WRRB
-              | WRRR
-              | WRRS
-              | WRRW
-              | WRSJ
-              | WRSP
-              | WRSQ
-              | WRSS
-              | WSAP
-              | WSSS
-              | YBAF
-              | YBAM
-              | YBAS
-              | YBBN
-              | YBCG
-              | YBCS
-              | YBCV
-              | YBGL
-              | YBLR
-              | YBMA
-              | YBMK
-              | YBOK
-              | YBPN
-              | YBRK
-              | YBRM
-              | YBTL
-              | YBWP
-              | YDGV
-              | YDTC
-              | YDYL
-              | YMAY
-              | YMDV
-              | YMEN
-              | YMES
-              | YMHB
-              | YMLT
-              | YMLV
-              | YMMB
-              | YMMG
-              | YMMI
-              | YMML
-              | YMMQ
-              | YMWY
-              | YPAD
-              | YPAL
-              | YPBH
-              | YPCC
-              | YPCD
-              | YPDB
-              | YPDN
-              | YPEA
-              | YPED
-              | YPFT
-              | YPGN
-              | YPKG
-              | YPKU
-              | YPLC
-              | YPLM
-              | YPMR
-              | YPPD
-              | YPPF
-              | YPPH
-              | YPWR
-              | YPXM
-              | YSBK
-              | YSCB
-              | YSCH
-              | YSCM
-              | YSCN
-              | YSDU
-              | YSNF
-              | YSNW
-              | YSRI
-              | YSSY
-              | YSTW
-              | YSWG
-              | YSWM
-              | ZBAA
-              | ZBHH
-              | ZBYN
-              | ZGCS
-              | ZGGG
-              | ZGHK
-              | ZGKL
-              | ZGNN
-              | ZGOW
-              | ZGSZ
-              | ZGZJ
-              | ZHCC
-              | ZHHH
-              | ZKKC
-              | ZKPY
-              | ZLIC
-              | ZLJQ
-              | ZLSN
-              | ZLXN
-              | ZLYA
-              | ZPPP
-              | ZSAM
-              | ZSCN
-              | ZSFZ
-              | ZSGZ
-              | ZSHC
-              | ZSNJ
-              | ZSOF
-              | ZSQD
-              | ZSSS
-              | ZSTN
-              | ZUCK
-              | ZUGY
-              | ZULS
-              | ZUUU
-              | ZWHM
-              | ZWSH
-              | ZWTN
-              | ZWYN
-              | ZYCC
-              | ZYQQ
-              | ZYTL
+data ICAOCode = AGGH -- Honiara / Henderson
+              | AGGL -- Santa Cruz
+              | AGGM -- Munda
+              | ANAU -- Nauru Airport
+              | AYMD -- Madang
+              | AYPY -- Moresby
+              | AYWK -- Wewak
+              | BGAM -- Tasiilaq
+              | BGAS -- Angisoq
+              | BGAT -- Aputiteeq
+              | BGBW -- Narsarsuaq
+              | BGCO -- Constable Pynt
+              | BGDB -- Daneborg
+              | BGDH -- Danmarkshavn
+              | BGEM -- Egedesminde
+              | BGFH -- Frederikshaab
+              | BGGD -- Groennedal
+              | BGGH -- Godthaab / Nuuk
+              | BGHB -- Holsteinsborg
+              | BGJH -- Julianehaab
+              | BGJN -- Jacobshavn Lufthavn
+              | BGKK -- Kulusuk Lufthavn
+              | BGKT -- Cape Tobin Automated Reporting Station 
+              | BGPC -- Prins Christian Sund
+              | BGSC -- Scoresbysund
+              | BGSF -- Sdr Stroemfjord
+              | BGTL -- Thule A. B.
+              | BIAR -- Akureyri
+              | BIEG -- Egilsstadir
+              | BIGR -- Grimsey
+              | BIHN -- Akurnes
+              | BIKF -- Keflavikurflugvollur
+              | BIRG -- Raufarhofn
+              | BIRK -- Reykjavik
+              | BIST -- Stykkisholmur
+              | BIVM -- Vestmannaeyjar
+              | BIVO -- Skjaldthingsstadir
+              | CWAC -- Nitinat Lake Meteorological Aeronautical Presentation System 
+              | CWAF -- Ile Rouge Meteorological Aeronautical Presentation System 
+              | CWAG -- La Scie, Nfld.
+              | CWAH -- Amherst, N. S.
+              | CWAJ -- Erieau Meteorological Aeronautical Presentation System 
+              | CWAN -- Amphitrite Point
+              | CWAQ -- Coronach Spc
+              | CWAR -- Argentia, Nfld
+              | CWAS -- Pam Rocks
+              | CWAV -- Sundre
+              | CWAX -- St. Anthony, Nfld.
+              | CWBA -- Banff, Alta.
+              | CWBE -- Killarney Meteorological Aeronautical Presentation System 
+              | CWBG -- Big Creek 
+              | CWBI -- Britt, Ont.
+              | CWBJ -- Inner Whalebacks
+              | CWBK -- Caribou Point Meteorological Aeronautical Presentation System 
+              | CWBL -- Bachelors Island Automated Reporting Station 
+              | CWBM -- Beaverlodge
+              | CWBO -- Brooks Automatic Weather Reporting System 
+              | CWBR -- B, R
+              | CWBT -- Longue Point De Mingan, Que.
+              | CWBV -- Beaven Island, N. S.
+              | CWBY -- Port Menier, Que.
+              | CWBZ -- St Anicet
+              | CWCA -- Cartwright, Nfld.
+              | CWCD -- Saskatoon Kernen
+              | CWCF -- Berens River CS , Man.
+              | CWCH -- Atikokan Automated Reporting Station 
+              | CWCI -- Caribou Island, Ont.
+              | CWCJ -- Pukaskwa 
+              | CWCL -- Clinton, B. C.
+              | CWCM -- Carberry Mcdc
+              | CWCO -- Collingwood Automatic Weather Reporting System 
+              | CWCU -- Barrie, Ont.
+              | CWCX -- Clut Lake Automated Reporting Station 
+              | CWDA -- Englee Meteorological Aeronautical Presentation System 
+              | CWDB -- Burwash Automatic Weather Reporting System 
+              | CWDC -- Uranium City, Sask.
+              | CWDE -- Lac Benoit
+              | CWDF -- Oliphant \ Ont
+              | CWDH -- Daniel's Harbour, Nfld
+              | CWDI -- Badger, Nfld
+              | CWDJ -- Regina University
+              | CWDK -- Claresholm Automatic Weather Reporting System 
+              | CWDL -- Dease Lake B. C.
+              | CWDM -- Chevery, Que.
+              | CWDO -- Twillingate Meteorological Aeronautical Presentation System 
+              | CWDP -- Manouane-Est Automated Reporting Station 
+              | CWDQ -- La Tuque
+              | CWDS -- St. Lawrence, Nfld.
+              | CWDT -- Chute Des Passes
+              | CWDU -- Cop Upper
+              | CWDV -- Upsala, Ont.
+              | CWEA -- Pinawa Automatic Weather Reporting System 
+              | CWEB -- Estevan Point, B. C.
+              | CWEC -- Welcome Island
+              | CWEE -- Chamouchouane Automatic Weather Reporting System
+              | CWEF -- Saint Paul Island Meteorological Aeronautical Presentation System 
+              | CWEH -- Eastend Cypress, Sask
+              | CWEI -- Melita, Man
+              | CWEK -- Grey Islet Meteorological Aeronautical Presentation System 
+              | CWEL -- Entrance Island Automatic Weather Reporting System 
+              | CWEO -- Lac Eon, Que
+              | CWEP -- East Point, P. E. I
+              | CWEQ -- Swan River, Man.
+              | CWER -- Ile D'Orleans Automated Reporting Station 
+              | CWES -- Cape Scott Light
+              | CWEU -- Eureka, N. W. T.
+              | CWEV -- Ellice River Automated Reporting Station 
+              | CWEW -- L'Assomption
+              | CWEZ -- Saturna Island Meteorological Aeronautical Presentation System 
+              | CWFD -- Cape Dyer, N. W. T.
+              | CWFE -- Elk Island National Park
+              | CWFF -- Melfort Automatic Weather Reporting System 
+              | CWFG -- Sartine Island Meteorological Aeronautical Presentation System 
+              | CWFJ -- Cardston Automated Reporting Station 
+              | CWFN -- Cree Lake Meteorological Aeronautical Presentation System 
+              | CWFQ -- Frelighsburg
+              | CWFW -- Baie Comeau
+              | CWFX -- Colville Lake
+              | CWFZ -- Fort Reliance, N. W. T.
+              | CWGB -- Ballenas Island Automatic Weather Reporting System 
+              | CWGD -- Goderich Automatic Weather Reporting System 
+              | CWGF -- Garden River Automatic Weather Reporting System 
+              | CWGH -- Grenadier Island 
+              | CWGL -- Lagoon City 
+              | CWGM -- Waterton Park Gate
+              | CWGN -- Gretna, Man.
+              | CWGP -- Pemberton Automatic Weather Reporting System 
+              | CWGQ -- Roquemaure
+              | CWGR -- Iles-De-La-Madelein
+              | CWGT -- Sisters Island Automatic Weather Reporting System 
+              | CWGU -- Gypsumville
+              | CWGW -- Sparwood Automatic Weather Reporting System 
+              | CWGY -- Esther 1
+              | CWHA -- Highvale
+              | CWHC -- Vancouver Automatic Weather Reporting System 
+              | CWHE -- Ellerslie
+              | CWHH -- Hunters Point Mar
+              | CWHI -- Three Hills
+              | CWHL -- Holland Rock Automatic Weather Reporting System 
+              | CWHM -- Varennes
+              | CWHO -- Hopedale Meteorological Aeronautical Presentation System 
+              | CWHP -- Heath Point Meteorological Aeronautical Presentation System 
+              | CWHQ -- Deschambaults , Que.
+              | CWHS -- Bernard Harbour
+              | CWHT -- Haines Junction
+              | CWHV -- Beauceville
+              | CWHW -- Comfort Cove, Nfld.
+              | CWHY -- Mont-Orford
+              | CWIC -- Isachsen Meteorological Aeronautical Presentation System 
+              | CWID -- Fort Providence
+              | CWIE -- Indian River 
+              | CWII -- Victoria Beach 
+              | CWIJ -- Lupin, N. W. T.
+              | CWIK -- Broadview, Sask.
+              | CWIL -- Hat Island, N. W. T.
+              | CWIO -- Iskut River 
+              | CWIP -- Pointe Noire , Que.
+              | CWIQ -- Primrose Lake 
+              | CWIS -- Charlevoix CS , Que.
+              | CWIT -- Saint Clothilde Automated Reporting Station 
+              | CWIW -- Watrous East Automated Reporting Station 
+              | CWIX -- Mistook Automated Reporting Station 
+              | CWIZ -- L'Acadie
+              | CWJA -- Jasper, Alta.
+              | CWJB -- Ste Foy CS , Que.
+              | CWJC -- Ennadai Lake Meteorological Aeronautical Presentation System 
+              | CWJD -- Grand Rapids, Man.
+              | CWJH -- Southend Automatic Weather Reporting System 
+              | CWJI -- Assiniboia Airport Automated Reporting Station
+              | CWJM -- Upper Rideau Lake
+              | CWJN -- Herschel Island Automatic Weather Reporting System 
+              | CWJO -- Jonquiere Automated Reporting Station 
+              | CWJP -- Porter Lake
+              | CWJR -- Creston Automatic Weather Reporting System 
+              | CWJT -- St Jovite Automatic Weather Reporting System 
+              | CWJW -- Jasper Warden Automated Reporting Station 
+              | CWJX -- Leader Airport Automatic Weather Reporting System 
+              | CWJY -- Yathkyed Lake Meteorological Aeronautical Presentation System 
+              | CWJZ -- Dubawnt Lake Meteorological Aeronautical Presentation System 
+              | CWKD -- Bonnard 1, Que.
+              | CWKE -- Pelly Bay
+              | CWKG -- Kejimkujik 1, N. S.
+              | CWKH -- Malahat Automatic Weather Reporting System 
+              | CWKK -- Katatota Island
+              | CWKM -- Komakuk Beach, Y. T.
+              | CWKO -- Rockglen, Sask.
+              | CWKW -- Cape Kakkiviak
+              | CWKX -- Dease Lake Coastal Station
+              | CWLA -- Langara, B. C.
+              | CWLB -- Lac La Biche, Alta.
+              | CWLE -- Lucky Lake Automatic Weather Reporting System 
+              | CWLF -- Lansdowne House 
+              | CWLG -- Little Chicago
+              | CWLI -- Liverpool Bay
+              | CWLM -- Victoria Automatic Weather Reporting System 
+              | CWLO -- Shilo
+              | CWLP -- Herbert Island Meteorological Aeronautical Presentation System 
+              | CWLQ -- Nipissing
+              | CWLS -- Mount Forest, Ont.
+              | CWLT -- Alert, N. W. T.
+              | CWLV -- Waskesiu Lake Automated Reporting Station 
+              | CWLX -- Longstaff Bluff, N. W. T.
+              | CWLY -- Lytton, B. C.
+              | CWLZ -- Candle Lake
+              | CWME -- Cathedral Point Meteorological Aeronautical Presentation System 
+              | CWMH -- Mary's Harbour, Nfld.
+              | CWMI -- Miscou Island, N. B.
+              | CWMJ -- Maniwaki
+              | CWMM -- P. Meadows Coastal Station Automatic Weather Reporting System
+              | CWMN -- Mcgill Radar Site
+              | CWMP -- Powder Lake
+              | CWMQ -- Maplecreek Automatic Weather Reporting System 
+              | CWMS -- Mcinnes Island, B. C.
+              | CWMT -- Lac La Martre
+              | CWMU -- Rampart River Automatic Weather Reporting System 
+              | CWMV -- St Charles Creek
+              | CWMW -- Maniwaki, Que.
+              | CWMX -- Mildred Lake
+              | CWMZ -- Western Island Meteorological Aeronautical Presentation System 
+              | CWNB -- S. E. Shoal Meteorological Aeronautical Presentation System 
+              | CWNC -- Cobourg, Ont.
+              | CWND -- Pelly Island Automatic Weather Reporting System 
+              | CWNH -- Riviere Du Loup, Que.
+              | CWNK -- Carman U Of M
+              | CWNL -- Great Duck Island
+              | CWNM -- Nelson Automatic Weather Reporting System 
+              | CWNO -- Satah River Automatic Weather Reporting System
+              | CWNP -- Nakusp Automatic Weather Reporting System 
+              | CWNQ -- Nicolet Automatic Weather Reporting System 
+              | CWNR -- Nakiska Ridgetop 
+              | CWNT -- Turtle Mountain
+              | CWNW -- Haldane River Automatic Weather Reporting System
+              | CWNX -- Nechako River 
+              | CWNZ -- Nagagami, Ont.
+              | CWOA -- Camsell River, N. W. T.
+              | CWOB -- Brevoort Island
+              | CWOC -- New Carlisle1
+              | CWOD -- Normandin
+              | CWOE -- Onefour Automatic Weather Reporting System 
+              | CWOH -- Ste Agathe Des Mont
+              | CWOI -- Ivvavik Park Automatic Weather Reporting System
+              | CWOK -- Elbow Marine Aviation Reporting Station 
+              | CWOU -- Primrose Lake 2
+              | CWPA -- Henderickson Automatic Weather Reporting System
+              | CWPB -- Beausoleil Island Automated Reporting Station 
+              | CWPC -- Port Colborne Automated Reporting Station 
+              | CWPD -- Parc Des Laurentid
+              | CWPF -- Esquimalt Harbour, B. C.
+              | CWPH -- Inukjuak, Que
+              | CWPI -- Pine Island Meteorological Aeronautical Presentation System 
+              | CWPJ -- Point Escuminac Meteorological Aeronautical Presentation System 
+              | CWPK -- Parent, Que.
+              | CWPL -- Pickle Lake, Ont.
+              | CWPO -- Pilot Mound, Man.
+              | CWPQ -- Montreal-Est
+              | CWPR -- Princeton Automatic Weather Reporting System 
+              | CWPS -- Long Point Meteorological Aeronautical Presentation System 
+              | CWPU -- Puntzi Mountain, B. C.
+              | CWQC -- Port Alberni, B. C.
+              | CWQE -- Toronto Headland
+              | CWQF -- Rabbit Kettle Automated Reporting Station
+              | CWQG -- Valcartier
+              | CWQH -- Lennoxville
+              | CWQK -- Race Rocks Automatic Weather Reporting System 
+              | CWQL -- Lethbridge Automated Reporting Station 
+              | CWQM -- Cap Rouge
+              | CWQO -- Ile Bicquette, Que.
+              | CWQP -- Point Petre , Ont.
+              | CWQQ -- Lacombe Cda
+              | CWQR -- Ile Aux Perroquets, Que.
+              | CWQS -- Kindakun Rocks, B. C.
+              | CWQV -- Puinte Claveau
+              | CWQW -- Cape Whittle
+              | CWQY -- Hanbury River Automated Reporting Station 
+              | CWRA -- Cape Race, Nfld
+              | CWRD -- Red Earth
+              | CWRF -- Pelly Bay 1
+              | CWRH -- Resolution Island, N. W. T.
+              | CWRJ -- Rosetown East, Sask
+              | CWRN -- Hart Island Meteorological Aeronautical Presentation System 
+              | CWRO -- Rose Spit Meteorological Aeronautical Presentation System 
+              | CWRP -- Nicholson Peninsul 
+              | CWRT -- Crowsnest
+              | CWRU -- Solander Island Meteorological Aeronautical Presentation System 
+              | CWRV -- Camrose
+              | CWRW -- Fourchu Head Meteorological Aeronautical Presentation System 
+              | CWRY -- Milk River
+              | CWRZ -- Cap D'Espoir , Que.
+              | CWSA -- Sable Island, N. S.
+              | CWSE -- Edmonton Stony Plain Alta.
+              | CWSF -- Cap Madeleine Meteorological Aeronautical Presentation System 
+              | CWSG -- Cap Chat CS, Que.
+              | CWSH -- Sousa Crk Avt 
+              | CWSI -- Simcoe, Ont.
+              | CWSK -- Squamish Airport, B. C
+              | CWSL -- Salmon Arm Automatic Weather Reporting System 
+              | CWSP -- Sheringham Automatic Weather Reporting System 
+              | CWSQ -- Aulvik National Park
+              | CWSR -- Spiritwood West, Sask
+              | CWSS -- St. Stephen, N. B.
+              | CWST -- La Pocatiere
+              | CWSY -- Sachs Harbour, N. W. T.
+              | CWSZ -- Fisher Branch Marine Aviation Reporting Station 
+              | CWTA -- Mc Tavish Automated Reporting Station 
+              | CWTB -- Border, Que.
+              | CWTC -- Ethelda Bay
+              | CWTD -- Robertson Lake Automated Reporting Station 
+              | CWTE -- Trout Lake
+              | CWTF -- Beartooth Island
+              | CWTG -- Pointe-Des-Monts , Que.
+              | CWTN -- Cap Tourmente
+              | CWTO -- Toronto Aes Hq 
+              | CWTY -- Trois Rivieres
+              | CWUM -- Faro, Y. T.
+              | CWUP -- Cape Hooper, N. W. T.
+              | CWUR -- Truro, N. S.
+              | CWUS -- Summerland Automatic Weather Reporting System 
+              | CWUT -- Shoal Lake Airport Automated Reporting Station 
+              | CWUU -- Mackar Inlet
+              | CWUW -- Dewar Lakes, N. W. T.
+              | CWUX -- La Baie , Que.
+              | CWUY -- Rouyn
+              | CWVA -- Bonavista, Nfld.
+              | CWVC -- Swift Current Automatic Weather Reporting System 
+              | CWVD -- Broughton Island
+              | CWVH -- Storm Hills , N. W. T.
+              | CWVI -- Vegreville Automatic Weather Reporting System 
+              | CWVK -- Vernon, B. C.
+              | CWVN -- Val Marie Southeast, Sask
+              | CWVO -- Vauxhall Cda
+              | CWVP -- Cypress Hills Park
+              | CWVQ -- Ste Anne De Bell 1
+              | CWVT -- Buffalo Narrows, Sask.
+              | CWVU -- Brier Island, N. S.
+              | CWVY -- Villeroy Radar Site
+              | CWWA -- W Vancouver Automatic Weather Reporting System 
+              | CWWB -- Burlington Piers 
+              | CWWC -- Collins Bay Automatic Weather Reporting System 
+              | CWWE -- Western Head, N. S.
+              | CWWF -- Weyburn Automatic Weather Reporting System 
+              | CWWK -- White Rock Automatic Weather Reporting System 
+              | CWWL -- Bonilla Island Meteorological Aeronautical Presentation System 
+              | CWWN -- Peawanuck Meteorological Aeronautical Presentation System 
+              | CWWO -- Willow Creek
+              | CWWP -- Wasagaming, Man.
+              | CWWS -- George Island Meteorological Aeronautical Presentation System 
+              | CWWV -- Killinek Meteorological Aeronautical Presentation System 
+              | CWWX -- Cove Island Meteorological Aeronautical Presentation System 
+              | CWWZ -- Port Weller, Ont.
+              | CWXA -- Bow Valley
+              | CWXC -- Onatchiway, Que.
+              | CWXH -- Holberg, B. C.
+              | CWXL -- Bow Island
+              | CWXM -- Helmcken Island Meteorological Aeronautical Presentation System 
+              | CWXP -- Pangnirtung
+              | CWXV -- Back River Meteorological Aeronautical Presentation System 
+              | CWXW -- Alexis River Meteorological Aeronautical Presentation System 
+              | CWYE -- Outlook Pfra
+              | CWYH -- Rae Lakes
+              | CWYJ -- Victoria University
+              | CWYK -- Cape Kiglapait, Nfld.
+              | CWYL -- Yoho Park Automatic Weather Reporting System 
+              | CWYM -- Cape Mercy
+              | CWYO -- Wynyard, Sask.
+              | CWYY -- Osoyoos Automatic Weather Reporting System 
+              | CWZA -- Agassiz Automated Reporting Station 
+              | CWZB -- Port-Aux-Basques, Nfld.
+              | CWZN -- Sagona Island Meteorological Aeronautical Presentation System 
+              | CWZQ -- Grand Etang, N. S.
+              | CWZS -- Amqui , Que.
+              | CWZT -- Dauphin Coastal Station
+              | CWZV -- Virginia Falls
+              | CWZZ -- Saglek Bay 
+              | CXBK -- Bratts Lake, Sask.
+              | CXBO -- Beauport CS, Que.
+              | CXCK -- Carmacks CS, Y. T.
+              | CXDE -- Deline , N. W. T.
+              | CXDI -- Delhi CS, Ont.
+              | CXDW -- Deerwood RCS , Man.
+              | CXEC -- Edmonton Municipal CR10 , Alta.
+              | CXEG -- Edmonton International CS , Alta.
+              | CXGH -- Gimli Harbour CS, Man.
+              | CXHF -- High Falls , Que.
+              | CXKT -- Kentville , N. S.
+              | CXLC -- Lower Carp Lake , N. W. T.
+              | CXLL -- Lindberg Landing , N. W. T.
+              | CXMD -- Morden CDA CS , Man.
+              | CXMM -- Fort McMurray CS, Alta.
+              | CXNM -- North Mountain , N. S.
+              | CXOX -- La Ronge , Sask.
+              | CXPV -- Prairie River, Alta
+              | CXQA -- Qavvik Lake, N. W. T.
+              | CXRH -- Rocky Harbour CS, Nfld.
+              | CXSH -- Shawinigan CS , Que.
+              | CXSR -- Spirit River Auto Station, Alta
+              | CXSW -- St. John's West CDA CS, Nfld.
+              | CXTN -- Tuktut Nogait , N. W. T.
+              | CXTP -- Terra Nova National Park CS, Nfld.
+              | CXTV -- Trail Valley , N. W. T.
+              | CXWN -- Winnipeg The Forks, Man.
+              | CXXX -- Cluff Lake , Sask.
+              | CXZU -- Whitecourt , Alta.
+              | CYAH -- La Grande Iv, Que.
+              | CYAJ -- Komakuk Beach Airport
+              | CYAM -- Sault Ste Marie, Ont.
+              | CYAW -- Shearwater, N. S.
+              | CYAZ -- Tofino Airport
+              | CYBC -- Baie Comeau, Que.
+              | CYBD -- Bella Coola Airport 
+              | CYBG -- Bagotville, Que.
+              | CYBK -- Baker Lake, N. W. T.
+              | CYBR -- Brandon, Man.
+              | CYBU -- Nipawin, Sask.
+              | CYBV -- Berens River Airport
+              | CYBX -- Blanc Sablon, Que.
+              | CYCB -- Cambridge Bay, N. W. T.
+              | CYCD -- Nanaimo Airport
+              | CYCG -- Castlegar Airport
+              | CYCH -- Chatham Can-Mil 
+              | CYCL -- Charlo, N. B.
+              | CYCO -- Coppermine, N. W. T.
+              | CYCP -- Blue River, B. C.
+              | CYCT -- Coronation Marine Aviation Reporting Station 
+              | CYCX -- Gagetown Can-Mil 
+              | CYCY -- Clyde, N. W. T.
+              | CYDA -- Dawson, Y. T.
+              | CYDC -- Princeton Airport 
+              | CYDF -- Deer Lake, Nfld.
+              | CYDN -- Dauphin, Man.
+              | CYDP -- Nain, Nfld
+              | CYED -- Edmonton Namao Alta.
+              | CYEG -- Edmonton International, Alta.
+              | CYEN -- Estevan, Sask.
+              | CYET -- Edson, Alta.
+              | CYEV -- Inuvik, N. W. T.
+              | CYFB -- Iqaluit, N. W. T.
+              | CYFC -- Fredericton, N. B.
+              | CYFS -- Fort Simpson, N. W. T.
+              | CYGK -- Kingston, Ont.
+              | CYGL -- La Grande Riviere, Que
+              | CYGM -- Gimli Industrial, Man
+              | CYGP -- Gaspe, Que.
+              | CYGQ -- Geraldton, Ont.
+              | CYGR -- Iles De La Madeleineque.
+              | CYGV -- Havre St Pierre 
+              | CYGW -- Kuujjuarapik, Que.
+              | CYGX -- Gillam, Man.
+              | CYHA -- Quaqtaq Airport
+              | CYHB -- Hudson Bay, Sask.
+              | CYHE -- Hope, B. C.
+              | CYHM -- Hamilton Airport 
+              | CYHU -- Saint Hubert Airport 
+              | CYHY -- Hay River, N. W. T.
+              | CYHZ -- Halifax International Airport 
+              | CYIO -- Pond Inlet, N. W. T.
+              | CYIV -- Island Lake, Man.
+              | CYJT -- Stephenville, Nfld.
+              | CYKA -- Kamloops, B. C.
+              | CYKF -- Waterloo Well 
+              | CYKJ -- Key Lake
+              | CYKL -- Schefferville, Que.
+              | CYKY -- Kindersley, Sask.
+              | CYLJ -- Meadow Lake, Sask.
+              | CYLL -- Lloydminister, Alta.
+              | CYLW -- Kelowna Airport
+              | CYMA -- Mayo Airport
+              | CYMD -- Mould Bay, N. W. T.
+              | CYMJ -- Moose Jaw, Sask.
+              | CYMM -- Fort Mcmurray, Alta.
+              | CYMO -- Moosonee, Ont.
+              | CYMT -- Chibougamau-Chapais, Que
+              | CYNA -- Natashquan, Que.
+              | CYNE -- Norway House, Man.
+              | CYNM -- Matagami, Que.
+              | CYOD -- Cold Lake, Alta.
+              | CYOJ -- High Level, Alta
+              | CYOW -- Ottawa Int'L. Ont.
+              | CYOY -- Valcartier Airport
+              | CYPA -- Prince Albert, Sask.
+              | CYPE -- Peace River, Alta.
+              | CYPG -- Portage Southport A
+              | CYPQ -- Peterborough Airport 
+              | CYPR -- Prince Rupert, B. C.
+              | CYPW -- Powell River Airport 
+              | CYPY -- Fort Chipewyan, Alta.
+              | CYPZ -- Burns Lake 
+              | CYQA -- Muskoka, Ont.
+              | CYQB -- Quebec, Que
+              | CYQD -- The Pas, Man.
+              | CYQF -- Red Deer, Alta.
+              | CYQG -- Windsor, Ont.
+              | CYQH -- Watson Lake, Y. T.
+              | CYQI -- Yarmouth, N. S.
+              | CYQK -- Kenora, Ont.
+              | CYQL -- Lethbridge, Alta.
+              | CYQM -- Moncton, N. B.
+              | CYQQ -- Comox, B. C.
+              | CYQR -- Regina, Sask.
+              | CYQT -- Thunder Bay, Ont.
+              | CYQU -- Grande Prairie, Alta.
+              | CYQV -- Yorkton, Sask.
+              | CYQW -- North Battleford, Sask.
+              | CYQX -- Gander Int. Airport, Nfld.
+              | CYQY -- Sydney, N. S.
+              | CYQZ -- Quesnel Airport
+              | CYRB -- Resolute, N. W. T.
+              | CYRJ -- Roberval, Que.
+              | CYRL -- Red Lake, Ont.
+              | CYRM -- Rocky Mountain House, Alta
+              | CYRT -- Rankin Inlet, N. W. T.
+              | CYRV -- Revelstoke, B. C.
+              | CYSB -- Sudbury, Ont.
+              | CYSC -- Sherbrooke, Que.
+              | CYSD -- Suffield Airport
+              | CYSF -- Stony Rapids Airport
+              | CYSJ -- Saint John, N. B.
+              | CYSL -- Saint Leonard Airport 
+              | CYSM -- Fort Smith, N. W. T.
+              | CYSU -- Summerside Can-Mil 
+              | CYTE -- Cape Dorset, N. W. T.
+              | CYTH -- Thompson Weather Office, Man
+              | CYTL -- Big Trout Lake
+              | CYTR -- Trenton, Ont.
+              | CYTS -- Timmins, Ont.
+              | CYTZ -- Toronto Island Airport Automated Reporting Station
+              | CYUA -- Shingle Point, Y. T.
+              | CYUB -- Tuktoyaktuk 
+              | CYUI -- Cape Young Airport
+              | CYUJ -- Lady Franklin Point, N. W. T.
+              | CYUK -- Byron Bay Airport
+              | CYUL -- Montreal / Pierre Elliot Trudeau International Airport, Que
+              | CYUQ -- Jenny Lind Island Airport
+              | CYUS -- Shepherd Bay, N. W. T.
+              | CYUX -- Hall Beach, N. W. T.
+              | CYVC -- La Ronge, Sask
+              | CYVO -- Val D'Or, Que.
+              | CYVP -- Kuujjuaq, Que.
+              | CYVQ -- Norman Wells, N. W. T.
+              | CYVR -- Vancouver International Air-Port, B. C.
+              | CYVV -- Wiarton, Ont.
+              | CYWA -- Petawawa, Ont.
+              | CYWG -- Winnipeg Int. Airportman.
+              | CYWK -- Wabush Lake, Nfld.
+              | CYWL -- Williams Lake, B. C.
+              | CYXC -- Cranbrook, B. C.
+              | CYXD -- Edmonton Municipal Alta.
+              | CYXE -- Saskatoon, Sask.
+              | CYXH -- Medicine Hat, Alta.
+              | CYXJ -- Fort St John, B. C.
+              | CYXL -- Sioux Lookout, Ont.
+              | CYXR -- Earlton, Ont.
+              | CYXS -- Prince George, B. C.
+              | CYXT -- Terrace, B. C.
+              | CYXU -- London, Ont.
+              | CYXX -- Abbotsford, B. C.
+              | CYXY -- Whitehorse, Y. T.
+              | CYXZ -- Wawa, Ont.
+              | CYYB -- North Bay, Ont.
+              | CYYC -- Calgary International, Alta.
+              | CYYD -- Smithers, B. C.
+              | CYYE -- Fort Nelson, B. C.
+              | CYYF -- Penticton, B. C.
+              | CYYG -- Charlottetown, P. E. I.
+              | CYYJ -- Victoria Int. Airport, B. C.
+              | CYYL -- Lynn Lake, Man.
+              | CYYN -- Swift Current, Sask.
+              | CYYQ -- Churchill, Man.
+              | CYYR -- Goose, Nfld.
+              | CYYT -- St. John's, Nfld
+              | CYYU -- Kapuskasing, Ont.
+              | CYYW -- Armstrong, Ont.
+              | CYYY -- Mont Joli, Que.
+              | CYYZ -- Toronto Pearson Int'L. Ont.
+              | CYZE -- Gore Bay, Ont.
+              | CYZF -- Yellowknife, N. W. T.
+              | CYZH -- Slave Lake, Alta
+              | CYZP -- Sandspit, B. C.
+              | CYZR -- Sarnia Airport 
+              | CYZS -- Coral Harbour, N. W. T.
+              | CYZT -- Port Hardy, B. C.
+              | CYZU -- Whitecourt, Alta.
+              | CYZV -- Sept-Iles, Que.
+              | CYZW -- Teslin, Y. T.
+              | CYZX -- Greenwood, N. S.
+              | CYZY -- Mackenzie, B. C.
+              | CZDI -- Churchill Falls
+              | CZOC -- Old Crow Automatic Weather Reporting System 
+              | CZPK -- Paulatuk Automated Reporting Station 
+              | CZST -- Stewart Airport
+              | CZUB -- Tuktoyaktuk Automated Reporting Station 
+              | CZUE -- Cape Parry, N. W. T.
+              | CZUM -- Churchill Falls, Nfld.
+              | DAAD -- Bou-Saada
+              | DAAE -- Bejaia
+              | DAAG -- Dar-El-Beida
+              | DAAJ -- Djanet
+              | DAAP -- Illizi
+              | DAAS -- Setif
+              | DAAV -- Jijel Achouat
+              | DAAY -- Mecheria
+              | DABB -- Annaba
+              | DABC -- Constantine
+              | DABP -- Skikda
+              | DABS -- Tebessa
+              | DABT -- Batna
+              | DAFI -- Djelfa
+              | DAOB -- Tiaret
+              | DAOF -- Tindouf
+              | DAOI -- Chlef
+              | DAON -- Tlemcen Zenata 
+              | DAOO -- Oran / Es Senia
+              | DAOR -- Bechar
+              | DAOV -- Mascara-Ghriss
+              | DAUA -- Adrar
+              | DAUB -- Biskra
+              | DAUE -- El Golea
+              | DAUG -- Ghardaia
+              | DAUH -- Hassi-Messaoud
+              | DAUK -- Touggourt
+              | DAUL -- Laghouat
+              | DAUO -- El Oued
+              | DAUT -- Timimoun
+              | DAUU -- Ouargla
+              | DAUZ -- In Amenas
+              | DBBB -- Cotonou
+              | DBBC -- Bohicon
+              | DBBK -- Kandi
+              | DBBN -- Natitingou
+              | DBBP -- Parakou
+              | DBBS -- Save
+              | DFCC -- Ouahigouya
+              | DFCO -- Boromo
+              | DFCP -- Po
+              | DFEE -- Dori
+              | DFEF -- Fada N'Gourma
+              | DFFD -- Ouagadougou
+              | DFOD -- Dedougou
+              | DFOG -- Gaoua
+              | DFOO -- Bobo-Dioulasso
+              | DGAA -- Accra
+              | DGAD -- Ada
+              | DGAH -- Ho
+              | DGAK -- Akuse
+              | DGAS -- Saltpond
+              | DGAT -- Tema
+              | DGKA -- Akim Oda
+              | DGKK -- Koforidua
+              | DGLB -- Bole
+              | DGLE -- Tamale
+              | DGLN -- Navrongo
+              | DGLW -- Wa
+              | DGLY -- Yendi
+              | DGSB -- Sefwi Bekwai
+              | DGSI -- Kumasi
+              | DGSN -- Sunyani
+              | DGSW -- Wenchi
+              | DGTK -- Takoradi
+              | DGTX -- Axim
+              | DIAD -- Adiake
+              | DIAP -- Abidjan
+              | DIBK -- Bouake
+              | DIBU -- Bondoukou
+              | DIDK -- Dimbokro
+              | DIDL -- Daloa
+              | DIGA -- Gagnoa
+              | DIKO -- Korhogo
+              | DIMN -- Man
+              | DIOD -- Odienne
+              | DISP -- San Pedro
+              | DISS -- Sassandra
+              | DITB -- Tabou
+              | DIYO -- Yamoussoukro
+              | DNBI -- Bida
+              | DNCA -- Calabar
+              | DNEN -- Enugu
+              | DNGU -- Gusau
+              | DNIB -- Ibadan
+              | DNIL -- Ilorin
+              | DNJO -- Jos
+              | DNKA -- Kaduna
+              | DNKN -- Kano
+              | DNMA -- Maiduguri
+              | DNMK -- Makurdi
+              | DNMM -- Lagos / Ikeja
+              | DNOS -- Oshogbo
+              | DNPO -- Port Harcourt
+              | DNSO -- Sokoto
+              | DNYO -- Yola
+              | DNZA -- Zaria
+              | DRRB -- Birni-N'Konni
+              | DRRG -- Gaya
+              | DRRI -- Bilma
+              | DRRL -- Tillabery
+              | DRRM -- Maradi
+              | DRRN -- Niamey-Aero
+              | DRRT -- Tahoua
+              | DRZA -- Agadez
+              | DRZF -- Diffa
+              | DRZG -- Goure
+              | DRZM -- Maine-Soroa
+              | DRZR -- Zinder
+              | DTKA -- Tabarka
+              | DTTA -- Tunis-Carthage
+              | DTTB -- Bizerte
+              | DTTD -- Remada
+              | DTTF -- Gafsa
+              | DTTG -- Gabes
+              | DTTJ -- Djerba Mellita
+              | DTTK -- Kairouan
+              | DTTL -- Kelibia
+              | DTTM -- Monastir-Skanes
+              | DTTN -- Jendouba
+              | DTTR -- El Borma
+              | DTTX -- Sfax El-Maou
+              | DTTZ -- Tozeur
+              | DXAK -- Atakpame
+              | DXMG -- Mango
+              | DXNG -- Niamtougou
+              | DXSK -- Sokode
+              | DXTA -- Tabligbo
+              | DXXX -- Lome
+              | EBAW -- Antwerpen / Deurne
+              | EBBE -- Beauvechain
+              | EBBL -- Kleine Brogel
+              | EBBR -- Bruxelles National
+              | EBBT -- Brasschaat
+              | EBBX -- Bertrix Bel-Afb 
+              | EBCI -- Charleroi / Gosselies
+              | EBCV -- Chievres
+              | EBDT -- Schaffen
+              | EBFN -- Koksijde
+              | EBFS -- Florennes
+              | EBGT -- Gent / Industrie-Zone
+              | EBLB -- Elsenborn
+              | EBLG -- Bierset
+              | EBMB -- Melsbroek Bel-Afb 
+              | EBMT -- Munte
+              | EBOS -- Oostende Airport 
+              | EBSP -- Spa / La Sauveniere
+              | EBST -- Sint-Truiden
+              | EBSU -- St-Hubert
+              | EBTN -- Goetsenhoven
+              | EBWE -- Weelde Military 
+              | EBZW -- Genk
+              | EDDB -- Berlin-Schoenefeld
+              | EDDC -- Dresden-Klotzsche
+              | EDDE -- Erfurt-Bindersleben
+              | EDDF -- Frankfurt / M-Flughafen
+              | EDDG -- Muenster / Osnabrueck
+              | EDDH -- Hamburg-Fuhlsbuettel
+              | EDDI -- Berlin-Tempelhof
+              | EDDK -- Koeln / Bonn
+              | EDDL -- Duesseldorf
+              | EDDM -- Munchen
+              | EDDN -- Nuernberg
+              | EDDP -- Leipzig-Schkeuditz
+              | EDDR -- Saarbruecken / Ensheim
+              | EDDS -- Stuttgart-Echterdingen
+              | EDDT -- Berlin-Tegel
+              | EDDV -- Hannover
+              | EDDW -- Bremen
+              | EDFH -- Hahn
+              | EDFM -- Baden Wurttemberg, Neuostheim
+              | EDHI -- Hamburg-Finkenwerder
+              | EDHL -- Luebeck-Blankensee
+              | EDLP -- Paderborn / Lippstadt
+              | EDLW -- Dortmund / Wickede
+              | EDMA -- Augsburg
+              | EDNY -- Friedrichshafen
+              | EDOP -- Mecklenburg-Vorpommern, Parchim
+              | EDQD -- Bayreuth
+              | EDQM -- Hof
+              | EDTD -- Donaueschingen / Villingen
+              | EDTZ -- Konstanz
+              | EDVE -- Braunschweig
+              | EDVK -- Kassel / Calden
+              | EDXW -- Westerland / Sylt
+              | EDZE -- Essen
+              | EEKA -- Kardla
+              | EFHA -- Halli
+              | EFHF -- Helsinki-Malmi
+              | EFHK -- Helsinki-Vantaa
+              | EFHL -- Hailuoto
+              | EFHT -- Ahtari
+              | EFIV -- Ivalo
+              | EFJO -- Joensuu
+              | EFJY -- Jyvaskyla
+              | EFKA -- Kauhava
+              | EFKE -- Kemi
+              | EFKI -- Kajaani
+              | EFKK -- Kruunupyy
+              | EFKS -- Kuusamo
+              | EFKU -- Kuopio
+              | EFLP -- Lappeenranta
+              | EFMA -- Mariehamn / Aland Island
+              | EFMI -- Mikkeli
+              | EFOU -- Oulu
+              | EFPE -- Pello
+              | EFPO -- Pori
+              | EFPU -- Pudasjarvi
+              | EFRO -- Rovaniemi
+              | EFSA -- Savonlinna
+              | EFSO -- Sodankyla
+              | EFSU -- Suomussalmi
+              | EFTP -- Tampere / Pirkkala
+              | EFTU -- Turku
+              | EFUT -- Utti
+              | EFVA -- Vaasa
+              | EFVI -- Viitasaari
+              | EGAA -- Belfast / Aldergrove Airport
+              | EGAC -- Belfast / Harbour
+              | EGBB -- Birmingham / Airport
+              | EGCC -- Manchester Airport
+              | EGDB -- Plymouth
+              | EGDC -- Chivenor
+              | EGDG -- Saint Mawgan
+              | EGDL -- Lyneham
+              | EGDM -- Boscombe Down
+              | EGDP -- Portland / Rnas
+              | EGDR -- Culdrose
+              | EGDY -- Yeovilton
+              | EGFF -- Cardiff-Wales Airport
+              | EGHE -- Scilly, Saint Mary'S
+              | EGHH -- Bournemouth Airport
+              | EGHI -- Southampton / Weather Centre
+              | EGJB -- Guernsey Airport
+              | EGJJ -- Jersey Airport
+              | EGKA -- Shoreham Airport
+              | EGKK -- London / Gatwick Airport
+              | EGLF -- Farnborough
+              | EGLL -- London / Heathrow Airport
+              | EGNC -- Carlisle
+              | EGNH -- Blackpool Airport
+              | EGNL -- Walney Island
+              | EGNR -- Hawarden
+              | EGNS -- Isle Of Man / Ronaldsway Airport
+              | EGOM -- Spadeadam
+              | EGOP -- Pembrey Sands
+              | EGOS -- Shawbury
+              | EGOV -- Valley
+              | EGOY -- West Freugh
+              | EGPA -- Kirkwall Airport
+              | EGPB -- Sumburgh Cape 
+              | EGPC -- Wick
+              | EGPD -- Aberdeen / Dyce
+              | EGPE -- Inverness / Dalcross
+              | EGPF -- Glasgow Airport
+              | EGPH -- Edinburgh Airport
+              | EGPK -- Prestwick Airport
+              | EGPL -- Benbecula
+              | EGPO -- Stornoway
+              | EGPU -- Tiree
+              | EGQA -- Tain Range
+              | EGQJ -- Machrihanish
+              | EGQK -- Kinloss
+              | EGQL -- Leuchars
+              | EGQM -- Boulmer
+              | EGQS -- Lossiemouth
+              | EGRB -- London Weather Centre
+              | EGRR -- Bracknell / Beaufort Park
+              | EGSH -- Norwich Weather Centre
+              | EGSS -- Stansted Airport
+              | EGTE -- Exeter Airport
+              | EGUB -- Benson
+              | EGUC -- Aberporth
+              | EGUF -- Farnborough Military 
+              | EGUL -- Lakenheath Royal Air Force Base
+              | EGUM -- Manston
+              | EGUN -- Mildenhall Royal Air Force Base
+              | EGUW -- Wattisham
+              | EGUY -- Wyton Royal Air Force Base
+              | EGVA -- Fairford Royal Air Force Base
+              | EGVN -- Brize Norton
+              | EGVO -- Odiham
+              | EGVP -- Middle Wallop
+              | EGWU -- Northolt
+              | EGWZ -- Alconbury Royal Air Force Base
+              | EGXC -- Coningsby Royal Air Force Base
+              | EGXD -- Disforth
+              | EGXE -- Leeming
+              | EGXG -- Church Fenton
+              | EGXH -- Honington Royal Air Force Base
+              | EGXJ -- Cottesmore
+              | EGXT -- Wittering
+              | EGXU -- Linton-On-Ouse
+              | EGXV -- Leconfield
+              | EGXW -- Waddington
+              | EGYC -- Coltishall
+              | EGYD -- Cranwell
+              | EGYH -- Holbeach
+              | EGYM -- Marham
+              | EGYP -- Mount Pleasant Airport
+              | EGYW -- Wainfleet
+              | EHAM -- Amsterdam Airport Schiphol
+              | EHBK -- Maastricht Airport Zuid Limburg
+              | EHDB -- De Bilt
+              | EHDL -- Deelen
+              | EHEH -- Eindhoven
+              | EHGG -- Groningen Airport Eelde
+              | EHGR -- Gilze-Rijen
+              | EHKD -- De Kooy
+              | EHLE -- Lelystad
+              | EHLW -- Leeuwarden
+              | EHRD -- Rotterdam Airport Zestienhoven
+              | EHSB -- Soesterberg
+              | EHTW -- Twenthe
+              | EHVB -- Valkenburg
+              | EHVK -- Volkel
+              | EHVL -- Vlieland
+              | EHWO -- Woensdrecht
+              | EICK -- Cork Airport
+              | EIDW -- Dublin Airport
+              | EIME -- Casement Aerodrome
+              | EINN -- Shannon Airport
+              | EKAH -- Tirstrup
+              | EKAT -- Anholt Island Automated Reporting Station 
+              | EKAV -- Avno Danish Air Force Base 
+              | EKBI -- Billund Lufthavn
+              | EKCH -- Koebenhavn / Kastrup
+              | EKEB -- Esbjerg
+              | EKHO -- Lindtorp Airport
+              | EKHS -- Hadsund
+              | EKKA -- Karup
+              | EKMB -- Maribo Lufthavn
+              | EKOD -- Odense / Beldringe
+              | EKRK -- Koebenhavn / Roskilde
+              | EKRN -- Roenne
+              | EKSB -- Soenderborg Lufthavn
+              | EKSN -- Sindal Flyveplads
+              | EKSP -- Skrydstrup
+              | EKST -- Sydfyns Flyveplads
+              | EKSV -- Skive Lufthavn
+              | EKTS -- Thisted Lufthavn
+              | EKVA -- Vandel
+              | EKVD -- Vamdrup
+              | EKVG -- Soervaag / Vagar
+              | EKVJ -- Stauning Lufthavn
+              | EKVL -- Vaerloese
+              | EKYT -- Aalborg
+              | ELLX -- Luxembourg / Luxembourg
+              | ENAL -- Alesund / Vigra
+              | ENAN -- Andoya
+              | ENAS -- Ny-Alesund Ii
+              | ENAT -- Alta Lufthavn
+              | ENBJ -- Bjornoya
+              | ENBM -- Voss-Bo
+              | ENBN -- Bronnoysund / Bronnoy
+              | ENBO -- Bodo Vi
+              | ENBR -- Bergen / Flesland
+              | ENBV -- Berlevag
+              | ENCN -- Kristiansand / Kjevik
+              | ENDU -- Bardufoss
+              | ENEV -- Evenes
+              | ENFB -- Oslo / Fornebu
+              | ENFG -- Fagernes Leirin
+              | ENFL -- Floro
+              | ENGM -- Oslo / Gardermoen
+              | ENHD -- Haugesund / Karmoy
+              | ENHF -- Hammerfest
+              | ENHO -- Hopen
+              | ENHV -- Honningsvag / Valan
+              | ENJA -- Jan Mayen
+              | ENKA -- Kautokeino
+              | ENKB -- Kristiansund / Kvernberget
+              | ENKR -- Kirkenes Lufthavn
+              | ENLI -- Lista Flyplass
+              | ENLK -- Leknes
+              | ENMH -- Mehamn
+              | ENML -- Molde / Aro
+              | ENMS -- Mosjoen Kjaerstad
+              | ENNA -- Banak
+              | ENNK -- Narvik Iii
+              | ENNM -- Namsos Lufthavn
+              | ENOL -- Orland Iii
+              | ENOV -- Orsta-Volda / Hovden
+              | ENRA -- Mo I Rana / Rossvoll
+              | ENRM -- Rorvik / Ryum
+              | ENRO -- Roros Lufthavn
+              | ENRS -- Rost Flyplass
+              | ENRY -- Rygge
+              | ENSB -- Svalbard Lufthavn
+              | ENSD -- Sandane / Anda
+              | ENSG -- Sogndal / Haukasen
+              | ENSH -- Svolvaer / Helle
+              | ENSK -- Storkmarknes / Skagen
+              | ENSN -- Skien-Geiteryggen
+              | ENSR -- Sorkjosen
+              | ENSS -- Svartnes
+              | ENST -- Sandnessjoen / Stokka
+              | ENTC -- Tromso / Langnes
+              | ENTO -- Torp
+              | ENVA -- Trondheim / Vaernes
+              | ENVD -- Vadso
+              | ENZV -- Stavanger / Sola
+              | EPGD -- Gdansk-Rebiechowo
+              | EPKK -- Krakow
+              | EPKO -- Koszalin
+              | EPKT -- Katowice
+              | EPPO -- Poznan
+              | EPRZ -- Rzeszow-Jasionka
+              | EPSC -- Szczecin
+              | EPWA -- Warszawa-Okecie
+              | EPWR -- Wroclaw Ii
+              | EPZG -- Zielona Gora
+              | ESCF -- Linkoping / Malmen
+              | ESCL -- Soderhamn
+              | ESCM -- Uppsala
+              | ESDA -- Ljungbyhed, Ljungbyhed, SWE-AFB
+              | ESDB -- Angelholm
+              | ESDF -- Ronneby
+              | ESGG -- Goteborg / Landvetter
+              | ESGJ -- Jonkoping Flygplats
+              | ESGP -- Goteborg / Save
+              | ESGR -- Skovde Flygplats
+              | ESIB -- Satenas
+              | ESMK -- Kristianstad / Everod
+              | ESMQ -- Kalmar
+              | ESMS -- Malmo / Sturup
+              | ESMT -- Halmstad Swedish Air Force Base 
+              | ESMV -- Hagshult
+              | ESMX -- Vaxjo
+              | ESNG -- Gallivare
+              | ESNJ -- Jokkmokk
+              | ESNK -- Kramfors Flygplats
+              | ESNN -- Sundsvall-Harnosand Flygplats
+              | ESNO -- Ornskoldsvik Airport
+              | ESNQ -- Kiruna Airport
+              | ESNS -- Skelleftea Airport
+              | ESNU -- Umea Flygplats
+              | ESOW -- Vasteras / Hasslo
+              | ESPA -- Lulea / Kallax
+              | ESPC -- Ostersund / Froson
+              | ESPD -- Gunnarn
+              | ESPE -- Vidsel
+              | ESSA -- Stockholm / Arlanda
+              | ESSB -- Stockholm / Bromma
+              | ESSD -- Borlange
+              | ESSF -- Hultsfred Swedish Air Force Base 
+              | ESSK -- Gavle / Sandviken Air Force Base
+              | ESSP -- Norrkoping
+              | ESSQ -- Karlstad Flygplats
+              | ESSV -- Visby Flygplats
+              | ETAD -- Spangdahlem
+              | ETAR -- Ramstein
+              | ETAS -- Sembach United States Air Force Operated Base In Foreign Country 
+              | ETBA -- Aachen / Merzbruck
+              | ETEB -- Ansbach / Katterbach
+              | ETEH -- Bad Kreuznach
+              | ETEU -- Giebelstadt
+              | ETGB -- Bergen
+              | ETGG -- Gluecksburg / Meierwik
+              | ETGI -- Idar-Oberstein
+              | ETGK -- Kuemmersruck
+              | ETGW -- Wittstock
+              | ETGY -- Kalkar
+              | ETGZ -- Messstetten
+              | ETHA -- Altenstadt
+              | ETHB -- Bueckeburg
+              | ETHC -- Celle
+              | ETHE -- Rheine-Bentlage
+              | ETHF -- Fritzlar
+              | ETHI -- Itzehoe
+              | ETHL -- Laupheim
+              | ETHM -- Mendig
+              | ETHN -- Niederstetten
+              | ETHR -- Roth
+              | ETHS -- Fassberg
+              | ETHT -- Cottbus Flugplatz 
+              | ETIC -- Grafenwoehr
+              | ETID -- Hanau
+              | ETIE -- Heidelberg
+              | ETIH -- Hohenfels
+              | ETIK -- Illesheim
+              | ETIN -- Kitzingen Usa \ Af 
+              | ETME -- Eggebek
+              | ETMK -- Kiel-Holtenau
+              | ETMN -- Nordholz
+              | ETND -- Diepholz
+              | ETNG -- Geilenkirchen
+              | ETNH -- Hohn
+              | ETNJ -- Jever
+              | ETNL -- Laage
+              | ETNN -- Noervenich
+              | ETNP -- Hopsten
+              | ETNR -- Preschen
+              | ETNS -- Schleswig-Jagel
+              | ETNT -- Wittmundhaven
+              | ETNU -- Trollenhagen
+              | ETNW -- Wunstorf
+              | ETOR -- Coleman Mannheim 
+              | ETOU -- Wiesbaden
+              | ETSA -- Landsberg
+              | ETSB -- Buechel
+              | ETSE -- Erding
+              | ETSF -- Fuerstenfeldbruck
+              | ETSH -- Holzdorf
+              | ETSI -- Ingolstadt
+              | ETSL -- Lechfeld
+              | ETSM -- Memmingen
+              | ETSN -- Neuburg / Donau
+              | ETSP -- Pferdsfeld
+              | ETUL -- Laarbruch
+              | ETUN -- Nordhorn
+              | ETUO -- Guetersloh
+              | ETUR -- Brueggen
+              | EYVI -- Vilnius
+              | FAAB -- Alexander Bay
+              | FAAN -- Aliwal North
+              | FABL -- Bloemfontein, Bloemfontein Airport
+              | FABM -- Bethlehem Airport
+              | FABY -- Beaufort West
+              | FACL -- Carolina
+              | FACT -- Cape Town, Cape Town International Airport
+              | FACV -- Calvinia
+              | FADA -- De Aar
+              | FADN -- Durban, Durban International Airport
+              | FADY -- De Aar
+              | FAEL -- East London, East London Airport
+              | FAER -- Ellisras
+              | FAFF -- Frankfort
+              | FAFR -- Fraserburg
+              | FAGB -- Gobabis
+              | FAGE -- Gough Island
+              | FAGG -- George, George Airport
+              | FAGR -- Graaff Reinet
+              | FAHS -- Hoedspruit
+              | FAIR -- Pretoria Irene 
+              | FAJS -- Johannesburg International Airport
+              | FAKD -- Klerksdorp
+              | FAKM -- Kimberley, Kim-Apt
+              | FALW -- Langebaanweg
+              | FALY -- Ladysmith
+              | FAMB -- Middelburg
+              | FAME -- Marion Island
+              | FAMM -- Mafikeng Intl. Ad
+              | FAMO -- Mossel Bay Cape Saint Blaize 
+              | FANS -- Nelspruit
+              | FAOH -- Oudtshoorn
+              | FAPB -- Pietersburg
+              | FAPE -- Port Elizabeth, Port E Apt
+              | FAPH -- Phalaborwa
+              | FAPJ -- Port St Johns
+              | FAPR -- Pretoria
+              | FAQT -- Queenstown
+              | FARB -- Richard Bay
+              | FASB -- Springbok
+              | FATC -- Tristan Da Cunha
+              | FAUP -- Upington, Up-Apt
+              | FAUT -- Umtata
+              | FAVB -- Vryburg
+              | FAVR -- Vredendal
+              | FAWK -- Waterkloof (SAAF)
+              | FAWM -- Welkom
+              | FBFT -- Francistown
+              | FBGZ -- Ghanzi
+              | FBJW -- Jwaneng
+              | FBKE -- Kasane
+              | FBLT -- Letlhakane
+              | FBMN -- Maun
+              | FBSK -- Seretse Khama International Airport
+              | FBSN -- Sua-Pan
+              | FBSW -- Shakawe
+              | FBTE -- Tshane
+              | FBTS -- Tsabong
+              | FCBB -- Brazzaville / Maya-Maya
+              | FCBD -- Djambala
+              | FCBM -- Mouyondzi
+              | FCBO -- M'Pouya
+              | FCBS -- Sibiti
+              | FCOG -- Gamboma
+              | FCOI -- Impfondo
+              | FCOM -- Makoua
+              | FCOS -- Souanke
+              | FCOU -- Ouesso
+              | FCPA -- Makabana
+              | FCPL -- Loubomo
+              | FCPP -- Pointe-Noire
+              | FDMS -- Manzini / Matsapa Airport
+              | FEFA -- Alindao
+              | FEFB -- Obo
+              | FEFF -- Bangui
+              | FEFG -- Bangassou
+              | FEFI -- Birao
+              | FEFL -- Bossembele
+              | FEFM -- Bambari
+              | FEFN -- N'Dele
+              | FEFO -- Bouar
+              | FEFR -- Bria
+              | FEFS -- Bossangoa
+              | FEFT -- Berberati
+              | FEFY -- Yalinga
+              | FGSL -- Malabo/Fernando Poo
+              | FHAW -- Wide Awake Field Ascension Island 
+              | FIMP -- Plaisance Mauritius 
+              | FIMR -- Rodrigues
+              | FJDG -- NSF DIEGO GARCIA
+              | FKAB -- Banyo
+              | FKAF -- Bafia
+              | FKAG -- Abong-Mbang
+              | FKAL -- Lomie
+              | FKAM -- Meiganga
+              | FKAN -- Nkongsamba
+              | FKAO -- Betare-Oya
+              | FKAY -- Yoko
+              | FKKA -- Maroua-Salak
+              | FKKB -- Kribi
+              | FKKC -- Tiko
+              | FKKD -- Douala Obs.
+              | FKKF -- Mamfe
+              | FKKI -- Batouri
+              | FKKM -- Koundja
+              | FKKN -- Ngaoundere
+              | FKKR -- Garoua
+              | FKKV -- Bamenda 
+              | FKYS -- Yaounde
+              | FLBA -- Mbala
+              | FLCH -- Choma
+              | FLCP -- Chipata
+              | FLIK -- Isoka
+              | FLKB -- Kawambwa
+              | FLKO -- Kaoma
+              | FLKS -- Kasama
+              | FLKW -- Kabwe
+              | FLLC -- Lusaka City Airport
+              | FLLD -- Lundazi
+              | FLLI -- Livingstone
+              | FLLS -- Lusaka Internationalairport
+              | FLMA -- Mansa
+              | FLMG -- Mongu
+              | FLMP -- Mpika
+              | FLMW -- Mwinilunga
+              | FLND -- Ndola
+              | FLPA -- Kasempa
+              | FLPE -- Petauke
+              | FLPO -- Kabompo
+              | FLSE -- Serenje
+              | FLSN -- Senanga
+              | FLSS -- Sesheke
+              | FLSW -- Solwezi
+              | FLZB -- Zambezi
+              | FMCH -- Hahaya International Airport
+              | FMCV -- Ouani Anjouan 
+              | FMCZ -- Dzaoudzi / Pamanzi Mayotte 
+              | FMEE -- Saint-Denis / Gillot
+              | FMEP -- Saint-Pierre
+              | FMME -- Antsirabe
+              | FMMH -- Mahanoro
+              | FMMI -- Antananarivo / Ivato
+              | FMMO -- Maintirano
+              | FMMS -- Sainte-Marie Aerodrome
+              | FMMT -- Tamatave
+              | FMMV -- Morondava
+              | FMNA -- Diego-Suarez
+              | FMND -- Andapa
+              | FMNH -- Antalaha
+              | FMNL -- Analalava
+              | FMNM -- Majunga
+              | FMNN -- Fascene Nossi-Be 
+              | FMNQ -- Besalampy
+              | FMNS -- Sambava
+              | FMNV -- Vohemar
+              | FMSD -- Fort-Dauphin
+              | FMSF -- Fianarantsoa
+              | FMSG -- Farafangana
+              | FMSM -- Mananjary
+              | FMSO -- Ranohira
+              | FMSR -- Morombe
+              | FMST -- Tulear
+              | FNBG -- Monbaca Benguela 
+              | FNCA -- Cabinda
+              | FNHU -- Huambo Nova Lisboa 
+              | FNKU -- Bie Silva Porto 
+              | FNLU -- Luanda
+              | FOGM -- Mouila
+              | FOGR -- Lambarene
+              | FOOB -- Bitam
+              | FOOC -- Cocobeach
+              | FOOD -- Moanda
+              | FOOE -- Mekambo
+              | FOOG -- Port-Gentil
+              | FOOK -- Makokou
+              | FOOL -- Libreville
+              | FOOM -- Mitzic
+              | FOOR -- Lastoursville
+              | FOOT -- Tchibanga
+              | FOOY -- Mayumba
+              | FPPR -- Principe
+              | FPST -- S. Tome
+              | FQBR -- Beira
+              | FQCB -- Cuamba
+              | FQCH -- Chimoio
+              | FQIN -- Inhambane
+              | FQLC -- Lichinga
+              | FQLU -- Lumbo
+              | FQMA -- Maputo / Mavalane
+              | FQMP -- Mocimboa Da Praia
+              | FQNP -- Nampula
+              | FQPB -- Pemba
+              | FQQL -- Quelimane
+              | FQTE -- Tete
+              | FQVL -- Vilanculos
+              | FQXA -- Xai Xai
+              | FSIA -- Seychelles Inter-National Airport
+              | FSSS -- Seychelles International Airport Rawinsonde Station 
+              | FTTA -- Sarh
+              | FTTC -- Abeche
+              | FTTD -- Moundou
+              | FTTJ -- Ndjamena
+              | FTTK -- Bokoro
+              | FTTL -- Bol-Berim
+              | FTTN -- Am-Timan
+              | FTTP -- Pala
+              | FTTY -- Faya
+              | FVBB -- Beitbridge
+              | FVBI -- Binga
+              | FVBU -- Bulawayo Airport
+              | FVCH -- Chipinge
+              | FVCZ -- Buffalo Range
+              | FVFA -- Victoria Falls
+              | FVGO -- Gokwe
+              | FVHA -- Harare Kutsaga 
+              | FVKA -- Karoi
+              | FVKB -- Kariba
+              | FVMT -- Mutoko
+              | FVMV -- Masvingo
+              | FVRU -- Rusape
+              | FVTL -- Gweru
+              | FVWN -- Hwange National Park
+              | FWCL -- Chileka
+              | FWCT -- Chitipa
+              | FWDZ -- Dedza
+              | FWKA -- Karonga
+              | FWKI -- Lilongwe International Airport
+              | FWKK -- Nkhota Kota
+              | FWMG -- Mangochi
+              | FWMY -- Monkey Bay
+              | FWMZ -- Mzimba
+              | FWSM -- Salima
+              | FWUU -- Mzuzu
+              | FXMU -- Maseru-Mia
+              | FYGF -- Grootfontein
+              | FYKT -- Keetmanshoop
+              | FYRU -- Rundu
+              | FYWH -- J. G. Strijdom
+              | FZAA -- Kinshasa / N'Djili
+              | FZAG -- Moanda
+              | FZAM -- Matadi
+              | FZAN -- Inga
+              | FZBA -- Inongo
+              | FZBO -- Bandundu
+              | FZCA -- Kikwit
+              | FZCS -- Kenge
+              | FZEA -- Mbandaka
+              | FZFK -- Gemena
+              | FZGN -- Boende
+              | FZIA -- Kisangani
+              | FZMB -- Butembo
+              | FZNA -- Goma
+              | FZNC -- Rutshuru
+              | FZOA -- Kindu
+              | FZQA -- Lubumbashi-Luano
+              | FZQM -- Kolwezi
+              | FZRA -- Manono
+              | FZRF -- Kalemie
+              | FZRQ -- Kongolo
+              | FZSA -- Kamina / Base
+              | FZUA -- Kananga
+              | FZUK -- Tshikapa
+              | FZVA -- Lodja
+              | FZVI -- Lusambo
+              | FZVS -- Ilebo
+              | FZWA -- Mbuji-Mayi
+              | GABG -- Bougouni
+              | GABS -- Bamako / Senou
+              | GAGO -- Gao
+              | GAHB -- Hombori
+              | GAKA -- Kenieba
+              | GAKL -- Kidal
+              | GAKO -- Koutiala
+              | GAKT -- Kita
+              | GAKY -- Kayes
+              | GAMB -- Mopti
+              | GAMK -- Menaka
+              | GANK -- Nara
+              | GANR -- Nioro Du Sahel
+              | GASG -- Segou
+              | GASK -- Sikasso
+              | GASN -- San
+              | GATB -- Tombouctou
+              | GATS -- Tessalit
+              | GBYD -- Banjul / Yundum
+              | GCFV -- Fuerteventura / Aeropuerto
+              | GCHI -- Hierro / Aeropuerto
+              | GCLA -- La Palma / Aeropuerto
+              | GCLP -- Gran Canaria - Canary Islands
+              | GCRR -- Lanzarote / Aeropuerto
+              | GCTS -- Tenerife Sur
+              | GCXO -- Tenerife / Los Rodeos
+              | GEML -- Melilla
+              | GFLL -- Lungi
+              | GGBF -- Bafata
+              | GGOV -- Bissau Aeroport 
+              | GLRB -- Grand Bassa, Roberts Field
+              | GMAA -- Agadir
+              | GMAD -- Agadir Al Massira
+              | GMAT -- Tan-Tan
+              | GMFF -- Fes-Sais
+              | GMFI -- Ifrane
+              | GMFK -- Errachidia
+              | GMFM -- Meknes
+              | GMFN -- Nador
+              | GMFO -- Oujda
+              | GMFZ -- Taza
+              | GMMC -- Casablanca
+              | GMME -- Rabat-Sale
+              | GMMF -- Sidi Ifni
+              | GMMI -- Essaouira
+              | GMMN -- Nouasseur
+              | GMMS -- Safi
+              | GMMX -- Marrakech
+              | GMMY -- Kenitra
+              | GMMZ -- Ouarzazate
+              | GMTA -- Al Hoceima
+              | GMTN -- Tetuan / Sania Ramel
+              | GMTT -- Tanger Aerodrome 
+              | GOGG -- Ziguinchor
+              | GOGK -- Kolda
+              | GOGS -- Cap-Skirring
+              | GOOD -- Diourbel
+              | GOOG -- Linguere
+              | GOOK -- Kaolack
+              | GOOY -- Dakar / Yoff
+              | GOSM -- Matam
+              | GOSP -- Podor
+              | GOSS -- Saint-Louis
+              | GOTK -- Kedougou
+              | GOTT -- Tambacounda
+              | GQNA -- Aioun El Atrouss
+              | GQNB -- Boutilimit
+              | GQND -- Tidjikja
+              | GQNF -- Kiffa
+              | GQNI -- Nema
+              | GQNJ -- Akjoujt
+              | GQNK -- Kaedi
+              | GQNN -- Nouakchott
+              | GQNR -- Rosso
+              | GQPA -- Atar
+              | GQPP -- Nouadhibou
+              | GQPT -- Bir Moghrein
+              | GSVO -- Villa Cisneros
+              | GUCY -- Conakry / Gbessia
+              | GUFH -- Faranah / Badala
+              | GUID -- Kindia
+              | GUKU -- Kissidougou
+              | GULB -- Labe
+              | GUMA -- Macenta
+              | GUNZ -- N'Zerekore
+              | GUOK -- Boke
+              | GUSI -- Siguiri
+              | GUXD -- Kankan
+              | GVAC -- Sal
+              | HAAB -- Addis Ababa
+              | HAAM -- Arba Minch
+              | HABD -- Bahar Dar
+              | HADC -- Combolcha
+              | HADM -- Debremarcos
+              | HADR -- Dire Dawa
+              | HAGN -- Gondar
+              | HAGO -- Gode
+              | HAGR -- Gore
+              | HAHM -- Harar Meda
+              | HAJJ -- Jiggiga
+              | HAJM -- Jimma
+              | HALA -- Awassa
+              | HAMK -- Makale
+              | HAMS -- Massawa
+              | HANG -- Neghelli
+              | HASB -- Assab
+              | HBBA -- Bujumbura
+              | HCMH -- Hargeisa
+              | HCMI -- Berbera
+              | HCMM -- Mogadiscio
+              | HCMN -- Belet Uen
+              | HCMV -- Burao
+              | HEAR -- El Arish
+              | HEAT -- Asyut
+              | HEAX -- Alexandria / Nouzha
+              | HECA -- Cairo Airport
+              | HEGN -- Hurguada
+              | HELX -- Luxor
+              | HEMM -- Mersa Matruh
+              | HEPS -- Port Said
+              | HESN -- Asswan
+              | HETR -- El Tor
+              | HFFF -- Djibouti
+              | HHAS -- Asmara
+              | HKEL -- Eldoret
+              | HKEM -- Embu
+              | HKGA -- Garissa
+              | HKKG -- Kakamega
+              | HKKI -- Kisumu
+              | HKKR -- Kericho
+              | HKKS -- Kisii
+              | HKKT -- Kitale
+              | HKLO -- Lodwar
+              | HKLU -- Lamu
+              | HKMA -- Mandera
+              | HKMB -- Marsabit
+              | HKME -- Meru
+              | HKML -- Malindi
+              | HKMO -- Mombasa
+              | HKMU -- Makindu
+              | HKMY -- Moyale
+              | HKNA -- Nairobi ACC/FIC/RCC/MET/COM/
+              | HKNC -- Nairobi / Dagoretti
+              | HKNI -- Nyeri
+              | HKNK -- Nakuru
+              | HKNO -- Narok
+              | HKNW -- Nairobi / Wilson
+              | HKVO -- Voi
+              | HKWJ -- Wajir
+              | HLGT -- Ghat
+              | HLKF -- Kufra
+              | HLLB -- Benina
+              | HLLS -- Sebha
+              | HLLT -- Tripoli Inter-National Airport
+              | HLTD -- Ghadames
+              | HRYG -- Gisenyi
+              | HRYR -- Kigali
+              | HSAT -- Atbara
+              | HSDN -- Dongola
+              | HSDZ -- Damazine
+              | HSFS -- El Fasher
+              | HSGF -- Gedaref
+              | HSGN -- Geneina
+              | HSKA -- Kassala
+              | HSKI -- Kosti
+              | HSLI -- Kadugli
+              | HSNL -- Nyala
+              | HSNR -- Sennar
+              | HSOB -- El Obeid
+              | HSRN -- Renk
+              | HSSJ -- Juba
+              | HSSM -- Malakal
+              | HSSP -- Port Sudan
+              | HSSS -- Khartoum
+              | HSSW -- Wadi Halfa
+              | HTAR -- Arusha
+              | HTBU -- Bukoba
+              | HTDA -- Dar Es Salaam Airport
+              | HTDO -- Dodoma
+              | HTIR -- Iringa
+              | HTKA -- Kigoma
+              | HTKJ -- Kilimanjaro Airport
+              | HTMB -- Mbeya
+              | HTMG -- Morogoro
+              | HTMO -- Mombo
+              | HTMS -- Moshi
+              | HTMT -- Mtwara
+              | HTMU -- Musoma
+              | HTMW -- Mwanza
+              | HTNA -- Nachingwea
+              | HTPE -- Pemba / Karume Airport
+              | HTSE -- Same
+              | HTSO -- Songea
+              | HTTB -- Tabora Airport
+              | HTTG -- Tanga
+              | HTZA -- Zanzibar / Kisauni
+              | HUAR -- Arua
+              | HUEN -- Entebbe Airport
+              | HUGU -- Gulu
+              | HUJI -- Jinja
+              | HUKB -- Kabale
+              | HUKS -- Kasese
+              | HUMA -- Mbarara
+              | HUMI -- Masindi
+              | HUSO -- Soroti
+              | HUTO -- Tororo
+              | K01R -- Claiborne Range, Airways Facilities Sector 
+              | K1K5 -- Elkhart / Elkhart-Morton County Airport
+              | K1V4 -- ST JOHNSBURY FAIRBANKS
+              | K2C2 -- White Sands
+              | K2DP -- Dare County Gunnery Range
+              | K2PJ -- Poinsett Range, Sumpter
+              | K3RN -- Graying Air Force Range
+              | K44W -- Diamond Shoals Coast Guard Station
+              | K4CB -- Cuddleback Gunnery Range
+              | K4MR -- Melrose Gunnery Range
+              | K4SU -- Superior Valley Gunnery Range
+              | K50Q -- Farallon Island
+              | K87Q -- Point Piedras Blanca
+              | K9B2 -- Newport
+              | K9V9 -- CHAMBERLAIN MUNICIPAL AIRPORT
+              | KABE -- LEHIGH VALLEY INTERNATIONAL  AIRPORT
+              | KABI -- ABILENE REGIONAL AIRPORT
+              | KABQ -- ALBUQUERQUE INTERNATIONAL  AIRPORT
+              | KABR -- ABERDEEN REGIONAL AIRPORT
+              | KABY -- ALBANY SOUTHWEST GEORGIA
+              | KACT -- WACO REGIONAL AIRPORT
+              | KACY -- ATLANTIC CITY INTERNATIONAL
+              | KADW -- Camp Springs / Andrews Air Force Base
+              | KAEX -- ALEXANDRIA INTERNATIONAL AIRPORT
+              | KAFF -- Air Force Academy
+              | KAGR -- Avon Park Gunnery Range
+              | KAGS -- AUGUSTA BUSH FIELD
+              | KAHN -- ATHENS BEN EPPS AIRPORT
+              | KALB -- ALBANY INTERNATIONAL AIRPORT
+              | KALO -- WATERLOO MUNICIPAL AIRPORT
+              | KALS -- SAN LUIS VALLEY REGIONAL
+              | KAMA -- AMARILLO INTERNATIONAL  AIRPORT
+              | KANJ -- SAULT STE. MARIE MUNI
+              | KAPN -- ALPENA COUNTY REGIONAL AIRPORT
+              | KAQQ -- Apalachicola, Apalachicola
+              | KAST -- PORT OF ASTORIA AIRPORT
+              | KATL -- HARTSFIELD-JACKSON ATLANTA
+              | KATT -- CAMP MABRY/AUSTIN CITY ASOS
+              | KAVL -- ASHEVILLE REGIONAL AIRPORT
+              | KAVP -- WILKES-BARRE/SCRANTON INTERNATIONAL 
+              | KAVX -- AVALON CATALINA AIRPORT
+              | KAYS -- Waycross / Ware County, Ga
+              | KBDL -- BRADLEY INTERNATIONAL AIRPORT 
+              | KBDR -- SIKORSKY MEMORIAL AIRPORT
+              | KBED -- BEDFORD HANSCOM FIELD
+              | KBFF -- SCOTTSBLUFF HEILIG FIELD
+              | KBFL -- BAKERSFIELD MEADOWS FIELD
+              | KBGM -- BINGHAMTON REGIONAL AIRPORT
+              | KBHM -- BIRMINGHAM INT'L AIRPORT
+              | KBIH -- BISHOP AIRPORT
+              | KBIL -- LOGAN INTERNATIONAL AIRPORT
+              | KBIS -- BISMARCK MUNICIPAL AIRPORT
+              | KBJI -- Bemidji
+              | KBJN -- Las Vegas, Tonopah Range #74 Nellis AFB
+              | KBKW -- RALEIGH COUNTY MEM AIRPORT 
+              | KBML -- BERLIN MUNICIPAL AIRPORT
+              | KBNA -- NASHVILLE INTERNATIONAL  AIRPORT
+              | KBNO -- BURNS MUNICIPAL AIRPORT
+              | KBOI -- BOISE AIR TERMINAL
+              | KBOS -- BOSTON LOGAN INTERNATIONAL
+              | KBPI -- BIG PINEY-MARBLETON AIRPORT
+              | KBPT -- SOUTHEAST TEXAS RGNL AIRPORT
+              | KBRO -- BROWNSVILLE/SOUTH PADRE IS
+              | KBTV -- BURLINGTON INTERNATIONAL
+              | KBUF -- GREATER BUFFALO INTERNATIONAL  AIRPORT 
+              | KBUR -- BURBANK-GLENDALE-PASADENA
+              | KBVE -- Boothville
+              | KBWI -- BALTIMORE-WASHINGTON INTERNATIONAL 
+              | KBYS -- Fort Irwin/Barstow, Bicycle Lake Army Airfield
+              | KCAE -- COLUMBIA METROPOLITAN AIRPORT 
+              | KCAG -- CRAIG MOFFAT AIRPORT
+              | KCAK -- AKRON-CANTON REGIONAL AIRPORT 
+              | KCAO -- CLAYTON MUNICIPAL AIRPARK
+              | KCAR -- CARIBOU MUNICIPAL AIRPORT
+              | KCEF -- Chicopee Falls / Westover Air Force Base
+              | KCHA -- LOVELL FIELD
+              | KCHH -- Chatham
+              | KCHS -- CHARLESTON INT'L AIRPORT
+              | KCKL -- Centreville
+              | KCLE -- CLEVELAND-HOPKINS INTERNATIONAL 
+              | KCLT -- CHARLOTTE/DOUGLAS INTERNATIONAL 
+              | KCMH -- PORT COLUMBUS INTERNATIONAL  AIRPORT
+              | KCMX -- HANCOCK HOUGHTON CTY. MEMO
+              | KCNK -- Concordia, Blosser Municipal Airport
+              | KCOD -- Cody
+              | KCOF -- Cocoa / Patrick Air Force Base
+              | KCON -- Concord, Concord Municipal Airport
+              | KCOS -- COLORADO SPRINGS MUNI
+              | KCOU -- COLUMBIA REGIONAL AIRPORT
+              | KCPR -- NATRONA COUNTY INTERNATIONAL  AIRPORT 
+              | KCRP -- CORPUS CHRISTI INTERNATIONAL 
+              | KCRW -- YEAGER AIRPORT
+              | KCTY -- CROSS CITY AIRPORT
+              | KCVG -- CINCINNATI/NORTHERN KY INTERNATIONAL 
+              | KCYS -- CHEYENNE AIRPORT
+              | KD45 -- Warroad
+              | KDAY -- COX DAYTON INTERNATIONAL
+              | KDBQ -- DUBUQUE REGIONAL AIRPORT
+              | KDCA -- WASHINGTON NATIONAL AIRPORT 
+              | KDDC -- DODGE CITY REGIONAL AIRPORT
+              | KDEN -- DENVER INTERNATIONAL AIRPORT
+              | KDFW -- DALLAS/FT. WORTH INTERNATIONAL  AIRPORT 
+              | KDGW -- DOUGLAS CONVERSE COUNTY
+              | KDLH -- Duluth, Duluth International Airport
+              | KDNR -- Denver / Stapleton International, Co.
+              | KDPG -- Dugway Proving Grounds
+              | KDRA -- DESERT ROCK AIRPORT
+              | KDRT -- DEL RIO INTERNATIONAL  AIRPORT
+              | KDSM -- DES MOINES INTERNATIONAL
+              | KDTW -- DETROIT METROPOLITAN
+              | KE28 -- Northrup Landing Strip
+              | KEDW -- Edwards Air Force Base
+              | KEKA -- Eureka
+              | KEKN -- JENNINGS RANDOLPH FIELD
+              | KELP -- EL PASO INTERNATIONAL AIRPORT 
+              | KELY -- ELY AIRPORT (YELLAND FIELD)
+              | KENV -- Wendover / Air Force Auxillary Field
+              | KEPO -- Eastport
+              | KEPZ -- Santa Teresa
+              | KERI -- ERIE INTERNATIONAL AIRPORT
+              | KESC -- Escanaba
+              | KEUG -- MAHLON SWEET FIELD
+              | KEVV -- EVANSVILLE REGIONAL
+              | KEWR -- NEWARK INTERNATIONAL  AIRPORT
+              | KEYW -- KEY WEST INTERNATIONAL AIRPORT 
+              | KF10 -- Henryetta Municipal
+              | KF30 -- Sulphur Municipal
+              | KFAR -- HECTOR INTERNATIONAL AIRPORT 
+              | KFAT -- FRESNO AIR TERMINAL
+              | KFBG -- Fort Bragg / Simmons Army Airfield
+              | KFCS -- Fort Carson
+              | KFFO -- Dayton / Wright-Patterson Air Force Base
+              | KFHU -- Fort Huachuca, Libby AAF Ft Huachuca
+              | KFMH -- Otis Air National Guard Base
+              | KFNT -- FLINT BISHOP INTERNATIONAL  AIRPORT
+              | KFOD -- Fort Dodge
+              | KFRI -- Fort Riley, Marshall AAF Ft Riley
+              | KFSD -- SIOUX FALLS FOSS FIELD
+              | KFSI -- Fort Sill
+              | KFSM -- FORT SMITH REGIONAL AIRPORT
+              | KFTK -- Fort Knox
+              | KFWA -- FORT WAYNE INTERNATIONAL
+              | KFWD -- Fort Worth
+              | KGBN -- Gila Bend U. S. Army Airfield
+              | KGCC -- GILLETTE-CAMPBELL CTY AIRPORT 
+              | KGDP -- GUADALUPE PASS
+              | KGEG -- SPOKANE INTERNATIONAL AIRPORT 
+              | KGGG -- LONGVIEW GREGG COUNTY AIRPORT 
+              | KGGW -- GLASGOW INTERNATIONAL AIRPORT 
+              | KGJT -- GRAND JUNCTION WALKER FIELD
+              | KGLD -- GOODLAND RENNER FIELD
+              | KGLS -- SCHOLES FIELD
+              | KGPI -- GLACIER PARK INTERNATIONAL  AIRPORT
+              | KGRB -- AUSTIN STRAUBEL INTERNATIONAL  AIRPORT 
+              | KGRF -- Fort Lewis / Gray U. S. Army Airfield
+              | KGRI -- CENTRAL NEBRASKA REGIONAL
+              | KGRR -- GERALD R. FORD INTERNATIONAL
+              | KGSO -- PIEDMONT TRIAD INTERNATIONAL  AIRPORT 
+              | KGSP -- GREER GREENVILLE SPARTBURG
+              | KGTB -- Fort Drum / Wheeler-Sack U. S. Army Airfield
+              | KGTF -- GREAT FALLS INTERNATIONAL
+              | KH92 -- Hominy Municipal
+              | KHAT -- Cape Hatteras
+              | KHLN -- HELENA REGIONAL AIRPORT
+              | KHLR -- Fort Hood, Hood AAF Ft Hood
+              | KHMN -- Holloman Air Force Base
+              | KHMS -- Hanford
+              | KHON -- HURON REGIONAL AIRPORT
+              | KHOP -- Fort Campbell U. S. Army Airfield
+              | KHRT -- Hurlburt Field
+              | KHSV -- HUNTSVILLE INTERNATIONAL  JONES FIELD
+              | KHTL -- ROSCOMMON COUNTY AIRPORT
+              | KHTS -- TRI-STATE AIRPORT
+              | KHVR -- HAVRE CITY-COUNTY AIRPORT
+              | KIAD -- DULLES INTERNATIONAL AIRPORT
+              | KIAH -- HOUSTON INTERCONTINENTAL
+              | KICT -- WICHITA MID-CONTINENT AIRPORT 
+              | KIGM -- KINGMAN AIRPORT
+              | KIND -- INDIANAPOLIS INTERNATIONAL  AIRPORT 
+              | KINL -- FALLS INTERNATIONAL AIRPORT 
+              | KINS -- Indian Springs, Indian Springs Auxiliary AFLD Nellis AFB
+              | KINW -- WINSLOW MUNICIPAL AIRPORT
+              | KIPT -- WILLIAMSPORT-LYCOMING COUNTY
+              | KISN -- SLOULIN FIELD INTERNATIONAL  AIRPORT
+              | KJAN -- Jackson, Jackson International Airport
+              | KJAX -- JACKSONVILLE INTERNATIONAL
+              | KJCT -- KIMBLE COUNTY AIRPORT
+              | KJFK -- KENNEDY INTERNATIONAL AIRPORT 
+              | KLAN -- CAPITAL CITY AIRPORT
+              | KLAS -- MCCARRAN INTERNATIONAL AIRPORT 
+              | KLAX -- LOS ANGELES INTERNTL AIRPORT
+              | KLBB -- LUBBOCK INTERNATIONAL AIRPORT 
+              | KLBF -- NORTH PLATTE REGIONAL AIRPORT 
+              | KLCH -- LAKE CHARLES REGIONAL AIRPORT 
+              | KLEX -- LEXINGTON BLUE GRASS AIRPORT
+              | KLFI -- Langley Air Force Base
+              | KLGA -- NEW YORK LA GUARDIA AIRPORT 
+              | KLGB -- LONG BEACH AIRPORT
+              | KLHW -- Ft. Stewart
+              | KLIX -- Slidell
+              | KLND -- LANDER HUNT FIELD
+              | KLNK -- LINCOLN MUNICIPAL AIRPORT
+              | KLRD -- Laredo, Laredo International Airport
+              | KLSE -- LA CROSSE MUNICIPAL AIRPORT 
+              | KLSF -- Fort Benning
+              | KLTS -- Altus Air Force Base
+              | KLWS -- LEWISTON NEZ PERCE CO AIRPORT 
+              | KLYH -- LYNCHBURG REGIONAL AIRPORT
+              | KLZK -- North Little Rock, North Little Rock Airport
+              | KMAF -- MIDLAND INTERNATIONAL AIRPORT 
+              | KMCF -- Macdill Air Force Base, Fl.
+              | KMCI -- KANSAS CITY INTERNATIONAL  AIRPORT
+              | KMCN -- MIDDLE GEORGIA REGIONAL AIRPORT 
+              | KMCO -- ORLANDO INTERNATIONAL AIRPORT 
+              | KMDW -- CHICAGO MIDWAY AIRPORT
+              | KMEI -- MERIDIAN KEY FIELD
+              | KMEM -- MEMPHIS INTERNATIONAL AIRPORT 
+              | KMER -- Merced / Castle Air Force Base
+              | KMFR -- ROGUE VALLEY INTERNATIONAL  AIRPORT
+              | KMGE -- Marietta / Dobbins Air Force Base
+              | KMGM -- MONTGOMERY DANNELLY FIELD
+              | KMHX -- Newport
+              | KMIA -- MIAMI INTERNATIONAL AIRPORT 
+              | KMKE -- GEN MITCHELL INTERNATIONAL  AIRPORT
+              | KMKG -- MUSKEGON COUNTY AIRPORT
+              | KMLB -- MELBOURNE INTERNATIONAL
+              | KMLI -- MOLINE QUAD-CITY AIRPORT
+              | KMLS -- MILES CITY WILEY FIELD
+              | KMMO -- Marseilles Island
+              | KMOB -- MOBILE REGIONAL AIRPORT
+              | KMQT -- Marquette
+              | KMRF -- Marfa
+              | KMSN -- MADISON DANE COUNTY RGNL
+              | KMSO -- MISSOULA INTERNATIONAL AIRPORT 
+              | KMSP -- MINNEAPOLIS-ST PAUL INTERNATIONAL 
+              | KMSY -- NEW ORLEANS INTERNATIONAL  AIRPORT
+              | KMWN -- Mount Washington
+              | KMWS -- Mount Wilson
+              | KMYR -- Myrtle Beach Air Force Base
+              | KN78 -- Barnegat Coast Guard Station
+              | KNEL -- Lakehurst Naval Air Station
+              | KNGZ -- Alameda Naval Air Station
+              | KNHK -- NAS PATUXENT RIVER MD
+              | KNHZ -- BRUNSWICK NAVAL AIR STN
+              | KNID -- NAWS CHINA LAKE
+              | KNJK -- El Centro, Naval Air Facility
+              | KNKT -- Cherry Point, Marine Corps Air Station
+              | KNKX -- MCAS MIRAMAR
+              | KNLC -- LEMOORE NAVAL AIR STATION
+              | KNOW -- Port Angeles Coast Guard Air Station
+              | KNSI -- SAN NICOLAS ISLAND
+              | KNTD -- NAWCWPNS POINT MUGU, CA
+              | KNUQ -- MOFFETT FIELD
+              | KO64 -- Fort Bragg
+              | KOAK -- METRO OAKLAND INTERNATIONAL  AIRPORT 
+              | KOAX -- Valley
+              | KOFF -- Omaha / Offutt Air Force Base
+              | KOFK -- KARL STEFAN MEMORIAL AIRPORT
+              | KOGD -- OGDEN-HINCKLEY AIRPORT
+              | KOKC -- WILL ROGERS WORLD AIRPORT
+              | KOLM -- OLYMPIA AIRPORT
+              | KOMA -- OMAHA EPPLEY AIRFIELD
+              | KONM -- Socorro Municipal
+              | KORD -- CHICAGO O'HARE INTERNATIONAL
+              | KORF -- NORFOLK INTERNATIONAL AIRPORT 
+              | KOUN -- Norman / Max Westheimer
+              | KP07 -- Sanderson
+              | KP11 -- Devils Lake
+              | KP24 -- Roseglen
+              | KP28 -- MEDICINE LODGE
+              | KP35 -- Spickard
+              | KP38 -- Caliente
+              | KP39 -- Pequot Lake
+              | KPAH -- BARKLEY REGIONAL AIRPORT
+              | KPAM -- Tyndall Air Force Base
+              | KPBI -- PALM BEACH INTERNATIONAL
+              | KPDT -- PENDLETON MUNICIPAL AIRPORT
+              | KPDX -- PORTLAND INTERNATIONAL  AIRPORT
+              | KPGA -- PAGE MUNICIPAL AIRPORT
+              | KPHL -- PHILADELPHIA INTERNATIONAL  AIRPT
+              | KPHX -- Phoenix, Phoenix Sky Harbor International Airport
+              | KPIA -- GREATER PEORIA REGIONAL AIRPORT 
+              | KPIH -- POCATELLO REGIONAL AIRPORT
+              | KPIT -- GREATER PITTSBURGH INTERNATIONAL 
+              | KPKF -- Park Falls
+              | KPMD -- PALMDALE PROD FLIGHT PLANT
+              | KPOB -- Pope Air Force Base
+              | KPOE -- Fort Polk, Polk AAF Ft Polk
+              | KPQI -- Presque Isle
+              | KPTT -- Pratt Municipal
+              | KPUB -- PUEBLO MEMORIAL AIRPORT
+              | KPUC -- PRICE CARBON COUNTY AIRPORT
+              | KPVD -- PROVIDENCE GREEN STATE AIRPORT 
+              | KPWM -- PORTLAND INTERNATIONAL  JETPORT
+              | KQHA -- FOB Mandrian
+              | KRAP -- RAPID CITY REGIONAL AIRPORT 
+              | KRBL -- RED BLUFF MUNICIPAL AIRPORT
+              | KRDD -- REDDING MUNICIPAL AIRPORT
+              | KRDU -- RALEIGH-DURHAM INTERNATIONAL  AIRPORT
+              | KRFD -- GREATER ROCKFORD AIRPORT
+              | KRIC -- RICHMOND INTERNATIONAL  AIRPORT
+              | KRIV -- Riverside / March Air Force Base
+              | KRIW -- RIVERTON REGIONAL AIRPORT
+              | KRKS -- ROCK SPRINGS-SWEETWATER CO
+              | KRMG -- ROME R. B. RUSSELL AIRPORT
+              | KRNO -- RENO/TAHOE INTERNATIONAL  AIRPORT
+              | KROA -- ROANOKE REGIONAL AIRPORT
+              | KROC -- GREATER ROCHESTER INTERNATIONAL 
+              | KROW -- ROSWELL INDUSTRIAL AIR CENTR
+              | KRQE -- WINDOW ROCK AIRPORT
+              | KRST -- ROCHESTER INTERNATIONAL AIRPORT 
+              | KRUE -- RUSSELVILLE MUNICIPAL AIRPORT 
+              | KRUM -- Rumford
+              | KSAC -- SACRAMENTO EXECUTIVE AIRPORT 
+              | KSAN -- SAN DIEGO INTERNATIONAL \LINDBERGH FLD
+              | KSAT -- SAN ANTONIO INTERNATIONAL  AIRPORT 
+              | KSAV -- SAVANNAH INTERNATIONAL AIRPORT 
+              | KSBN -- SOUTH BEND REGIONAL AIRPORT
+              | KSCK -- STOCKTON METROPOLITAN AIRPORT 
+              | KSDB -- SANDBERG
+              | KSDF -- STANDIFORD FIELD
+              | KSEA -- SEATTLE-TACOMA INTERNATIONAL  AIRPORT 
+              | KSEP -- Stephenville, Clark Field Municipal Airport
+              | KSFD -- Winner, Bob Wiley Field Airport
+              | KSFO -- SAN FRANCISCO INTERNATIONAL  AIRPORT 
+              | KSGF -- SPRINGFIELD-BRANSON NATIONAL
+              | KSHR -- SHERIDAN COUNTY AIRPORT
+              | KSHV -- SHREVEPORT REGIONAL AIRPORT
+              | KSJT -- MATHIS FIELD
+              | KSLC -- SALT LAKE CITY INTERNATIONAL  AIRPORT 
+              | KSLE -- SALEM MCNARY FIELD
+              | KSLO -- Salem, Salem-Leckrone Airport
+              | KSMX -- SANTA MARIA PUBLIC AIRPORT
+              | KSNY -- SIDNEY MUNICIPAL AIRPORT
+              | KSPS -- WICHITA FALLS SHEPPARD AFB
+              | KSSC -- Shaw Air Force Base
+              | KSTJ -- ROSECRANS MEMORIAL AIRPORT
+              | KSTL -- LAMBERT-ST LOUIS INTERNATIONAL  AIRPORT 
+              | KSUU -- Fairfield / Travis Air Force Base
+              | KSUX -- SIOUX GATEWAY AIRPORT
+              | KSVC -- Silver City / Grant
+              | KSYR -- SYRACUSE HANCOCK INTERNATIONAL  AIRPORT 
+              | KTBW -- Tampa Bay Area
+              | KTCM -- Tacoma / McChord Air Force Base
+              | KTCS -- TRUTH OR CONSEQUENCES MUNI
+              | KTIK -- Tinker Air Force Base
+              | KTLH -- TALLAHASSEE REGIONAL AIRPORT 
+              | KTOL -- TOLEDO EXPRESS AIRPORT
+              | KTOP -- TOPEKA BILLARD MUNICIPAL AIRPORT
+              | KTPA -- TAMPA INTERNATIONAL AIRPORT 
+              | KTUL -- TULSA INTERNATIONAL AIRPORT
+              | KTUP -- TUPELO REGIONAL AIRPORT
+              | KTUS -- TUCSON INTERNATIONAL AIRPORT 
+              | KTYS -- MCGHEE TYSON AIRPORT
+              | KU67 -- Roosevelt
+              | KUIL -- QUILLAYUTE STATE AIRPORT
+              | KVAD -- Moody Air Force Base
+              | KVBG -- Lompoc, Vandenberg Air Force Base
+              | KVCT -- VICTORIA REGIONAL AIRPORT
+              | KVPS -- Valparaiso / Eglin Air Force Base
+              | KVTN -- MILLER FIELD - VALENTINE, NE
+              | KW30 -- Ocean City
+              | KWAL -- WALLOPS FLIGHT FAC AIRPORT 
+              | KWDD -- Belle River
+              | KWMC -- WINNEMUCCA MUNICIPAL AIRPORT
+              | KWWR -- Woodward, West Woodward Airport
+              | KXMR -- Cocoa Beach, Cape Canaveral Air Force Station Skid Strip
+              | KYKM -- YAKIMA AIR TERMINAL
+              | KYNG -- YOUNGSTOWN-WARREN REG AIRPRT
+              | KYUM -- Yuma / Yuma International
+              | LATI -- Tirana
+              | LBBG -- Burgas
+              | LBPD -- Plovdiv
+              | LBRS -- Rousse
+              | LBSF -- Sofia Observ. 
+              | LBWN -- Varna
+              | LCLK -- Larnaca Airport
+              | LCNC -- Athalassa
+              | LCPH -- Paphos Airport
+              | LCRA -- Akrotiri
+              | LDDD -- Zagreb / Maksimir
+              | LDDU -- Dubrovnik / Cilipi
+              | LDOR -- Slavonski Brod
+              | LDOS -- Osijek / Cepin
+              | LDPL -- Pula Aerodrome
+              | LDRI -- Rijeka / Omisalj
+              | LDSH -- Hvar
+              | LDSP -- Split / Resnik
+              | LDVA -- Varazdin
+              | LDZA -- Zagreb / Pleso
+              | LDZD -- Zadar / Zemunik
+              | LEAB -- Albacete / Los Llanos
+              | LEAL -- Alicante / El Altet
+              | LEAM -- Almeria / Aeropuerto
+              | LEAS -- Asturias / Aviles
+              | LEBA -- Cordoba / Aeropuerto
+              | LEBB -- Bilbao / Sondica
+              | LEBG -- Burgos / Villafria
+              | LEBL -- Barcelona / Aeropuerto
+              | LEBZ -- Badajoz / Talavera La Real
+              | LECH -- Calamocha
+              | LECO -- La Coruna / Alvedro
+              | LECV -- Madri-Colmenar
+              | LEGE -- Gerona / Costa Brava
+              | LEGR -- Granada / Aeropuerto
+              | LEGT -- Madrid / Getafe
+              | LEHI -- Hinojosa Del Duque
+              | LEIB -- Ibiza / Es Codola
+              | LEJR -- Jerez De La Fronteraaeropuerto
+              | LELC -- Murcia / San Javier
+              | LELN -- Leon / Virgen Del Camino
+              | LELO -- Logrono / Agoncillo
+              | LEMD -- Madrid / Barajas
+              | LEMG -- Malaga / Aeropuerto
+              | LEMH -- Menorca / Mahon
+              | LEMO -- Moron De La Frontera
+              | LEPA -- Palma De Mallorca / Son San Juan
+              | LEPP -- Pamplona / Noain
+              | LERI -- Murcia / Alcantarilla
+              | LERS -- Reus / Aeropuerto
+              | LERT -- Rota
+              | LESA -- Salamanca / Matacan
+              | LESO -- San Sebastian / Fuenterrabia
+              | LEST -- Santiago / Labacolla
+              | LETO -- Madrid / Torrejon
+              | LEVC -- Valencia / Aeropuerto
+              | LEVD -- Valladolid / Villanubla
+              | LEVS -- Madrid / Cuatro Vientos
+              | LEVT -- Vitoria
+              | LEVX -- Vigo / Peinador
+              | LEXJ -- Santander / Parayas
+              | LEZG -- Zaragoza / Aeropuerto
+              | LEZL -- Sevilla / San Pablo
+              | LFAT -- Le Touquet
+              | LFBA -- Agen
+              | LFBC -- Cazaux
+              | LFBD -- Bordeaux / Merignac
+              | LFBE -- Bergerac
+              | LFBF -- Toulouse / Francazal
+              | LFBG -- Cognac
+              | LFBH -- La Rochelle
+              | LFBI -- Poitiers
+              | LFBL -- Limoges
+              | LFBM -- Mont-De-Marsan
+              | LFBN -- Niort
+              | LFBO -- Toulouse / Blagnac
+              | LFBP -- Pau
+              | LFBS -- Biscarosse
+              | LFBT -- Tarbes Ossun Lourdes
+              | LFBV -- Brive
+              | LFBX -- Perigueux
+              | LFBY -- Dax
+              | LFBZ -- Biarritz
+              | LFCG -- St-Girons
+              | LFCI -- Albi
+              | LFCR -- Rodez
+              | LFDH -- Auch
+              | LFHP -- Le Puy
+              | LFIG -- Cassagnes-Begonhes
+              | LFJL -- Metz-Nancy-Lorraine
+              | LFKB -- Bastia
+              | LFKC -- Calvi
+              | LFKF -- Figari
+              | LFKJ -- Ajaccio
+              | LFKS -- Solenzara
+              | LFLA -- Auxerre
+              | LFLB -- Chambery / Aix-Les-Bains
+              | LFLC -- Clermont-Ferrand
+              | LFLD -- Bourges
+              | LFLL -- Lyon / Satolas
+              | LFLM -- Macon
+              | LFLN -- Saint-Yan
+              | LFLQ -- Montelimar
+              | LFLS -- Grenoble / St. Geoirs
+              | LFLV -- Vichy
+              | LFLW -- Aurillac
+              | LFLX -- Chateauroux
+              | LFLY -- Lyon / Bron
+              | LFMA -- Aix Les Milles
+              | LFMC -- Le Luc
+              | LFMD -- Cannes
+              | LFME -- Nimes / Courbessac
+              | LFMH -- St-Etienne Boutheon
+              | LFMI -- Istres
+              | LFMK -- Carcassonne
+              | LFML -- Marseille / Marignane
+              | LFMN -- Nice
+              | LFMO -- Orange
+              | LFMP -- Perpignan
+              | LFMT -- Montpellier
+              | LFMX -- St-Auban-Sur-Durance
+              | LFMY -- Salon
+              | LFOB -- Beauvais
+              | LFOC -- Chateaudun
+              | LFOE -- Evreux
+              | LFOF -- Alencon
+              | LFOH -- La Heve
+              | LFOI -- Abbeville
+              | LFOJ -- Orleans
+              | LFOP -- Rouen
+              | LFOR -- Chartres
+              | LFOS -- Vittefleur / St. Vale
+              | LFOT -- Tours
+              | LFOW -- Saint-Quentin
+              | LFPB -- Paris / Le Bourget
+              | LFPC -- Creil Fafb 
+              | LFPG -- Paris-Aeroport Charles De Gaulle
+              | LFPM -- Melun
+              | LFPN -- Toussus Le Noble
+              | LFPO -- Paris-Orly
+              | LFPV -- Villacoublay
+              | LFQB -- Troyes
+              | LFQG -- Nevers
+              | LFQH -- Chatillon-Sur-Seine
+              | LFQI -- Cambrai
+              | LFQQ -- Lille
+              | LFQV -- Charleville
+              | LFRA -- Angers
+              | LFRB -- Brest
+              | LFRC -- Cherbourg / Maupertus
+              | LFRD -- Dinard
+              | LFRH -- Lann Bihoue
+              | LFRI -- La Roche-Sur-Yon
+              | LFRJ -- Landivisiau
+              | LFRK -- Caen
+              | LFRL -- Lanveoc Poulmic
+              | LFRM -- Le Mans
+              | LFRN -- Rennes
+              | LFRQ -- Quimper
+              | LFRS -- Nantes
+              | LFRT -- Saint-Brieuc
+              | LFRZ -- St-Nazaire
+              | LFSA -- Besancon
+              | LFSB -- Bale-Mulhouse
+              | LFSC -- Colmar
+              | LFSD -- Dijon
+              | LFSF -- Metz / Frescaty
+              | LFSI -- St-Dizier
+              | LFSL -- Toul / Rosieres
+              | LFSN -- Nancy / Essey
+              | LFSO -- Nancy / Ochey
+              | LFSQ -- Belfort
+              | LFSR -- Reims
+              | LFST -- Strasbourg
+              | LFSX -- Luxeuil
+              | LFTH -- Hyeres
+              | LFTU -- St-Raphael
+              | LFTW -- Nimes / Garons
+              | LFVP -- Saint-Pierre
+              | LFXA -- Amberieu
+              | LFYR -- Romorantin
+              | LGAD -- Andravida Airport 
+              | LGAL -- Alexandroupoli Airport 
+              | LGAT -- Athinai Airport 
+              | LGBL -- Anchialos Airport 
+              | LGEL -- Elefsis Airport 
+              | LGHI -- Chios Airport 
+              | LGIR -- Heraklion Airport 
+              | LGKA -- Kastoria Airport 
+              | LGKF -- Kefalhnia Airport 
+              | LGKL -- Kalamata Airport 
+              | LGKO -- Kos Airport 
+              | LGKP -- Karpathos Airport
+              | LGKR -- Kerkyra Airport 
+              | LGKV -- Chrysoupoli Airport 
+              | LGKZ -- Kozani Airport 
+              | LGLM -- Limnos Airport 
+              | LGLR -- Larissa Airport 
+              | LGMT -- Mytilini Airport 
+              | LGPZ -- Aktion Airport 
+              | LGRP -- Rhodes Airport 
+              | LGRX -- Araxos Airport 
+              | LGSA -- Souda Airport 
+              | LGSM -- Samos Airport 
+              | LGTG -- Tanagra Airport 
+              | LGTP -- Tripolis Airport
+              | LGTS -- Thessaloniki Airport 
+              | LGTT -- Tatoi
+              | LHBC -- Bekescsaba
+              | LHBM -- Budapest Met Center
+              | LHBP -- Budapest / Ferihegy
+              | LHBS -- Budaors
+              | LHDC -- Debrecen
+              | LHKE -- Kecskemet
+              | LHKV -- Kaposvar
+              | LHMC -- Miskolc
+              | LHNY -- Nyiregyhaza / Napkor
+              | LHPA -- Papa
+              | LHPP -- Pecs / Pogany
+              | LHSK -- Siofok
+              | LHSN -- Szolnok
+              | LHSY -- Szombathely
+              | LHUD -- Szeged
+              | LIBA -- Amendola
+              | LIBC -- Crotone
+              | LIBD -- Bari / Palese Macchie
+              | LIBE -- Monte S. Angelo
+              | LIBG -- Grottaglie
+              | LIBH -- Marina Di Ginosa
+              | LIBN -- Lecce
+              | LIBP -- Pescara
+              | LIBQ -- Monte Scuro
+              | LIBR -- Brindisi
+              | LIBS -- Campobasso
+              | LIBT -- Termoli
+              | LIBU -- Latronico
+              | LIBV -- Gioia Del Colle
+              | LIBW -- Bonifati
+              | LIBY -- S. Maria Di Leuca
+              | LIBZ -- Potenza
+              | LICA -- Lamezia Terme
+              | LICC -- Catania / Fontanarossa
+              | LICD -- Lampedusa
+              | LICE -- Enna
+              | LICF -- Messina
+              | LICG -- Pantelleria
+              | LICJ -- Palermo / Punta Raisi
+              | LICL -- Gela
+              | LICO -- Cozzo Spadaro
+              | LICP -- Palermo Boccadifalco
+              | LICR -- Reggio Calabria
+              | LICT -- Trapani / Birgi
+              | LICU -- Ustica
+              | LICZ -- Catania / Sigonella
+              | LIEA -- Alghero
+              | LIEB -- Capo Bellavista
+              | LIEC -- Capo Carbonara
+              | LIED -- Decimomannu
+              | LIEE -- Cagliari / Elmas
+              | LIEF -- Capo Frasca
+              | LIEG -- Guardiavecchia
+              | LIEH -- Capo Caccia
+              | LIEL -- Capo S. Lorenzo
+              | LIEN -- Fonni
+              | LIEO -- Olbia / Costa Smeralda
+              | LIEP -- Perdasdefogu
+              | LIMC -- Milano / Malpensa
+              | LIME -- Bergamo / Orio Al Serio
+              | LIMF -- Torino / Caselle
+              | LIMG -- Albenga
+              | LIMH -- Pian Rosa
+              | LIMJ -- Genova / Sestri
+              | LIMK -- Torino / Bric Della Croce
+              | LIML -- Milano / Linate
+              | LIMN -- Novara / Cameri
+              | LIMO -- Monte Bisbino
+              | LIMS -- Piacenza
+              | LIMT -- Passo Della Cisa
+              | LIMU -- Capo Mele
+              | LIMV -- Passo Dei Giovi
+              | LIMY -- Monte Malanotte
+              | LIPA -- Aviano
+              | LIPB -- Bolzano
+              | LIPC -- Cervia
+              | LIPD -- Udine / Campoformido
+              | LIPE -- Bologna / Borgo Panigale
+              | LIPF -- Ferrara
+              | LIPH -- Treviso / S. Angelo
+              | LIPI -- Udine / Rivolto
+              | LIPK -- Forli
+              | LIPL -- Brescia / Ghedi
+              | LIPQ -- Ronchi Dei Legionari
+              | LIPR -- Rimini
+              | LIPS -- Treviso / Istrana
+              | LIPT -- Vicenza
+              | LIPX -- Verona / Villafranca
+              | LIPY -- Falconara
+              | LIPZ -- Venezia / Tessera
+              | LIQB -- Arezzo
+              | LIQC -- Capri
+              | LIQJ -- Civitavecchia
+              | LIQK -- Capo Palinuro
+              | LIQN -- Rieti
+              | LIQO -- Monte Argentario
+              | LIQP -- Isola Di Palmaria
+              | LIQR -- Radicofani
+              | LIQV -- Volterra
+              | LIQW -- Sarzana / Luni
+              | LIQZ -- Ponza
+              | LIRA -- Roma / Ciampino
+              | LIRB -- Vigna Di Valle
+              | LIRE -- Pratica Di Mare
+              | LIRF -- Roma Fiumicino
+              | LIRG -- Guidonia
+              | LIRH -- Frosinone
+              | LIRJ -- M. Calamita
+              | LIRK -- Monte Terminillo
+              | LIRL -- Latina
+              | LIRM -- Grazzanise
+              | LIRN -- Napoli / Capodichino
+              | LIRP -- Pisa / S. Giusto
+              | LIRQ -- Firenze / Peretola
+              | LIRS -- Grosseto
+              | LIRT -- Trevico
+              | LIRU -- Roma / Urbe
+              | LIRV -- Viterbo
+              | LIRZ -- Perugia
+              | LIVC -- Monte Cimone
+              | LIVD -- Dobbiaco
+              | LIVF -- Frontone
+              | LIVM -- Punta Marina
+              | LIVO -- Tarvisio
+              | LIVP -- Paganella
+              | LIVR -- Passo Rolle
+              | LIVT -- Trieste
+              | LIYW -- Aviano Usaf 
+              | LJLJ -- Ljubljana / Brnik
+              | LJMB -- Maribor / Slivnica
+              | LJMS -- Murska Sobota
+              | LJPZ -- Portoroz
+              | LKHO -- Holesov
+              | LKKV -- Karlovy Vary
+              | LKKZ -- Kosice
+              | LKMT -- Ostrava / Mosnov
+              | LKPP -- Piestany
+              | LKPR -- Praha / Ruzyne
+              | LKSL -- Sliac
+              | LKTB -- Brno / Turany
+              | LLBG -- Ben-Gurion International Airport
+              | LLBS -- Beer-Sheva
+              | LLET -- Eilat
+              | LLHA -- Sde-Haifa Haifa
+              | LLJR -- Jerusalem Airport
+              | LLOV -- Ovda
+              | LMML -- Luqa
+              | LOAV -- Niederosterreich / Lugplatz  Voslau
+              | LOWG -- Graz-Thalerhof-Flughafen
+              | LOWI -- Innsbruck-Flughafen
+              | LOWK -- Klagenfurt-Flughafen
+              | LOWL -- Linz / Hoersching-Flughafen
+              | LOWS -- Salzburg-Flughafen
+              | LOWW -- Wien / Schwechat-Flughafen
+              | LOXA -- Aigen Im Ennstal
+              | LOXL -- Horsching Aus-Afb 
+              | LOXS -- Schwaz Heliport 
+              | LOXT -- Tulln
+              | LOXZ -- Zeltweg
+              | LPAZ -- Santa Maria Acores 
+              | LPBG -- Braganca
+              | LPBJ -- Beja
+              | LPFL -- Flores Acores 
+              | LPFR -- Faro / Aeroporto
+              | LPFU -- Funchal / S. Catarina
+              | LPHR -- Horta / Castelo Branco Acores 
+              | LPLA -- Lajes Acores 
+              | LPPD -- Ponta Delgada / Nordela Acores 
+              | LPPR -- Porto / Pedras Rubras
+              | LPPS -- Porto Santo
+              | LPPT -- Lisboa / Portela
+              | LPVR -- Vila Real
+              | LQBI -- Bihac
+              | LQBK -- Banja Luka
+              | LQLV -- Livno
+              | LQMO -- Mostar
+              | LQSA -- Sarajevo
+              | LQTZ -- Tuzla
+              | LRAR -- Arad
+              | LRBC -- Bacau
+              | LRBM -- Baia Mare
+              | LRBS -- Bucuresti / Imh
+              | LRCK -- Kogalniceanu
+              | LRCL -- Cluj-Napoca
+              | LRCS -- Caransebes
+              | LRCV -- Craiova
+              | LRIA -- Iasi
+              | LROD -- Oradea
+              | LROP -- Bucuresti Otopeni
+              | LRSB -- Sibiu
+              | LRSM -- Satu Mare
+              | LRSV -- Suceava / Salcea
+              | LRTC -- Tulcea
+              | LRTM -- Tirgu Mures
+              | LRTR -- Timisoara
+              | LSGG -- Geneve-Cointrin
+              | LSGL -- Lausanne
+              | LSGN -- Neuchatel
+              | LSGS -- Sion
+              | LSMP -- Payerne
+              | LSZA -- Lugano
+              | LSZG -- Grenchen
+              | LSZH -- Zurich-Kloten
+              | LSZR -- Saint Gallen-Altenrhein
+              | LTAC -- Ankara / Esenboga
+              | LTAD -- Ankara / Etimesgut
+              | LTAE -- Murted Tur-Afb 
+              | LTAF -- Adana / Sakirpasa
+              | LTAG -- Adana / Incirlik
+              | LTAH -- Afyon
+              | LTAI -- Antalya
+              | LTAJ -- Gaziantep
+              | LTAK -- Iskenderun
+              | LTAN -- Konya
+              | LTAP -- Merzifon
+              | LTAQ -- Samsun
+              | LTAR -- Sivas
+              | LTAS -- Zonguldak
+              | LTAT -- Malatya / Erhac
+              | LTAU -- Kayseri / Erkilet
+              | LTAW -- Tokat
+              | LTBA -- Istanbul / Ataturk
+              | LTBD -- Aydin
+              | LTBE -- Bursa
+              | LTBF -- Balikesir
+              | LTBG -- Bandirma
+              | LTBH -- Canakkale
+              | LTBI -- Eskisehir
+              | LTBJ -- Izmir / Adnan Menderes
+              | LTBL -- Izmir / Cigli
+              | LTBM -- Isparta
+              | LTBO -- Usak
+              | LTBS -- Dalaman
+              | LTBT -- Akhisar
+              | LTBV -- Bodrum
+              | LTCA -- Elazig
+              | LTCC -- Diyarbakir
+              | LTCD -- Erzincan
+              | LTCE -- Erzurum
+              | LTCF -- Kars
+              | LTCG -- Trabzon
+              | LTCH -- Urfa
+              | LTCI -- Van
+              | LTCJ -- Batman
+              | LWOH -- Ohrid
+              | LWSK -- Skopje-Petrovec
+              | LXGB -- Gibraltar
+              | LYBE -- Beograd / Surcin
+              | LYNI -- Nis
+              | LYPR -- Pristina
+              | LYPZ -- Portoroz / Secovlje
+              | LYTI -- Podgorica / Golubovci
+              | LYTV -- Tivat
+              | LYVR -- Vrsac
+              | LZIB -- Bratislava Ivanka
+              | LZKC -- Kamenica Nad Cirochou
+              | LZLU -- Lucenec
+              | LZTT -- Poprad / Tatry
+              | MDBH -- Barahona
+              | MDHE -- Herrera
+              | MDPC -- Punta Cana
+              | MDPP -- Puerto Plata International
+              | MDSD -- Las Americas
+              | MDST -- Santiago
+              | MGCB -- Coban
+              | MGFL -- Flores
+              | MGGT -- Guatemala Aeropuertola Aurora 
+              | MGHT -- Huehuetenango
+              | MGPB -- Puerto Barrios
+              | MGRT -- Retalhuleu
+              | MGSJ -- San Jose
+              | MHAM -- Amapala
+              | MHCA -- Catacamas
+              | MHCH -- Choluteca
+              | MHIC -- Islas Del Cisne
+              | MHLC -- La Ceiba Airport 
+              | MHLE -- La Esperanza
+              | MHLM -- La Mesa San Pedro Sula 
+              | MHNO -- Guanaja
+              | MHPL -- Puerto Lempira
+              | MHRO -- Roatan
+              | MHSC -- Coronel Enrique Soto Cano Air Base
+              | MHSR -- Santa Rosa De Copan
+              | MHTE -- Tela
+              | MHTG -- Tegucigalpa
+              | MHYR -- Yoro
+              | MKJP -- Kingston / Norman Manley
+              | MKJS -- Montego Bay / Sangster
+              | MMAN -- Aerop. Internacional Monterrey, N. L.
+              | MMAS -- Aguascalientes, Ags.
+              | MMCB -- Cuernavaca, Mor.
+              | MMCL -- Culiacan, Sin.
+              | MMCM -- Chetumal, Q. Roo
+              | MMCN -- Ciudad Obregon
+              | MMCP -- Campeche, Camp.
+              | MMEP -- Tepic, Nay.
+              | MMHO -- Hermosillo, Son.
+              | MMIA -- Colima 
+              | MMIO -- Saltillo, Coah.
+              | MMLT -- Loreto, B. C. S.
+              | MMMD -- Merida / lic Manuel Crecencio
+              | MMMV -- Monclova, Coah.
+              | MMPB -- Puebla, Pue.
+              | MMPG -- Piedras Negras, Coah.
+              | MMQT -- Queretaro, Qro.
+              | MMSP -- San Luis Potosi, S. L. P.
+              | MMTC -- Torreon, Coah.
+              | MMTG -- Tuxtla Gutierrez, Chis.
+              | MMTL -- Tulancingo 
+              | MNBL -- Bluefields
+              | MNCH -- Chinandega
+              | MNJG -- Jinotega
+              | MNJU -- Juigalpa
+              | MNMG -- Managua A. C. Sandino
+              | MNPC -- Puerto Cabezas
+              | MNRS -- Rivas
+              | MPDA -- David
+              | MPFS -- Ft Sherman Rocob 
+              | MPHO -- Howard Air Force Base
+              | MPSA -- Santiago
+              | MPTO -- Tocumen
+              | MRLB -- Liberia
+              | MRLM -- Puerto Limon
+              | MRNC -- Nicoya
+              | MROC -- Juan Santamaria
+              | MRPM -- Palmar Sur
+              | MSAC -- Acajutla
+              | MSLP -- El Salvador Intl. Airport / Comalapa
+              | MSSA -- Santa Ana / El Palmar
+              | MSSM -- San Miguel / El Papalon
+              | MSSS -- San Salvador / Ilopango
+              | MTCH -- Cap-Haitien
+              | MUBA -- Baracoa, Oriente
+              | MUCA -- Venezuela, Ciego De Avila
+              | MUCF -- Cienfuegos, Las Villas
+              | MUCM -- Camaguey Aeropuerto
+              | MUCU -- Santiago De Cuba, Oriente
+              | MUGM -- GUANTANAMO BAY, CUBA NAVAL
+              | MUGT -- Guantanamo, Oriente
+              | MUHA -- Aeropuerto Jose Marti, Rancho-Boyeros, Habana
+              | MUMZ -- Manzanillo, Oriente
+              | MUNG -- Nueva Gerona, Isla De Pinos
+              | MUPR -- Pinar Del Rio, Pinar Del Rio
+              | MUVR -- Varadero, Matanzas
+              | MUVT -- Las Tunas, Las Tunas
+              | MWCR -- Owen Roberts Airportgrand Cayman
+              | MYBS -- Alice Town, Bimini
+              | MYEG -- Georgetown, Exuma
+              | MYGF -- Freeport, Grand Bahama
+              | MYGW -- West End, Grand Bahama
+              | MYIG -- Matthew Town, Inagua
+              | MYNN -- Nassau Airport
+              | MYSM -- Cockburn Town, San Salvador
+              | MZBZ -- Belize / Phillip Goldston Intl. Airport
+              | NCRG -- Rarotonga
+              | NFFN -- Nandi
+              | NFNA -- Nausori
+              | NFNK -- Lakemba
+              | NFNR -- Rotuma
+              | NFTF -- Fua'Amotu
+              | NFTL -- Haapai
+              | NGBR -- Beru
+              | NGFO -- Nanumea
+              | NGFU -- Funafuti
+              | NGTA -- Tarawa
+              | NGTR -- Arorae
+              | NGTU -- Butaritari
+              | NIUE -- Alofi / Niue
+              | NLWF -- Maopoopo Ile Futuna 
+              | NLWW -- Hihifo Ile Wallis 
+              | NSAP -- Apia / Upolu Island
+              | NSFA -- Faleolo Intl / Apia
+              | NSTU -- Pago Pago / Int. Airport
+              | NTAA -- Tahiti-Faaa
+              | NTAT -- Tubuai
+              | NTTB -- Bora-Bora
+              | NTTG -- Rangiroa / Tuamoto Island
+              | NTTO -- Hao
+              | NTTX -- Mururoa
+              | NVSC -- Sola Vanua Lava 
+              | NVSL -- Lamap Malekula 
+              | NVSS -- Pekoa Airport Santo 
+              | NVVV -- Bauerfield Efate 
+              | NWWE -- Moue Ile Des Pins 
+              | NWWK -- Koumac Nlle-Caledonie 
+              | NWWL -- Ouanaham Ile Lifou 
+              | NWWN -- Noumea Nlle-Caledonie 
+              | NWWR -- La Roche Ile Mare 
+              | NWWV -- Ouloup Ile Ouvea 
+              | NWWW -- La Tontouta Nlle-Caledonie 
+              | NZAA -- Auckland Airport
+              | NZCH -- Christchurch
+              | NZCI -- Chatham Island
+              | NZCM -- Williams Field
+              | NZDN -- Dunedin Aerodrome
+              | NZGS -- Gisborne Aerodrome
+              | NZHK -- Hokitika Aerodrome
+              | NZKI -- Kaikoura 
+              | NZNP -- New Plymouth Aerodrome
+              | NZNV -- Invercargill Aerodrome
+              | NZOH -- Ohakea
+              | NZPP -- Paraparaumu Aerodrome
+              | NZRN -- Raoul Island, Kermadec Island
+              | NZRO -- Rotorua Aerodrome
+              | NZSP -- Amundsen-Scott South Pole Station
+              | NZTG -- Tauranga Aerodrome Aws
+              | NZWN -- Wellington Airport
+              | NZWP -- Whenuapai
+              | OAFR -- Farah
+              | OAFZ -- Faizabad
+              | OAHR -- Herat
+              | OAJL -- Jalalabad
+              | OAJS -- Jabul-Saraj
+              | OAKB -- Kabul Airport
+              | OAMS -- Mazar-I-Sharif
+              | OASD -- Shindand
+              | OASG -- Shebirghan
+              | OAZB -- Zebak
+              | OAZG -- Zaranj
+              | OBBI -- Bahrain International Airport 
+              | OEAB -- Abha
+              | OEAH -- Al Ahsa
+              | OEBA -- Al Baha
+              | OEBH -- Bisha
+              | OEDF -- Dammam-King Fahd International Airport
+              | OEDR -- Dhahran
+              | OEDW -- Dawadmi
+              | OEGN -- Gizan
+              | OEGS -- Gassim
+              | OEGT -- Guriat
+              | OEHL -- Hail
+              | OEJD -- Jeddah 
+              | OEJN -- Jeddah King Abdul Aziz International Airport 
+              | OEKK -- Hafr Al-Batin
+              | OEKM -- Khamis Mushait
+              | OEMA -- Madinah
+              | OEMK -- Makkah
+              | OENG -- Najran
+              | OEPA -- Al Qaysumah
+              | OERF -- Rafha
+              | OERK -- King Khaled International Airport
+              | OERR -- Arar
+              | OERY -- Riyadh
+              | OESH -- Sharurah
+              | OESK -- Al-Jouf
+              | OETB -- Tabuk
+              | OETF -- Taif
+              | OETR -- Turaif
+              | OEWD -- Wadi Al Dawasser Airport
+              | OEWJ -- Wejh
+              | OEYN -- Yenbo
+              | OIAA -- Abadan
+              | OIAG -- Omidieh
+              | OIAH -- Gach Saran Du Gunbadan
+              | OIAI -- Masjed-Soleyman
+              | OIAW -- Ahwaz
+              | OIBB -- Bushehr Civ / Afb 
+              | OIBL -- Bandar Lengeh
+              | OICC -- Kermanshah
+              | OICG -- Ghasre-Shirin
+              | OICS -- Sanandaj
+              | OIFK -- Kashan
+              | OIFM -- Esfahan
+              | OIFS -- Shahre-Kord
+              | OIGG -- Rasht
+              | OIHR -- Arak
+              | OIII -- Tehran-Mehrabad
+              | OIIK -- Ghazvin
+              | OIIS -- Semnan
+              | OIKB -- Bandarabbass
+              | OIKK -- Kerman
+              | OIKM -- Bam
+              | OIMB -- Birjand
+              | OIMH -- Torbat-Heydarieh
+              | OIMM -- Mashhad
+              | OIMN -- Bojnourd
+              | OIMS -- Sabzevar
+              | OIMT -- Tabas
+              | OING -- Gorgan
+              | OINR -- Ramsar
+              | OISA -- Abadeh
+              | OISF -- Fasa
+              | OISS -- Shiraz
+              | OITK -- Khoy
+              | OITR -- Orumieh
+              | OITS -- Saghez
+              | OITT -- Tabriz
+              | OITZ -- Zanjan
+              | OIYY -- Yazd
+              | OIZB -- Zabol
+              | OIZC -- Chahbahar
+              | OIZH -- Zahedan
+              | OIZI -- Iranshahr
+              | OIZJ -- Jask
+              | OJAI -- Queen Alia Airport
+              | OJAM -- Amman Airport
+              | OJAQ -- Aqaba Airport
+              | OJBD -- Irbid
+              | OJHF -- H-5'Safawi
+              | OJHR -- H-4'Irwaished
+              | OJMF -- Mafraq
+              | OJMN -- Ma'An
+              | OKBK -- Kuwait Internationalairport
+              | OLBA -- Beyrouth Aeroport 
+              | OMAA -- Abu Dhabi International Airport
+              | OMAD -- Abu Dhabi Bateen Airport
+              | OMAL -- Al Ain International Airport
+              | OMDB -- Dubai International Airport
+              | OMFJ -- Fujairah
+              | OMRK -- Ras Al Khaimah International Airport
+              | OMSJ -- Sharjah International Airport
+              | OOBR -- Buraimi
+              | OOFD -- Fahud
+              | OOKB -- Khassab
+              | OOMA -- Masirah
+              | OOMS -- Seeb, International Airport
+              | OOSA -- Salalah
+              | OOSH --  Sohar Majis
+              | OOSQ -- Saiq
+              | OOSR -- Sur
+              | OOTH -- Thumrait
+              | OPDI -- Dera Ismail Khan
+              | OPJA -- Jacobabad
+              | OPJI -- Jiwani
+              | OPKC -- Karachi Airport
+              | OPKD -- Hyderabad Airport
+              | OPLA -- Lahore Airport
+              | OPLH -- Lahore City
+              | OPMI -- Mianwali
+              | OPMT -- Multan
+              | OPNH -- Nawabshah
+              | OPPG -- Panjgur
+              | OPPS -- Peshawar
+              | OPQT -- Quetta Airport
+              | OPRN -- Islamabad Airport
+              | OPRS -- Risalpur
+              | OPSB -- Sibi
+              | OPSR -- Sargodha
+              | ORBB -- Baghdad
+              | ORBM -- Mosul
+              | ORMS -- Shaibah / Basrah
+              | OSAP -- Aleppo International Airport
+              | OSDI -- Damascus Int. Airport
+              | OSDZ -- Deir Ezzor
+              | OSKL -- Kamishli
+              | OSLK -- Lattakia
+              | OSPR -- Palmyra
+              | OTBD -- Doha International Airport
+              | OYAA -- Aden
+              | OYAR -- Riyan
+              | OYAT -- Ataq
+              | OYHD -- Hodeidah
+              | OYMB -- Marib 
+              | OYMC -- Mokha
+              | OYMK -- Mokha 
+              | OYSN -- Sana'A
+              | OYSQ -- Socotra
+              | OYTZ -- Taiz
+              | OYZM -- Al-Hazm 
+              | PAAQ -- PALMER MUNICIPAL AIRPORT
+              | PABA -- Barter Island, Barter Island LRRS Airport
+              | PABE -- BETHEL AIRPORT
+              | PABI -- ALLEN ARMY AIRFIELD
+              | PABL -- Buckland, Buckland Airport
+              | PABR -- POST ROGERS MEMORIAL AIRPORT
+              | PABT -- BETTLES AIRPORT
+              | PACD -- COLD BAY AIRPORT
+              | PACP -- Cape Saint Elias
+              | PACV -- MERLE K. SMITH AIRPORT
+              | PACY -- Yakataga
+              | PACZ -- Cape Romanzof, Cape Romanzof LRRS Airport
+              | PADK -- Adak Island, Adak Airport
+              | PADL -- Dillingham, Dillingham Airport
+              | PADQ -- KODIAK AIRPORT
+              | PADU -- Unalaska, Unalaska Airport
+              | PAED -- Anchorage, Elmendorf Air Force Base
+              | PAEH -- Cape Newenham, Cape Newenham LRRS Airport
+              | PAEI -- Fairbanks, Eielson Air Force Base
+              | PAEN -- KENAI MUNICIPAL AIRPORT
+              | PAFA -- Fairbanks, Fairbanks International Airport
+              | PAFM -- Ambler, Ambler Airport
+              | PAFR -- Ft. Richardson / Bryant U. S. Army Heliport, Ak
+              | PAGA -- Galena, Edward G. Pitka Sr. Airport
+              | PAGK -- GULKANA AIRPORT
+              | PAGM -- Gambell, Gambell Airport
+              | PAGN -- Angoon
+              | PAGS -- Gustavus, Gustavus Airport
+              | PAGY -- SKAGWAY AIRPORT
+              | PAHD -- Homer / Municipal
+              | PAIL -- ILIAMNA AIRPORT
+              | PAIM -- Utopia Creek, Indian Mountain LRRS Airport
+              | PAJN -- JUNEAU INTERNATIONAL AIRPORT
+              | PAKN -- KING SALMON AIRPORT
+              | PAKO -- Nikolski
+              | PAKT -- KETCHIKAN INTERNATIONAL AIRPORT 
+              | PAKW -- Klawock, Klawock Airport
+              | PALU -- Cape Lisburne, Cape Lisburne LRRS Airport
+              | PAMC -- MCGRATH AIRPORT
+              | PAMD -- Middleton Island, Middleton Island Airport
+              | PAMH -- Minchumina, Minchumina Airport
+              | PANC -- TED STEVENS ANCHORAGE INTERNATIONAL 
+              | PANI -- Aniak, Aniak Airport
+              | PANN -- NENANA MUNICIPAL AIRPORT
+              | PANT -- ANNETTE ISLAND AIRPORT
+              | PAOM -- NOME AIRPORT
+              | PAOR -- NORTHWAY AIRPORT
+              | PAOT -- WIEN MEMORIAL AIRPORT
+              | PAPC -- Port Clarence, Port Clarence Coast Guard Station
+              | PAPG -- Petersburg
+              | PAPH -- Port Heiden, Port Heiden Airport
+              | PAPT -- Puntilla
+              | PAQT -- NUIQSUT AIRPORT
+              | PASI -- SITKA AIRPORT
+              | PASN -- ST PAUL ISLAND AIRPORT
+              | PASV -- Sparrevohn Airways Facilities Sector
+              | PASW -- Skwentna
+              | PASY -- SHEMYA EARECKSON AS
+              | PATA -- TANANA CALHOUN MEMORIAL AIRPORT 
+              | PATC -- Tin City Airways Facilities Sector
+              | PATK -- TALKEETNA AIRPORT
+              | PAUM -- Umiat
+              | PAUN -- Unalakleet
+              | PAWD -- Seward
+              | PAWG -- Wrangell
+              | PAWI -- WAINWRIGHT AIRPORT
+              | PAYA -- YAKUTAT AIRPORT
+              | PFYU -- Fort Yukon, Fort Yukon Airport
+              | PGAC -- Guam, Mariana Island
+              | PGRO -- Rota Island, N. Mariana Is, Rota International Airport
+              | PGSN -- Saipan Island, Saipan International Airport
+              | PGUA -- Andersen, Mariana Is, Andersen Air Force Base
+              | PGUM -- Agana, Guam International Airport
+              | PGWT -- Tinian Island, N. Mariana Is, West Tinian Airport
+              | PHBK -- PMRF BARKING SANDS
+              | PHHI -- Wheeler Air Force Base / Oahu
+              | PHJR -- KALAELOA AIRPORT
+              | PHLI -- LIHUE AIRPORT
+              | PHMK -- Kaunakakai, Molokai Airport
+              | PHNG -- MCBH KANEOHE BAY HAWAII
+              | PHNL -- HONOLULU INTERNATIONAL AIRPORT 
+              | PHOG -- KAHULUI AIRPORT
+              | PHTO -- HILO INTERNATIONAL AIRPORT
+              | PHWH -- South Kona / Hawaii
+              | PJON -- Johnston Island, Johnston Atoll Airport
+              | PKMJ -- Majuro Atoll, Marshall Islands Int. Airp.
+              | PKWA -- Kwajalein, Bucholz AAF, Kwajalein KMR ATOL Airport
+              | PLCH -- Christmas / Cassidy
+              | PLFA -- Fanning Island
+              | PMDY -- Sand Island, Henderson Field Airport
+              | POLI -- Oliktok Distant Early Warning 
+              | PPIZ -- Point Lay, Point Lay LRRS Airport
+              | PTKK -- Weno Island, Chuuk Int. Airp.
+              | PTPN -- Pohnpei Island, Pohnpei Int. Airp.
+              | PTRO -- Babelthuap Island, Babelthuap/Koror Airport
+              | PTSA -- Kosrae Island, Kosrae Airport
+              | PTTK -- Kosrae Carolines / V
+              | PTYA -- Yap Island, Yap Int. Airp.
+              | PWAK -- Wake Island, Wake Island Army Airfield Airport
+              | RCAY -- Kangshan Tw-Afb 
+              | RCBS -- Chinmem / Shatou Air Force Base 
+              | RCDC -- Pingtung South Air Force Base 
+              | RCFG -- Mazu
+              | RCFS -- Chia Tung
+              | RCGM -- Taoyuan Ab = 589650
+              | RCKH -- Kaohsiung International Airport
+              | RCKU -- Chiayi Tw-Afb 
+              | RCKW -- Hengchun
+              | RCLG -- Taichung Tw-Afb 
+              | RCLM -- Dongsha
+              | RCLY -- Lan Yu
+              | RCMJ -- Donggang
+              | RCMQ -- Wuchia Observatory
+              | RCMS -- Ilan
+              | RCNN -- Tainan Tw-Afb 
+              | RCNO -- Dongshi
+              | RCPO -- Hsinchu Tw-Afb 
+              | RCQC -- Makung Ab
+              | RCQS -- Chihhang Tw-Afb 
+              | RCSQ -- Pingtung North Air Force Base 
+              | RCSS -- Sungshan / Taipei
+              | RCTP -- Chiang Kai Shek
+              | RCUK -- Pa Kuei / Bakuai
+              | RCYU -- Hulien Ab
+              | RJAA -- New Tokyo Inter-National Airport
+              | RJAF -- Matsumoto Airport
+              | RJAH -- Hyakuri Ab
+              | RJAK -- Kasumigaura Ab
+              | RJAM -- Minamitorishima
+              | RJAO -- Chichijima
+              | RJAT -- Fuji Ab
+              | RJAW -- Iwojima
+              | RJBB -- Kansai International Airport
+              | RJBD -- Nankishirahama Airport
+              | RJCA -- Asahikawa Ab
+              | RJCB -- Obihiro Airport
+              | RJCC -- Chitose Ab
+              | RJCH -- Hakodate Airport
+              | RJCJ -- Chitose Japanese Air Self Defense Force 
+              | RJCK -- Kushiro Airport
+              | RJCM -- Memambetsu Airport
+              | RJCN -- Nakashibetsu Airport
+              | RJCO -- Sapporo Ab
+              | RJCS -- Kushiro
+              | RJCW -- Wakkanai Airport
+              | RJCY -- Muroran
+              | RJDB -- Iki Airport
+              | RJDC -- Yamaguchi Ube Airport
+              | RJDM -- Metabaru Ab
+              | RJDT -- Tsushima Airport
+              | RJEB -- Mombetsu Airport
+              | RJEC -- Asahikawa Airport
+              | RJFA -- Ashiya Ab
+              | RJFC -- Yakushima
+              | RJFE -- Fukue Airport
+              | RJFF -- Fukuoka Airport
+              | RJFG -- Tanegashima Airport
+              | RJFK -- Kagoshima Airport
+              | RJFM -- Miyazaki Airport
+              | RJFN -- Nyutabaru Ab
+              | RJFO -- Oita Airport
+              | RJFR -- Kitakyushu Airport
+              | RJFT -- Kumamoto Airport
+              | RJFU -- Nagasaki Airport
+              | RJFW -- Sasebo Usn
+              | RJFY -- Kanoya Ab
+              | RJFZ -- Tsuiki Ab
+              | RJKA -- Amami Airport
+              | RJKB -- Okinoerabu
+              | RJKN -- Tokunoshima Island
+              | RJNF -- Fukui Airport
+              | RJNG -- Gifu Ab
+              | RJNH -- Hamamatsu Ab
+              | RJNK -- Komatsu Ab
+              | RJNN -- Nagoya Airport
+              | RJNO -- Oki Airport
+              | RJNT -- Toyama Airport
+              | RJNY -- Shizuhama Ab
+              | RJOA -- Hiroshima Airport
+              | RJOB -- Okayama Airport
+              | RJOC -- Izumo Airport
+              | RJOE -- Akeno Ab
+              | RJOF -- Hofu Ab
+              | RJOH -- Miho Ab
+              | RJOI -- MCAS IWAKUNI,JAPAN
+              | RJOK -- Kochi Airport
+              | RJOM -- Matsuyama Airport
+              | RJOO -- Osaka International Airport
+              | RJOP -- Komatsujima Ab
+              | RJOR -- Tottori Airport
+              | RJOS -- Tokushima Ab
+              | RJOT -- Takamatsu Airport
+              | RJOW -- Iwami Airport
+              | RJOY -- Yao Airport
+              | RJOZ -- Ozuki Ab
+              | RJSA -- Aomori Airport
+              | RJSC -- Yamagata Airport
+              | RJSD -- Sado Airport
+              | RJSF -- Fukushima Airport
+              | RJSH -- Hachinohe Ab
+              | RJSI -- Hanamaki Airport
+              | RJSK -- Akita Airport
+              | RJSM -- Misawa Ab
+              | RJSN -- Niigata Airport
+              | RJSO -- Ominato Ab
+              | RJSS -- Sendai Airport
+              | RJST -- Matsushima Ab
+              | RJSU -- Kasuminome Ab
+              | RJTA -- Atsugi United States Naval Air Station
+              | RJTC -- Tachikawa Ab
+              | RJTD -- Tokyo
+              | RJTE -- Tateyama Ab
+              | RJTF -- Chofu Airport
+              | RJTH -- Hachijojima Airport
+              | RJTI -- Tokyo Heliport
+              | RJTJ -- Iruma Ab
+              | RJTK -- Kisarazu Ab
+              | RJTL -- Shimofusa Ab
+              | RJTO -- Oshima Airport
+              | RJTQ -- Miyakejima Airport
+              | RJTR -- Zama Airfield
+              | RJTT -- Tokyo International Airport
+              | RJTU -- Utsunomiya Ab
+              | RJTX -- Yokosuka Fwf
+              | RJTY -- Yokota Ab
+              | RKJJ -- Kwangju Ab
+              | RKJK -- Kunsan Ab
+              | RKJY -- Yosu Airport
+              | RKNC -- Chunchon Ab
+              | RKNH -- Hoengsong Ab
+              | RKNN -- Kangnung Ab
+              | RKNW -- Wonju
+              | RKPC -- Cheju International Airport
+              | RKPK -- Pusan / Kimhae International Airport
+              | RKPM -- Mosulpo Ab
+              | RKPS -- Sach'On Ab
+              | RKPU -- Ulsan
+              | RKSB -- Tonghae Radar Site
+              | RKSF -- Seoul / Yongdungp'O Rokaf Wc
+              | RKSG -- Pyongtaek Ab
+              | RKSI -- Incheon International Airport
+              | RKSL -- Seoul
+              | RKSM -- Seoul E Ab
+              | RKSN -- Koon-Ni Range
+              | RKSO -- Osan Ab
+              | RKSP -- Paengnyongdo Ab
+              | RKSS -- Seoul / Kimp'O International Airport
+              | RKSW -- Suwon Ab
+              | RKTA -- Andong
+              | RKTD -- Taejon Kor-Afb 
+              | RKTE -- Songmu Ab
+              | RKTF -- Taejon
+              | RKTH -- Pohang Ab
+              | RKTI -- Jung Won Rok-Ab 
+              | RKTM -- Mangilsan Ab
+              | RKTN -- Taegu Ab
+              | RKTT -- Taegu
+              | RKTU -- Chongju Ab
+              | RKTY -- Yechon Ab
+              | ROAH -- Naha Airport
+              | RODE -- Iejima Auxiliary Ab
+              | RODN -- Kadena Ab
+              | ROHF -- Hamby U. S. Army Airfield
+              | ROIG -- Ishigakijima
+              | ROKJ -- Kumejima
+              | ROMD -- Minamidaitojima
+              | ROMY -- Miyakojima
+              | ROTM -- Futenma Marine Corps Air Facility
+              | ROYN -- Yonaguni Airport
+              | RPLB -- Subic Bay Weather Station
+              | RPLI -- Laoag
+              | RPLL -- Ninoy Aquino Inter-National Airport
+              | RPMD -- Davao Airport
+              | RPMK -- Clark Ab
+              | RPMP -- Legaspi
+              | RPMR -- Romblon
+              | RPMS -- Sangley Point
+              | RPMT -- Mactan
+              | RPMZ -- Zamboanga
+              | RPUA -- Aparri
+              | RPUB -- Baguio
+              | RPUD -- Daet
+              | RPUH -- San Jose
+              | RPUI -- Iba
+              | RPUK -- Calapan
+              | RPUO -- Basco
+              | RPUQ -- Vigan
+              | RPUR -- Baler
+              | RPUT -- Tuguegarao
+              | RPUV -- Virac
+              | RPVA -- Tacloban
+              | RPVD -- Dumaguete
+              | RPVF -- Catarman
+              | RPVG -- Guiuan
+              | RPVI -- Iloilo
+              | RPVM -- Masbate
+              | RPVP -- Puerto Princesa
+              | RPVR -- Roxas
+              | RPVT -- Tagbilaran
+              | RPWB -- Gen. Santos
+              | RPWC -- Cotobato
+              | RPWE -- Butuan
+              | RPWG -- Dipolog
+              | RPWL -- Cagayan De Oro
+              | RPWS -- Surigao
+              | RPWY -- Malaybalay
+              | RPXT -- Alabat
+              | SAAC -- Concordia Aerodrome
+              | SAAG -- Gualeguaychu Aerodrome
+              | SAAJ -- Junin Aerodrome
+              | SAAP -- Parana Aerodrome
+              | SAAR -- Rosario Aerodrome
+              | SAAU -- Villaguay Aerodrome
+              | SAAV -- Sauce Viejo Aerodrome
+              | SABA -- Buenos Aires Observatorio
+              | SABE -- Aeroparque Bs. As. Aerodrome
+              | SACI -- Pilar Observatorio
+              | SACO -- Cordoba Aerodrome
+              | SACP -- Chepes
+              | SACV -- Villa De Maria Del Rio Seco
+              | SADD -- Don Torcuato Aerodrome
+              | SADL -- La Plata Aerodrome
+              | SADP -- El Palomar Aerodrome
+              | SAEZ -- Ezeiza Aerodrome
+              | SAME -- Mendoza Aerodrome
+              | SAMI -- San Martin
+              | SAMJ -- Jachal
+              | SAMM -- Malargue Aerodrome
+              | SAMR -- San Rafael Aerodrome
+              | SAMS -- San Carlos
+              | SAMU -- Uspallata
+              | SANC -- Catamarca Aero.
+              | SANE -- Santiago Del Estero Aero.
+              | SANI -- Tinogasta
+              | SANL -- La Rioja Aero.
+              | SANO -- Chilecito
+              | SANT -- Tucuman Aerodrome
+              | SANU -- San Juan Aerodrome
+              | SANW -- Ceres Aerodrome
+              | SAOC -- Rio Cuarto Aerodrome
+              | SAOD -- Villa Dolores Aerodrome
+              | SAOL -- Laboulaye
+              | SAOM -- Marcos Juarez Aerodrome
+              | SAOR -- Villa Reynolds Aerodrome
+              | SAOU -- San Luis Aerodrome
+              | SARC -- Corrientes Aero.
+              | SARE -- Resistencia Aero.
+              | SARF -- Formosa Aerodrome
+              | SARI -- Iguazu Aerodrome
+              | SARL -- Paso De Los Libres Aerodrome
+              | SARM -- Monte Caseros Aerodrome
+              | SARP -- Posadas Aero.
+              | SARS -- Presidencia Roque Saenz Pena Aerodrome
+              | SASA -- Salta Aerodrome
+              | SASJ -- Jujuy Aerodrome
+              | SASO -- Oran Aerodrome
+              | SASQ -- La Quiaca Observatorio
+              | SASR -- Rivadavia
+              | SAST -- Tartagal Aerodrome
+              | SATK -- Las Lomitas
+              | SATU -- Curuzu Cuatia Aerodrome
+              | SAVB -- El Bolson Aerodrome
+              | SAVC -- Comodoro Rivadavia Aerodrome
+              | SAVE -- Esquel Aerodrome
+              | SAVO -- San Antonio Oeste Aerodrome
+              | SAVP -- Paso De Indios
+              | SAVT -- Trelew Aerodrome
+              | SAVV -- Viedma Aerodrome
+              | SAWA -- Lago Argentino Aerodrome
+              | SAWD -- Puerto Deseado Aerodrome
+              | SAWE -- Rio Grande B. A.
+              | SAWG -- Rio Gallegos Aerodrome
+              | SAWH -- Ushuaia Aerodrome
+              | SAWJ -- San Julian Aerodrome
+              | SAWP -- Perito Moreno Aerodrome
+              | SAWR -- Gobernador Gregores Aerodrome
+              | SAWU -- Santa Cruz Aerodrome
+              | SAZA -- Azul Airport
+              | SAZB -- Bahia Blanca Aerodrome
+              | SAZD -- Dolores Aerodrome
+              | SAZE -- Pigue Aerodrome
+              | SAZG -- General Pico Aerodrome
+              | SAZH -- Tres Arroyos
+              | SAZM -- Mar Del Plata Aerodrome
+              | SAZN -- Neuquen Aerodrome
+              | SAZP -- Pehuajo Aerodrome
+              | SAZQ -- Rio Colorado
+              | SAZR -- Santa Rosa Aerodrome
+              | SAZS -- Bariloche Aerodrome
+              | SAZT -- Tandil Aerodrome
+              | SAZV -- Villa Gesell
+              | SAZY -- Chapelco
+              | SBAA -- Conceicao Do Araguaia
+              | SBAF -- Afonsos Aeroporto 
+              | SBAN -- Anapolis Braz-Afb 
+              | SBAR -- Aracaju Aeroporto 
+              | SBAT -- Alta Floresta Aeroporto 
+              | SBBC -- Benjamin Constant
+              | SBBE -- Belem Aeroporto 
+              | SBBG -- Bage Aeroporto 
+              | SBBH -- Belo Horizonte Aeroporto 
+              | SBBI -- Curitiba
+              | SBBQ -- Barbacena
+              | SBBR -- Brasilia Aeroporto 
+              | SBBU -- Bauru
+              | SBBV -- Boa Vista, Boa Vista Intl 
+              | SBBW -- Barra Do Garcas
+              | SBCF -- Belo Horizonte
+              | SBCG -- Campo Grande Aeroporto 
+              | SBCI -- Maranhao / Carolina Airport
+              | SBCO -- Porto Alegre
+              | SBCP -- Campos
+              | SBCR -- Corumba
+              | SBCT -- Curitiba Aeroporto 
+              | SBCV -- Caravelas 
+              | SBCY -- Cuiaba Aeroporto 
+              | SBCZ -- Cruzeiro Do Sul
+              | SBDN -- Presidente Prudente
+              | SBEG -- Eduardo Gomes International
+              | SBEK -- Jacareacanga
+              | SBES -- S. P. Aldeia Aerodrome 
+              | SBFI -- Foz Do Iguacu Aeroporto 
+              | SBFL -- Florianopolis Aeroporto 
+              | SBFN -- Fernando De Noronha
+              | SBFZ -- Fortaleza / pinto Martins 
+              | SBGA -- Gama
+              | SBGL -- Galeao
+              | SBGO -- Goiania Aeroporto 
+              | SBGW -- Guaratingueta
+              | SBHT -- Altamira
+              | SBIH -- Itaituba
+              | SBIL -- Ilheus Aeroporto 
+              | SBIZ -- Imperatriz
+              | SBJF -- Juiz De Fora
+              | SBJP -- Joao Pessoa
+              | SBJR -- Rio / Jacarepagua
+              | SBKG -- Campina Grande
+              | SBKP -- Campinas Aeroporto 
+              | SBLO -- Londrina Aeroporto 
+              | SBLP -- Bom Jesus Da Lapa
+              | SBMA -- Maraba
+              | SBMG -- Maringa
+              | SBMK -- Montes Claros
+              | SBMN -- Manaus Aeroporto 
+              | SBMO -- Maceio Aeroporto 
+              | SBMQ -- Macapa
+              | SBMS -- Mocoro / 17 Rosado
+              | SBMT -- Marte Civ / Mil 
+              | SBMY -- Manicore
+              | SBNT -- Natal Aeroporto
+              | SBOI -- Oiapoque
+              | SBPA -- Porto Alegre Aero-Porto 
+              | SBPB -- Parnaiba Aeroporto 
+              | SBPC -- Pocos De Caldas
+              | SBPF -- Passo Fundo
+              | SBPG -- Paranagua
+              | SBPK -- Pelotas
+              | SBPL -- Petrolina 
+              | SBPN -- Porto Nacional Aeroporto 
+              | SBPP -- Ponta Pora Intl 
+              | SBPV -- Porto Velho Aeroporto 
+              | SBQV -- Vitoria Da Conquista
+              | SBRB -- Rio Branco
+              | SBRF -- Recife Aeroporto 
+              | SBRJ -- Rio De Janeiro Aeroporto 
+              | SBRS -- Resende
+              | SBSA -- Sao Carlos
+              | SBSC -- Rio De Janeiro-Santa Cruz Ab 
+              | SBSL -- Sao Luiz Aeroporto 
+              | SBSM -- Santa Maria Aero-Porto 
+              | SBSN -- Santarem-Aeroporto
+              | SBSP -- Sao Paulo/Congonhas Aeroporto
+              | SBST -- Santos Aeroporto 
+              | SBSV -- Salvador Aeroporto 
+              | SBTE -- Teresina Aeroporto 
+              | SBTF -- Tefe
+              | SBTK -- Tarauaca
+              | SBTT -- Tabatinga
+              | SBTU -- Tucurui
+              | SBUA -- Sao Gabriel Da Cachoeira
+              | SBUF -- Paulo Afonso
+              | SBUG -- Uruguaiana Aeroporto 
+              | SBUR -- Uberaba
+              | SBVH -- Vilhena Aeroporto 
+              | SBVT -- Vitoria Aeroporto 
+              | SBXV -- Xavantina 
+              | SBYA -- Iauarete
+              | SBYS -- Pirassununga
+              | SCAR -- Arica
+              | SCBA -- Balmaceda
+              | SCCC -- Chile Chico
+              | SCCH -- Chillan
+              | SCCI -- Punta Arenas
+              | SCCY -- Coyhaique
+              | SCDA -- Iquique / Diego Arac
+              | SCEL -- Pudahuel
+              | SCER -- Quintero Santiago
+              | SCFA -- Antofagasta
+              | SCHA -- Copiapo
+              | SCHR -- Cochrane
+              | SCIC -- Curico
+              | SCIE -- Concepcion
+              | SCIP -- Isla De Pascua
+              | SCLL -- Vallenar
+              | SCRA -- Chanaral
+              | SCSE -- La Serena
+              | SCTC -- Temuco
+              | SCTE -- Puerto Montt
+              | SCVD -- Valdivia
+              | SEAM -- Ambato / Chachoan
+              | SEBC -- Bahia De Caraquez
+              | SECU -- Cuenca / Mariscal Lamar
+              | SEES -- Esmeraldas-Tachina
+              | SEGU -- Guayaquil / Simon Bolivar
+              | SEIB -- Ibarra / Atahualpa
+              | SELO -- Catamayo / Camilo Ponce Enriquez
+              | SELT -- Latacunga
+              | SEMA -- Macara / J. M. Velasco I.
+              | SEMH -- Machala / General M. Serrano
+              | SEMT -- Manta
+              | SEPA -- Pastaza / Rio Amazonas
+              | SEQU -- Quito / Mariscal Sucre
+              | SESA -- Salinas / General Ulpiano Paez
+              | SEST -- San Cristobal Galapagos 
+              | SETI -- Tiputini 
+              | SETU -- Tulcan / El Rosal
+              | SFAL -- Stanley Airport
+              | SGAS -- Asuncion / Aeropuerto
+              | SGCO -- Concepcion
+              | SGEN -- Encarnacion
+              | SGME -- Mariscal Estigarribia
+              | SGNA -- Nueva Asuncion
+              | SKAR -- Armenia / El Eden
+              | SKAS -- Puerto Asis
+              | SKBG -- Bucaramanga / Palonegro
+              | SKBO -- Bogota / Eldorado
+              | SKBQ -- Barranquilla / Ernestocortissoz
+              | SKBU -- Buenaventura
+              | SKCC -- Cucuta / Camilo Daza
+              | SKCG -- Cartagena / Rafael Nunez
+              | SKCL -- Cali / Alfonso Bonillaaragon
+              | SKEJ -- Barrancabermeja / Yariguies
+              | SKIB -- Ibague / Perales
+              | SKIP -- Ipiales / San Luis
+              | SKLC -- Apartado / Los Cedros
+              | SKLT -- Leticia / Vasquez Cobo
+              | SKMD -- Medellin / Olaya Herrera
+              | SKMR -- Monteria / Los Garzones
+              | SKMU -- Mitu
+              | SKNV -- Neiva / Benito Salas
+              | SKPC -- Puerto Carreno / A. Guauquea
+              | SKPE -- Pereira / Matecana
+              | SKPP -- Popayan / Guillermo
+              | SKPS -- Pasto / Antonio Narin
+              | SKPV -- Providencia Isla / El Embrujo
+              | SKRG -- Rionegro / J. M. Cordova
+              | SKRH -- Riohacha / Almirante Padilla
+              | SKSJ -- San Jose Del Guaviare
+              | SKSM -- Santa Marta / Simon Bolivar
+              | SKSP -- San Andres Isla / Sesquicentenario
+              | SKUC -- Arauca / Santiago Perez
+              | SKUI -- Quibdo / El Carano
+              | SKVP -- Valledupar / Alfonso Lopez
+              | SKVV -- Villavicencio / Vanguardia
+              | SLAP -- Apolo
+              | SLAS -- Ascencion De Guarayos
+              | SLCA -- Camiri
+              | SLCB -- Cochabamba
+              | SLCN -- Charana
+              | SLCO -- Cobija
+              | SLCP -- Concepcion
+              | SLET -- Santa Cruz / El Trompillo
+              | SLGY -- Guayaramerin
+              | SLJE -- San Jose De Chiquitos
+              | SLJO -- San Joaquin
+              | SLJV -- San Javier
+              | SLLP -- La Paz / Alto
+              | SLMG -- Magdalena
+              | SLOR -- Oruro
+              | SLPO -- Potosi
+              | SLPS -- Puerto Suarez
+              | SLRB -- Robore
+              | SLRI -- Riberalta
+              | SLRQ -- Rurrenabaque
+              | SLRY -- Reyes
+              | SLSA -- Santa Ana
+              | SLSB -- San Borja
+              | SLSI -- San Ignacio De Velasco
+              | SLSM -- San Ignacio De Moxos
+              | SLSU -- Sucre
+              | SLTJ -- Tarija
+              | SLTR -- Trinidad
+              | SLVM -- Villamontes
+              | SLVR -- Viru-Viru
+              | SLYA -- Yacuiba
+              | SMZY -- Zanderij
+              | SOCA -- Cayenne / Rochambeau
+              | SOOM -- Saint-Laurent-Du-Maroni
+              | SPAY -- Atalaya
+              | SPCL -- Pucallpa
+              | SPEO -- Chimbote
+              | SPGM -- Tingo Maria
+              | SPHI -- Chiclayo
+              | SPHO -- Ayacucho
+              | SPHY -- Andahuayla
+              | SPHZ -- Anta Huaraz 
+              | SPIM -- Lima-Callao / Aerop. Internacional Jorgechavez
+              | SPJA -- Rioja
+              | SPJI -- Juanjui
+              | SPJL -- Juliaca
+              | SPJN -- San Juan
+              | SPJR -- Cajamarca
+              | SPME -- Tumbes
+              | SPMS -- Yurimaguas
+              | SPNC -- Huanuco
+              | SPPY -- Chachapoyas
+              | SPQT -- Iquitos
+              | SPQU -- Arequipa
+              | SPRU -- Trujillo
+              | SPSO -- Pisco
+              | SPST -- Tarapoto
+              | SPTN -- Tacna
+              | SPTU -- Puerto Maldonado
+              | SPUR -- Piura
+              | SPYL -- Talara
+              | SPZO -- Cuzco
+              | SUAA -- Melilla
+              | SUAG -- Artigas
+              | SUCA -- Colonia
+              | SUDU -- Durazno
+              | SUME -- Mercedes
+              | SUMO -- Melo
+              | SUMU -- Carrasco
+              | SUPU -- Paysandu
+              | SURV -- Rivera
+              | SUSO -- Salto
+              | SUTB -- Tacuarembo
+              | SUTR -- Treinta Y Tres
+              | SVAC -- Acarigua
+              | SVBC -- Barcelona
+              | SVBI -- Barinas
+              | SVBM -- Barquisimeto
+              | SVBS -- Maracay-B. A. Sucre
+              | SVCB -- Ciudad Bolivar
+              | SVCL -- Calabozo
+              | SVCR -- Coro
+              | SVCU -- Cumana
+              | SVFM -- Caracas / La Carlota
+              | SVGD -- Guasdualito
+              | SVGI -- Guiria
+              | SVGU -- Guanare
+              | SVJM -- San Juan De Los Morros
+              | SVLO -- La Orchila
+              | SVMC -- Maracaibo-La Chinita
+              | SVMD -- Merida
+              | SVMI -- Caracas / Maiquetia Aerop. Intl. Simon Bolivar
+              | SVMN -- Mene Grande
+              | SVMT -- Maturin
+              | SVPA -- Puerto Ayacucho
+              | SVPC -- Pto. Cabello
+              | SVSA -- San Antonio Del Tachira
+              | SVSE -- Santa Elena De Uairen
+              | SVSO -- Sto. Domingo
+              | SVSR -- San Fernando De Apure
+              | SVTM -- Tumeremo
+              | SVTR -- Temblador
+              | SVVA -- Valencia
+              | SVVL -- Valera
+              | SVVP -- Valle De La Pascua
+              | SWBC -- Barcelos
+              | SYGT -- Georgetown
+              | SYTM -- Timehri Airport
+              | TAPA -- Vc Bird International Airport Antigua
+              | TBPB -- Grantley Adams
+              | TDCF -- Canefield Airport
+              | TDPD -- Melville Hall Airport
+              | TDPR -- Roseau
+              | TFFF -- Le Lamentin
+              | TFFJ -- Gustavia, Saint Barthelemy
+              | TFFR -- Le Raizet, Guadeloupe
+              | TGPY -- Point Salines Airport
+              | TIST -- Charlotte Amalie St. Thomas, Cyril E. King Airport
+              | TISX -- Christiansted, Henry E. Rohlsen Airport
+              | TJBQ -- Aquadilla, Rafael Hernandez Airport
+              | TJNR -- ROOSEVELT ROADS PUERTO RICO
+              | TKPK -- Golden Rock
+              | TKPN -- Charlestown / Newcast
+              | TLPC -- Vigie
+              | TLPL -- Hewanorra International Airport
+              | TNCA -- Queen Beatrix Airport
+              | TNCB -- Flamingo Airport, Bonaire
+              | TNCC -- Hato Airport, Curacao
+              | TNCE -- Roosevelt Airport Saint Eustatius
+              | TNCM -- Juliana Airport, Saint Maarten
+              | TTPP -- Piarco International Airport, Trinidad
+              | TTPT -- Crown Point Airport, Tobago
+              | TUPJ -- Beef Island, Tortola
+              | TVSV -- Arnos Vale
+              | TXKF -- Bermuda
+              | UAAA -- Almaty
+              | UAII -- Shymkent
+              | UAKK -- Karaganda
+              | UAOO -- Kzyl-Orda
+              | UARR -- Uralsk
+              | UATA -- Aralskoe More
+              | UATT -- Aktjubinsk
+              | UBBB -- Baku / Bine Airport
+              | UEEE -- Jakutsk
+              | UELL -- Cul'Man
+              | UGEE -- Yerevan
+              | UGGG -- Tbilisi
+              | UGMM -- Muhrani
+              | UHBP -- Ekimchan
+              | UHHH -- Habarovsk
+              | UHHO -- Troickoe
+              | UHMA -- Anadyr
+              | UHMD -- Buhta Providenja
+              | UHMM -- Magadan
+              | UHPP -- Petropavlovsk-Kamchatskij
+              | UHSS -- Yuzhno-Sakhalinsk
+              | UHWW -- Vladivostok
+              | UIAA -- Chita
+              | UIII -- Irkutsk
+              | UIIO -- Ust'Ordynskij
+              | UIKB -- Bodajbo
+              | UIKK -- Kirensk
+              | UINN -- Nizhneudinsk
+              | UIUH -- Horinsk
+              | UIUU -- Ulan-Ude
+              | UKBB -- Boryspil
+              | UKFF -- Simferopol
+              | UKHH -- Kharkiv
+              | UKII -- Kisinev
+              | UKKK -- Kyiv
+              | UKLL -- L'Viv
+              | UKLR -- Rivne
+              | UKOO -- Odesa
+              | ULAA -- Arhangel'Sk
+              | ULAK -- Kotlas
+              | ULLI -- St. Peterburg
+              | ULMM -- Murmansk
+              | ULOL -- Velikie Luki
+              | ULWT -- Tot'Ma
+              | ULWW -- Vologda
+              | UMII -- Vitebsk
+              | UMMS -- Minsk
+              | UMRR -- Riga
+              | UMRW -- Ventspils
+              | UNBB -- Barnaul
+              | UNII -- Enisejsk
+              | UNNN -- Novosibirsk
+              | URKK -- Krasnodar
+              | URMM -- Mineral'Nye Vody
+              | URRR -- Rostov-Na-Donu
+              | URSS -- Adler
+              | URWI -- Elista
+              | URWW -- Volgograd
+              | USHH -- Hanty-Mansijsk
+              | USRR -- Surgut
+              | USSS -- Ekaterinburg
+              | UTDD -- Dushanbe
+              | UTED -- Dzizak
+              | UTSM -- Tamdy
+              | UTSS -- Samarkand
+              | UTST -- Termez
+              | UTTT -- Tashkent
+              | UUBP -- Brjansk
+              | UUEM -- Tver
+              | UUOO -- Voronez
+              | UUYT -- Ust'- Kulom
+              | UUYY -- Syktyvkar
+              | UWPP -- Penza
+              | UWWW -- Samara
+              | VAAH -- Ahmadabad
+              | VAAK -- Akola
+              | VAAU -- Aurangabad Chikalthan Aerodrome
+              | VABB -- Bombay / Santacruz
+              | VABI -- Bilaspur
+              | VABJ -- Bhuj-Rudramata
+              | VABM -- Belgaum / Sambra
+              | VABP -- Bhopal / Bairagarh
+              | VABV -- Bhaunagar
+              | VAGO -- Goa / Dabolim Airport
+              | VAID -- Indore
+              | VAJB -- Jabalpur
+              | VAKD -- Khandwa
+              | VAKP -- Kolhapur
+              | VANP -- Nagpur Sonegaon
+              | VARK -- Rajkot
+              | VASL -- Sholapur
+              | VBBM -- Bhamo
+              | VBBS -- Pathein
+              | VBCI -- Coco Island
+              | VBHL -- Homalin
+              | VBKG -- Kengtung
+              | VBKP -- Kyaukpyu
+              | VBLS -- Lashio
+              | VBMK -- Myitkyina
+              | VBML -- Meiktila
+              | VBMM -- Moulmein
+              | VBPA -- Hpa-An
+              | VBPR -- Prome
+              | VBPT -- Putao
+              | VBRM -- Mandalay
+              | VBRN -- Mergui
+              | VBRR -- Mingaladon
+              | VBSY -- Sandoway
+              | VBTV -- Dawei
+              | VCBI -- Katunayake
+              | VCCA -- Anuradhapura
+              | VCCB -- Batticaloa
+              | VCCC -- Ratmalana
+              | VCCT -- Trincomalee
+              | VDKC -- Kompong-Cham
+              | VDPP -- Phnom-Penh / Pochentong
+              | VDSR -- Siemreap
+              | VEAT -- Agartala
+              | VEBD -- Siliguri
+              | VEBS -- Bhubaneswar
+              | VECC -- Calcutta / Dum Dum
+              | VECX -- Car Nicobar
+              | VEGK -- Gorakhpur
+              | VEGT -- Gauhati
+              | VEGY -- Gaya
+              | VEIM -- Imphal Tulihal
+              | VEJH -- Jharsuguda
+              | VEJS -- Jamshedpur
+              | VELR -- North Lakhimpur
+              | VEMN -- Dibrugarh / Mohanbari
+              | VEPB -- Port Blair
+              | VEPT -- Patna
+              | VERC -- M. O. Ranchi
+              | VGCB -- Cox's Bazar
+              | VGEG -- Chittagong Patenga 
+              | VGIS -- Ishurdi
+              | VGJR -- Jessore
+              | VGRJ -- Rajshahi
+              | VGSY -- Sylhet
+              | VGTJ -- Dhaka
+              | VGZR -- Kurmitola, Dia
+              | VHCH -- Cheung Chau
+              | VHHH -- Hong Kong Inter-National Airport
+              | VIAG -- Agra
+              | VIAL -- Allahabad / Bamhrauli
+              | VIAR -- Amritsar
+              | VIBN -- Varanasi / Babatpur
+              | VIBY -- Bareilly
+              | VICX -- Kanpur / Chakeri
+              | VIDD -- New Delhi / Safdarjung
+              | VIDP -- New Delhi / Palam
+              | VIGR -- Gwalior
+              | VIHR -- Hissar
+              | VIJN -- Jhansi
+              | VIJO -- Jodhpur
+              | VIJP -- Jaipur / Sanganer
+              | VIKO -- Kota Aerodrome
+              | VILK -- Lucknow / Amausi
+              | VIST -- Satna
+              | VIUD -- Udaipur Dabok
+              | VLAP -- Attopeu
+              | VLIP -- Pakse
+              | VLLB -- Luang-Prabang
+              | VLSB -- Sayaboury
+              | VLSK -- Savannakhet
+              | VLSV -- Saravane
+              | VLTK -- Thakhek
+              | VLVT -- Vientiane
+              | VMMC -- Taipa
+              | VNBW -- Bhairawa Airport
+              | VNJL -- Jumla
+              | VNKT -- Kathmandu Airport
+              | VNPK -- Pokhara Airport
+              | VNSI -- Simra Airport
+              | VNSK -- Surkhet
+              | VNTJ -- Taplejung
+              | VNVT -- Biratnagar Airport
+              | VOBI -- Bellary
+              | VOBZ -- Vijayawada / Gannavaram
+              | VOCB -- Coimbatore / Peelamedu
+              | VOCC -- Cochin / Willingdon
+              | VOCP -- Cuddapah
+              | VOHY -- Hyderabad Airport
+              | VOMD -- Madurai
+              | VOML -- Mangalore / Bajpe
+              | VOMM -- Madras / Minambakkam
+              | VOTR -- Tiruchchirapalli
+              | VOTV -- Thiruvananthapuram
+              | VOVR -- Vellore
+              | VRGN -- Gan
+              | VRMM -- Male
+              | VTBC -- Chanthaburi
+              | VTBD -- Don Muang
+              | VTBG -- Kanchanaburi
+              | VTBI -- Prachin Buri
+              | VTBJ -- Phetchaburi
+              | VTBP -- Prachuap Khirikhan
+              | VTBS -- Chon Buri
+              | VTBU -- Rayong
+              | VTCC -- Chiang Mai
+              | VTCH -- Mae Hong Son
+              | VTCL -- Lampang
+              | VTCN -- Nan
+              | VTCP -- Phrae
+              | VTCR -- Chiang Rai
+              | VTCS -- Mae Sariang
+              | VTPH -- Hua Hin
+              | VTPM -- Mae Sot
+              | VTPN -- Nakhon Sawan
+              | VTPS -- Phitsanulok
+              | VTPT -- Tak
+              | VTPU -- Uttaradit
+              | VTSA -- Satun
+              | VTSB -- Surat Thani
+              | VTSD -- Chumphon
+              | VTSH -- Songkhla
+              | VTSK -- Pattani
+              | VTSN -- Nakhon Si Thammarat
+              | VTSP -- Phuket Airport
+              | VTSR -- Ranong
+              | VTSS -- Hat Yai
+              | VTST -- Trang
+              | VTUB -- Mukdahan
+              | VTUC -- Chaiyaphum
+              | VTUD -- Udon Thani
+              | VTUK -- Khon Kaen
+              | VTUL -- Loei
+              | VTUM -- Nong Khai
+              | VTUN -- Nakhon Ratchasima
+              | VTUP -- Nakhon Phanom
+              | VTUR -- Roi Et
+              | VTUS -- Sakon Nakhon
+              | VTUU -- Ubon Ratchathani
+              | VVDN -- Da Nang
+              | VVNB -- Ha Noi
+              | VVNT -- Nha Trang
+              | VVPB -- Hue
+              | VVPK -- Pleiku City
+              | VVQN -- Quy Nhon
+              | VVTS -- Ho Chi Minh
+              | VVVH -- Vinh
+              | VYSW -- Sittwe
+              | VYYY -- Yangon
+              | WAAA -- Ujung Pandang / Hasanuddin
+              | WAAB -- Bau-Bau / Beto Ambiri
+              | WAAU -- Kendari / Woltermon-Ginsidi
+              | WABB -- Biak / Mokmer
+              | WABI -- Nabire
+              | WABN -- Kokonao / Timuka
+              | WABO -- Serui / Yendosa
+              | WABT -- Enarotali
+              | WAJI -- Sarmi
+              | WAJJ -- Jayapura / Sentani
+              | WAJW -- Wamena / Wamena
+              | WAKK -- Merauke / Mopah
+              | WAKT -- Tanah Merah / Tanah Merah
+              | WAMA -- Galela / Gamarmalamu
+              | WAMG -- Gorontalo / Jalaluddin
+              | WAMH -- Tahuna
+              | WAMI -- Toli-Toli / Lalos
+              | WAML -- Palu / Mutiara
+              | WAMM -- Menado / Dr. Sam Ratulangi
+              | WAMP -- Poso / Kasiguncu
+              | WAMT -- Ternate / Babullah
+              | WAMW -- Luwuk / Bubung
+              | WAPA -- Amahai
+              | WAPH -- Labuha / Taliabu
+              | WAPI -- Saumlaki
+              | WAPN -- Sanana
+              | WAPP -- Ambon / Pattimura
+              | WAPR -- Namlea
+              | WASF -- Fak-Fak / Torea
+              | WASK -- Kaimana / Utarom
+              | WASR -- Manokwari / Rendani
+              | WASS -- Sorong / Jefman
+              | WBGB -- Bintulu
+              | WBGG -- Kuching
+              | WBGR -- Miri
+              | WBGS -- Sibu
+              | WBKK -- Kota Kinabalu
+              | WBKL -- Labuan
+              | WBKS -- Sandakan
+              | WBKT -- Kudat
+              | WBKW -- Tawau
+              | WBSB -- Brunei Airport
+              | WIAA -- Sabang / Cut Bau
+              | WIAG -- Menggala / Astra Ksetra
+              | WIAM -- Tasikmalaya / Cibeureum
+              | WIAR -- Madiun / Iswahyudi
+              | WIAS -- Malang / Abdul Rahkmansaleh
+              | WIBB -- Pakanbaru / Simpangtiga
+              | WIIA -- Curug / Budiarto
+              | WIIB -- Bandung / Husein
+              | WIIH -- Jakarta Halim Perdanakusuma
+              | WIII -- Jakarta / Soekarno-Hatta
+              | WIIJ -- Jogyakarta / Adisucipto
+              | WIIK -- Kalijati
+              | WIIL -- Cilacap
+              | WIIS -- Semarang / Ahmadyani
+              | WIIT -- Telukbetung / Beranti
+              | WIKB -- Batan, Sumatra
+              | WIKD -- Tanjungpandan / Buluh Tumbang
+              | WIKK -- Pangkalpinang / Pangkalpinang
+              | WIKN -- Tanjungpinang / Kijang
+              | WIKS -- Singkep / Dabo
+              | WIMB -- Gunung Sitoli / Binaka
+              | WIMG -- Padang / Tabing
+              | WIMM -- Medan / Polonia
+              | WIMS -- Sibolga / Pinangsori
+              | WIOI -- Singkawang Ii
+              | WIOK -- Ketapang / Rahadi Usmaman
+              | WION -- Ranai / Ranai
+              | WIOO -- Pontianak / Supadio
+              | WIOS -- Sintang
+              | WIPA -- Jambi / Sultan Taha
+              | WIPH -- Kerinci / Depati Parbo
+              | WIPL -- Bengkulu / Padangkemiling
+              | WIPP -- Palembang / Talangbetutu
+              | WIPR -- Rengat / Japura
+              | WITC -- Meulaboh / Cut Nyak Dhien
+              | WITM -- Lhokseumawe / Malikussaleh
+              | WITT -- Banda Aceh / Blangbintang
+              | WMBA -- Sitiawan
+              | WMKC -- Kota Bharu
+              | WMKD -- Kuantan
+              | WMKJ -- Johore Bharu / Senai
+              | WMKK -- Sepang/KL International Airport
+              | WMKL -- Langkawi
+              | WMKM -- Malacca
+              | WMKP -- Penang / Bayan Lepas
+              | WPDL -- Dilli / Dilli Airport
+              | WPEC -- Baucau
+              | WPOC -- Oe-Cusse / Oe Cusse
+              | WRBB -- Banjarmasin / Syamsuddin Noor
+              | WRBI -- Pangkalan Bun / Iskandar
+              | WRBK -- Kotabaru
+              | WRBM -- Muaratewe / Beringin
+              | WRBP -- Palangkaraya / Panarung
+              | WRKC -- Maumere / Wai Oti
+              | WRKK -- Kupang / El Tari
+              | WRKL -- Larantuka
+              | WRKM -- Alor / Mali
+              | WRKR -- Rote / Baa
+              | WRKS -- Sabu / Tardamu
+              | WRLB -- Longbawan / Juvai Semaring
+              | WRLG -- Tanjung Selor
+              | WRLK -- Tanjung Redep / Berau
+              | WRLL -- Balikpapan / Sepinggan
+              | WRLR -- Tarakan / Juwata
+              | WRLS -- Samarinda / Temindung
+              | WRRA -- Ampenan / Selaparang
+              | WRRB -- Bima
+              | WRRR -- Denpasar / Ngurah-Rai
+              | WRRS -- Sumbawa Besar / Sumbawa Besar
+              | WRRW -- Waingapu / Mau Hau
+              | WRSJ -- Surabaya / Juanda
+              | WRSP -- Surabaya / Perak
+              | WRSQ -- Surakarta / Adisumarmo
+              | WRSS -- Surabaya
+              | WSAP -- Singapore / Paya Lebar
+              | WSSS -- Singapore / Changi Airport
+              | YBAF -- Archerfield Aerodrome
+              | YBAM -- Amberley Aerodrome
+              | YBAS -- Alice Springs Aerodrome
+              | YBBN -- Brisbane Airport M. O
+              | YBCG -- Coolangatta Airport Aws
+              | YBCS -- Cairns Airport
+              | YBCV -- Charleville Airport
+              | YBGL -- Gladstone
+              | YBLR -- Longreach Airport
+              | YBMA -- Mount Isa Amo
+              | YBMK -- Mackay Mo
+              | YBOK -- Oakey Aerodrome
+              | YBPN -- Proserpine Airport
+              | YBRK -- Rockhampton Airport
+              | YBRM -- Broome Airport
+              | YBTL -- Townsville Amo
+              | YBWP -- Weipa City
+              | YDGV -- Gove Airport
+              | YDTC -- Tennant Creek Airport
+              | YDYL -- Yulara Aws
+              | YMAY -- Albury Airport
+              | YMDV -- Devonport East
+              | YMEN -- Goldstream Aws
+              | YMES -- East Sale Aerodrome
+              | YMHB -- Hobart Airport
+              | YMLT -- Launceston Airport
+              | YMLV -- Laverton Aerodrome
+              | YMMB -- Moorabbin Airport Aws
+              | YMMG -- Mount Gambier Aerodrome
+              | YMMI -- Mildura Airport
+              | YMML -- Melbourne Airport
+              | YMMQ -- Macquarie Island
+              | YMWY -- Wynyard West
+              | YPAD -- Adelaide Airport
+              | YPAL -- Albany Airport
+              | YPBH -- Broken Hill Patton Street
+              | YPCC -- Cocos Island Airport
+              | YPCD -- Ceduna Airport
+              | YPDB -- Derby
+              | YPDN -- Darwin Airport
+              | YPEA -- Bullsbrook Pearce Amo
+              | YPED -- Edinburgh M. O.
+              | YPFT -- Forrest Airport
+              | YPGN -- Geraldton Airport
+              | YPKG -- Kalgoorlie Boulder Amo
+              | YPKU -- Kununurra Kununurra Aws 
+              | YPLC -- Leigh Creek Airport
+              | YPLM -- Learmonth Airport
+              | YPMR -- Meekatharra Airport
+              | YPPD -- Port Hedland Pardoo
+              | YPPF -- Parafield Airport
+              | YPPH -- Belmont Perth Airport 
+              | YPWR -- Woomera Aerodrome
+              | YPXM -- Christmas Island Aerodrome
+              | YSBK -- Bankstown Airport Aws
+              | YSCB -- Canberra
+              | YSCH -- Coffs Harbour Mo
+              | YSCM -- Cooma
+              | YSCN -- Camden Airport
+              | YSDU -- Dubbo
+              | YSNF -- Norfolk Island Airport
+              | YSNW -- Nowra Ran Air Station
+              | YSRI -- Richmond Aus-Afb 
+              | YSSY -- Sydney Airport
+              | YSTW -- Tamworth Airport
+              | YSWG -- Wagga Airport
+              | YSWM -- Williamtown Aerodrome
+              | ZBAA -- Beijing
+              | ZBHH -- Hohhot
+              | ZBYN -- Taiyuan
+              | ZGCS -- Changsha
+              | ZGGG -- Guangzhou
+              | ZGHK -- Haikou
+              | ZGKL -- Guilin
+              | ZGNN -- Nanning
+              | ZGOW -- Shantou
+              | ZGSZ -- Shenzhen
+              | ZGZJ -- Zhanjiang
+              | ZHCC -- Zhengzhou
+              | ZHHH -- Wuhan
+              | ZKKC -- Kimchaek
+              | ZKPY -- Pyongyang
+              | ZLIC -- Yinchuan
+              | ZLJQ -- Jiuquan
+              | ZLSN -- Xi'An
+              | ZLXN -- Xining
+              | ZLYA -- Yan An
+              | ZPPP -- Kunming
+              | ZSAM -- Xiamen
+              | ZSCN -- Nanchang
+              | ZSFZ -- Fuzhou
+              | ZSGZ -- Ganzhou
+              | ZSHC -- Hangzhou
+              | ZSNJ -- Nanjing
+              | ZSOF -- Hefei
+              | ZSQD -- Qingdao
+              | ZSSS -- Shanghai / Hongqiao
+              | ZSTN -- Jinan
+              | ZUCK -- Chongqing
+              | ZUGY -- Guiyang
+              | ZULS -- Lhasa
+              | ZUUU -- Chengdu
+              | ZWHM -- Hami
+              | ZWSH -- Kashi
+              | ZWTN -- Hotan
+              | ZWYN -- Yining
+              | ZYCC -- Changchun
+              | ZYQQ -- Qiqihar
+              | ZYTL -- Dalian
           deriving (Bounded, Enum, Eq, Ord, Read, Show)
 
 data ICAOData = ICAOData { icaoPoint :: Point }
