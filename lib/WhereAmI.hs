@@ -1,5 +1,5 @@
 {-# LANGUAGE DeriveGeneric, DuplicateRecordFields, OverloadedStrings, RecordWildCards #-}
-module WhereAmI (whereAmI, Location(..)) where
+module WhereAmI (whereAmI, whereIs, Location(..)) where
 
 import Control.Exception
 import Control.Lens ((&), (^.), (.~))
@@ -55,8 +55,11 @@ tls = defaults & header "Accept" .~ ["application/json"]
   noTimeout = tlsManagerSettings { managerResponseTimeout = responseTimeoutNone }
 
 whereAmI :: IO Location
-whereAmI = do
-  r <- asJSON =<< getWith tls "https://extreme-ip-lookup.com/json/"
+whereAmI = whereIs ""
+
+whereIs :: String -> IO Location
+whereIs ip = do
+  r <- asJSON =<< getWith tls ("https://extreme-ip-lookup.com/json/" <> ip)
   let Body {..} = r ^. responseBody
   pure $ case status of
     "success" -> Location businessName businessWebsite
