@@ -1,4 +1,4 @@
-resolver: lts-13.10
+resolver: lts-13.11
 packages:
 - .
 extra-deps:
@@ -6,5 +6,6 @@ extra-deps:
 - gi-gst-1.0.16
 - github: judah/haskeline
   commit: master
+- gps-1.2
 - shh-0.2.0.2
 allow-newer: true

@@ -48,6 +48,7 @@ setup = do
               , ModuleImport "Data.IORef" NotQualified NoImportList
               , ModuleImport "Data.List" NotQualified NoImportList
               , ModuleImport "Diagrams" NotQualified NoImportList
+              , ModuleImport "METAR" (QualifiedAs Nothing) NoImportList
               , ModuleImport "Network.URI.Encode" (QualifiedAs (Just "URI")) NoImportList
               , ModuleImport "Radio" NotQualified NoImportList
               , ModuleImport "Ops" NotQualified NoImportList
@@ -56,6 +57,7 @@ setup = do
               , ModuleImport "System.Directory" NotQualified NoImportList
               , ModuleImport "System.Posix.IO" NotQualified NoImportList
               , ModuleImport "System.Posix.Types" NotQualified NoImportList
+              , ModuleImport "WhereAmI" NotQualified NoImportList
               ]
   runStmt $ "let externalPrint s = fdWrite (read " <> show (show wFd) <> ") s >> pure ()"
   runStmt "let printProc p = readProc p >>= externalPrint"

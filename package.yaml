@@ -9,8 +9,10 @@ copyright:           "2019 Mario Lang"
 description:         Marios Control Program
 
 dependencies:
+- aeson
 - ansi-terminal
 - base >= 4.9 && < 5
+- bytestring
 - diagrams-braille
 - diagrams-core
 - diagrams-lib
@@ -20,16 +22,23 @@ dependencies:
 - gi-glib
 - gi-gst
 - Glob
+- gps
 - haskeline >= 0.8.0.0
 - haskell-gi-base
 - hint
+- http-client
+- http-client-tls
+- lens
 - mtl
+- parsers
 - shh
 - stm
 - text
 - transformers
+- trifecta
 - unix
 - uri-encode
+- wreq
 
 library:
   source-dirs: lib
