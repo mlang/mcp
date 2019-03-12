@@ -6664,7 +6664,7 @@ icaoData = Map.fromDistinctAscList [
   , (PANN, ICAOData (Point {pntLat = 64.55, pntLon = -149.06666666666666, pntEle = Just 110.0, pntTime = Nothing}))
   , (PANT, ICAOData (Point {pntLat = 55.03333333333333, pntLon = -131.58333333333334, pntEle = Just 36.0, pntTime = Nothing}))
   , (PAOM, ICAOData (Point {pntLat = 64.51666666666667, pntLon = -165.43333333333334, pntEle = Just 11.0, pntTime = Nothing}))
-  , (PAOR, ICAOData (Point {pntLat = 62.96666666666667, pntLon = 141.93333333333334, pntEle = Just 523.0, pntTime = Nothing}))
+  , (PAOR, ICAOData (Point {pntLat = 62.96666666666667, pntLon = -141.93333333333334, pntEle = Just 523.0, pntTime = Nothing}))
   , (PAOT, ICAOData (Point {pntLat = 66.88333333333334, pntLon = -162.6, pntEle = Just 3.0, pntTime = Nothing}))
   , (PAPC, ICAOData (Point {pntLat = 65.25, pntLon = -166.85, pntEle = Just 3.0, pntTime = Nothing}))
   , (PAPG, ICAOData (Point {pntLat = 56.81666666666667, pntLon = -132.96666666666667, pntEle = Just 0.0, pntTime = Nothing}))
