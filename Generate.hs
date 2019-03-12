@@ -1,5 +1,5 @@
 {-# LANGUAGE RecordWildCards #-}
-module METAR where
+module Main where
 
 import Control.Applicative ((<|>))
 import Control.Exception
@@ -15,10 +15,8 @@ import Text.Parser.Combinators (count, endBy, many, optional, sepBy, sepEndBy)
 import Text.Trifecta.Parser (parseByteString)
 import Text.Trifecta.Result
 
-nearest :: Point -> IO (String, Distance)
-nearest p = do
-  l <- bbsss
-  pure . head . sortOn snd $ (\Info {..} -> (code, distance point p)) <$> l
+main :: IO ()
+main = writeModule "lib/ICAO.hs"
 
 data METARException = NotAvailable Status
                     | ParseFailed ErrInfo

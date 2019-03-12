@@ -50,7 +50,6 @@ setup = do
               , ModuleImport "Diagrams" NotQualified NoImportList
               , ModuleImport "Geo.Computations" NotQualified NoImportList
               , ModuleImport "ICAO" (QualifiedAs Nothing) NoImportList
-              , ModuleImport "METAR" (QualifiedAs Nothing) NoImportList
               , ModuleImport "Network.URI.Encode" (QualifiedAs (Just "URI")) NoImportList
               , ModuleImport "Radio" NotQualified NoImportList
               , ModuleImport "Ops" NotQualified NoImportList
