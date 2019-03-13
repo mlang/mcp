@@ -51,6 +51,7 @@ setup = do
               , ModuleImport "Distance" NotQualified NoImportList
               , ModuleImport "Geo.Computations" NotQualified (HidingList ["distance"])
               , ModuleImport "ICAO" (QualifiedAs Nothing) NoImportList
+              , ModuleImport "METAR" (QualifiedAs Nothing) NoImportList
               , ModuleImport "Network.URI.Encode" (QualifiedAs (Just "URI")) NoImportList
               , ModuleImport "Radio" NotQualified NoImportList
               , ModuleImport "Ops" NotQualified NoImportList
