@@ -1,0 +1,3 @@
+[submodule "airport-codes"]
+	path = airport-codes
+	url = https://github.com/datasets/airport-codes

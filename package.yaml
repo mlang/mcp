@@ -13,6 +13,7 @@ dependencies:
 - ansi-terminal
 - base >= 4.9 && < 5
 - bytestring
+- cassava
 - containers
 - diagrams-braille
 - diagrams-core
