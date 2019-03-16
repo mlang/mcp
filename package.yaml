@@ -12,6 +12,7 @@ dependencies:
 - aeson
 - ansi-terminal
 - base >= 4.9 && < 5
+- betris >= 0.2.0.0
 - bytestring
 - cassava
 - containers
@@ -36,6 +37,7 @@ dependencies:
 - shh
 - stm
 - text
+- time-units
 - transformers
 - trifecta
 - unix

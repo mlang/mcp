@@ -2,10 +2,12 @@ resolver: lts-13.12
 packages:
 - .
 extra-deps:
+- betris-0.2.0.0
 - diagrams-braille-0.1.0.2
 - gi-gst-1.0.16
 - github: judah/haskeline
   commit: master
 - gps-1.2
-- shh-0.2.0.2
+- shh-0.3.0.0
+- time-units-1.0.0
 allow-newer: true
